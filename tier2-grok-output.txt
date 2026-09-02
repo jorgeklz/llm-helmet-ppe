@@ -1,0 +1,783 @@
+
+==================================================
+ RUN 1/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9534 | val_loss=0.2255 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9494 | val_loss=0.2925 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9494 | val_loss=0.1802 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9413 | val_loss=0.3174 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9453 | val_loss=0.2159 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9433 | val_loss=0.3081 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9474 | val_loss=0.2999 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9474 | val_loss=0.2540 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9514 | val_loss=0.2524 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9534
+ [P2] Epoch 001 | val_acc=0.9474 | val_loss=0.1905 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9453 | val_loss=0.1842 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9474 | val_loss=0.1836 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9453 | val_loss=0.1765 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9514 | val_loss=0.1866 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9514 | val_loss=0.1713 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9474 | val_loss=0.1754 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9494 | val_loss=0.1667 | head_lr=3.00e-05
+ [P2] Epoch 009 | val_acc=0.9514 | val_loss=0.1710 | head_lr=3.00e-05
+ [P2] Epoch 010 | val_acc=0.9514 | val_loss=0.1882 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9514 | val_loss=0.1840 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9514 | val_loss=0.2005 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9555 | val_loss=0.1671 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9514 | val_loss=0.1744 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9494 | val_loss=0.1843 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9494 | val_loss=0.1849 | head_lr=9.00e-06
+ [P2] Epoch 017 | val_acc=0.9494 | val_loss=0.1732 | head_lr=9.00e-06
+ [P2] Epoch 018 | val_acc=0.9534 | val_loss=0.1782 | head_lr=2.70e-06
+ [P2] Epoch 019 | val_acc=0.9534 | val_loss=0.1752 | head_lr=2.70e-06
+ [P2] Epoch 020 | val_acc=0.9514 | val_loss=0.1744 | head_lr=2.70e-06
+ [P2] Epoch 021 | val_acc=0.9514 | val_loss=0.1913 | head_lr=2.70e-06
+ [P2] Epoch 022 | val_acc=0.9494 | val_loss=0.1766 | head_lr=2.70e-06
+ [P2] Epoch 023 | val_acc=0.9514 | val_loss=0.1944 | head_lr=8.10e-07
+ [P2] Epoch 024 | val_acc=0.9534 | val_loss=0.1732 | head_lr=8.10e-07
+ [P2] Epoch 025 | val_acc=0.9514 | val_loss=0.1866 | head_lr=8.10e-07
+ [P2] Early stop at epoch 25. Best val_acc=0.9555
+ → acc=0.9555 | auc=0.9849
+
+==================================================
+ RUN 2/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9555 | val_loss=0.1645 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9433 | val_loss=0.2414 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9433 | val_loss=0.2257 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9534 | val_loss=0.2341 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9474 | val_loss=0.2724 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9494 | val_loss=0.2795 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.2360 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9494 | val_loss=0.3037 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9474 | val_loss=0.3115 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9555
+ [P2] Epoch 001 | val_acc=0.9514 | val_loss=0.1741 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9494 | val_loss=0.1870 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9494 | val_loss=0.1814 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9494 | val_loss=0.1958 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9494 | val_loss=0.1814 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9494 | val_loss=0.1814 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9514 | val_loss=0.1938 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9474 | val_loss=0.1875 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9474 | val_loss=0.2171 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9494 | val_loss=0.1932 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9494 | val_loss=0.1851 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9534 | val_loss=0.1763 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9474 | val_loss=0.1841 | head_lr=2.70e-06
+ [P2] Epoch 014 | val_acc=0.9494 | val_loss=0.2058 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9453 | val_loss=0.1892 | head_lr=2.70e-06
+ [P2] Epoch 016 | val_acc=0.9494 | val_loss=0.1825 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9494 | val_loss=0.1819 | head_lr=8.10e-07
+ [P2] Epoch 018 | val_acc=0.9474 | val_loss=0.1957 | head_lr=8.10e-07
+ [P2] Epoch 019 | val_acc=0.9494 | val_loss=0.1925 | head_lr=8.10e-07
+ [P2] Epoch 020 | val_acc=0.9494 | val_loss=0.1834 | head_lr=8.10e-07
+ [P2] Epoch 021 | val_acc=0.9534 | val_loss=0.1792 | head_lr=8.10e-07
+ [P2] Epoch 022 | val_acc=0.9474 | val_loss=0.2095 | head_lr=2.43e-07
+ [P2] Epoch 023 | val_acc=0.9494 | val_loss=0.1949 | head_lr=2.43e-07
+ [P2] Epoch 024 | val_acc=0.9453 | val_loss=0.1867 | head_lr=2.43e-07
+ [P2] Early stop at epoch 24. Best val_acc=0.9534
+ → acc=0.9534 | auc=0.9837
+
+==================================================
+ RUN 3/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9555 | val_loss=0.1716 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9494 | val_loss=0.1836 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9474 | val_loss=0.2207 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9453 | val_loss=0.3315 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9433 | val_loss=0.2129 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9413 | val_loss=0.3690 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.2332 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9474 | val_loss=0.2396 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9494 | val_loss=0.3100 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9555
+ [P2] Epoch 001 | val_acc=0.9514 | val_loss=0.2105 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9474 | val_loss=0.2217 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9514 | val_loss=0.2054 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9534 | val_loss=0.2063 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9514 | val_loss=0.1990 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9534 | val_loss=0.1984 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9534 | val_loss=0.2249 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9534 | val_loss=0.2002 | head_lr=3.00e-05
+ [P2] Epoch 009 | val_acc=0.9534 | val_loss=0.1989 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.1979 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9555 | val_loss=0.2057 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9534 | val_loss=0.1926 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9555 | val_loss=0.1919 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9555 | val_loss=0.1900 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9534 | val_loss=0.2068 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9534 | val_loss=0.2141 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9555 | val_loss=0.1903 | head_lr=2.70e-06
+ [P2] Epoch 018 | val_acc=0.9534 | val_loss=0.2116 | head_lr=2.70e-06
+ [P2] Epoch 019 | val_acc=0.9514 | val_loss=0.1962 | head_lr=2.70e-06
+ [P2] Epoch 020 | val_acc=0.9514 | val_loss=0.2015 | head_lr=2.70e-06
+ [P2] Epoch 021 | val_acc=0.9514 | val_loss=0.1927 | head_lr=8.10e-07
+ [P2] Epoch 022 | val_acc=0.9555 | val_loss=0.1905 | head_lr=8.10e-07
+ [P2] Epoch 023 | val_acc=0.9534 | val_loss=0.2189 | head_lr=8.10e-07
+ [P2] Early stop at epoch 23. Best val_acc=0.9555
+ → acc=0.9555 | auc=0.9824
+
+==================================================
+ RUN 4/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9433 | val_loss=0.2089 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9291 | val_loss=0.3225 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9474 | val_loss=0.1696 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9555 | val_loss=0.1741 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9494 | val_loss=0.2443 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9534 | val_loss=0.1887 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9575 | val_loss=0.2047 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9534 | val_loss=0.2549 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9514 | val_loss=0.2175 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9514 | val_loss=0.2128 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9534 | val_loss=0.2085 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9514 | val_loss=0.2625 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9555 | val_loss=0.2063 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9555 | val_loss=0.2244 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9494 | val_loss=0.2655 | lr=2.71e-03
+ [P1] Early stop at epoch 15. Best val_acc=0.9575
+ [P2] Epoch 001 | val_acc=0.9575 | val_loss=0.2069 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9575 | val_loss=0.2093 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9595 | val_loss=0.2052 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9575 | val_loss=0.2098 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9555 | val_loss=0.2044 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9555 | val_loss=0.2189 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.2076 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9555 | val_loss=0.2168 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9595 | val_loss=0.2259 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9575 | val_loss=0.2197 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9595 | val_loss=0.2037 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9595 | val_loss=0.1984 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9555 | val_loss=0.2349 | head_lr=2.70e-06
+ [P2] Epoch 014 | val_acc=0.9595 | val_loss=0.2159 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9595 | val_loss=0.2197 | head_lr=2.70e-06
+ [P2] Early stop at epoch 15. Best val_acc=0.9595
+ → acc=0.9595 | auc=0.9852
+
+==================================================
+ RUN 5/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9555 | val_loss=0.1948 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9393 | val_loss=0.2649 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9494 | val_loss=0.1920 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9453 | val_loss=0.2553 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9453 | val_loss=0.2253 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9514 | val_loss=0.2513 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9474 | val_loss=0.2835 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9453 | val_loss=0.2174 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9474 | val_loss=0.2549 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9555
+ [P2] Epoch 001 | val_acc=0.9433 | val_loss=0.2060 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9433 | val_loss=0.2027 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9453 | val_loss=0.1920 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9433 | val_loss=0.1991 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9453 | val_loss=0.1944 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9453 | val_loss=0.1963 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9433 | val_loss=0.2032 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9433 | val_loss=0.1919 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9453 | val_loss=0.1902 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9453 | val_loss=0.1965 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9433 | val_loss=0.2270 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9453 | val_loss=0.1991 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9433 | val_loss=0.2065 | head_lr=2.70e-06
+ [P2] Epoch 014 | val_acc=0.9433 | val_loss=0.2287 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9433 | val_loss=0.2097 | head_lr=2.70e-06
+ [P2] Early stop at epoch 15. Best val_acc=0.9453
+ → acc=0.9453 | auc=0.9823
+
+==================================================
+ RUN 6/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9575 | val_loss=0.1667 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9433 | val_loss=0.2565 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9555 | val_loss=0.1736 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9575 | val_loss=0.1674 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9575 | val_loss=0.1564 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9514 | val_loss=0.1650 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9555 | val_loss=0.2061 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9534 | val_loss=0.2333 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9534 | val_loss=0.1716 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9575
+ [P2] Epoch 001 | val_acc=0.9534 | val_loss=0.1687 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9474 | val_loss=0.1747 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9555 | val_loss=0.1718 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9514 | val_loss=0.1672 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.1751 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9575 | val_loss=0.1691 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9575 | val_loss=0.1661 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9575 | val_loss=0.1696 | head_lr=3.00e-05
+ [P2] Epoch 009 | val_acc=0.9595 | val_loss=0.1650 | head_lr=3.00e-05
+ [P2] Epoch 010 | val_acc=0.9595 | val_loss=0.1621 | head_lr=3.00e-05
+ [P2] Epoch 011 | val_acc=0.9575 | val_loss=0.1638 | head_lr=3.00e-05
+ [P2] Epoch 012 | val_acc=0.9575 | val_loss=0.1724 | head_lr=3.00e-05
+ [P2] Epoch 013 | val_acc=0.9575 | val_loss=0.1686 | head_lr=3.00e-05
+ [P2] Epoch 014 | val_acc=0.9575 | val_loss=0.1904 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9555 | val_loss=0.1744 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9534 | val_loss=0.1837 | head_lr=9.00e-06
+ [P2] Epoch 017 | val_acc=0.9595 | val_loss=0.1676 | head_lr=9.00e-06
+ [P2] Epoch 018 | val_acc=0.9595 | val_loss=0.1752 | head_lr=9.00e-06
+ [P2] Epoch 019 | val_acc=0.9595 | val_loss=0.1781 | head_lr=2.70e-06
+ [P2] Epoch 020 | val_acc=0.9595 | val_loss=0.1705 | head_lr=2.70e-06
+ [P2] Epoch 021 | val_acc=0.9595 | val_loss=0.1693 | head_lr=2.70e-06
+ [P2] Early stop at epoch 21. Best val_acc=0.9595
+ → acc=0.9595 | auc=0.9859
+
+==================================================
+ RUN 7/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9494 | val_loss=0.2604 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9534 | val_loss=0.1830 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9474 | val_loss=0.1588 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9494 | val_loss=0.2939 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9575 | val_loss=0.2222 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9555 | val_loss=0.2345 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9575 | val_loss=0.1913 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9575 | val_loss=0.3138 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9575 | val_loss=0.2605 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9575 | val_loss=0.2537 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9555 | val_loss=0.2445 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9494 | val_loss=0.2330 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9494 | val_loss=0.3437 | lr=2.93e-03
+ [P1] Early stop at epoch 13. Best val_acc=0.9575
+ [P2] Epoch 001 | val_acc=0.9534 | val_loss=0.2152 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9494 | val_loss=0.2842 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9534 | val_loss=0.2141 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9555 | val_loss=0.2408 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.2399 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9534 | val_loss=0.2141 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.2421 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9575 | val_loss=0.2700 | head_lr=3.00e-05
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.2495 | head_lr=3.00e-05
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.2586 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9514 | val_loss=0.2392 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9555 | val_loss=0.2365 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9534 | val_loss=0.2267 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9514 | val_loss=0.2434 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9575 | val_loss=0.2294 | head_lr=2.70e-06
+ [P2] Epoch 016 | val_acc=0.9575 | val_loss=0.2217 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9514 | val_loss=0.2297 | head_lr=2.70e-06
+ [P2] Early stop at epoch 17. Best val_acc=0.9575
+ → acc=0.9575 | auc=0.9840
+
+==================================================
+ RUN 8/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9575 | val_loss=0.1450 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9534 | val_loss=0.1699 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9433 | val_loss=0.3151 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9514 | val_loss=0.3001 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9555 | val_loss=0.2666 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9575 | val_loss=0.2647 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9575 | val_loss=0.2424 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9534 | val_loss=0.2457 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9555 | val_loss=0.2312 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9575
+ [P2] Epoch 001 | val_acc=0.9534 | val_loss=0.1436 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9474 | val_loss=0.1496 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9514 | val_loss=0.1578 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9514 | val_loss=0.1579 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9514 | val_loss=0.1544 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9514 | val_loss=0.1575 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.1717 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9555 | val_loss=0.1713 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.1532 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9555 | val_loss=0.1532 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9555 | val_loss=0.1536 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9555 | val_loss=0.1557 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9555 | val_loss=0.1543 | head_lr=2.70e-06
+ [P2] Epoch 014 | val_acc=0.9555 | val_loss=0.1628 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9555 | val_loss=0.1503 | head_lr=2.70e-06
+ [P2] Epoch 016 | val_acc=0.9555 | val_loss=0.1515 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9555 | val_loss=0.1623 | head_lr=8.10e-07
+ [P2] Epoch 018 | val_acc=0.9555 | val_loss=0.1870 | head_lr=8.10e-07
+ [P2] Epoch 019 | val_acc=0.9534 | val_loss=0.1521 | head_lr=8.10e-07
+ [P2] Early stop at epoch 19. Best val_acc=0.9555
+ → acc=0.9555 | auc=0.9856
+
+==================================================
+ RUN 9/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9494 | val_loss=0.2184 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9393 | val_loss=0.1837 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9453 | val_loss=0.2215 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9453 | val_loss=0.3381 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9474 | val_loss=0.1962 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9433 | val_loss=0.2036 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.3189 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9514 | val_loss=0.2653 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9575 | val_loss=0.2345 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9555 | val_loss=0.2435 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9595 | val_loss=0.2235 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9555 | val_loss=0.2197 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9534 | val_loss=0.2509 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9494 | val_loss=0.2876 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9514 | val_loss=0.1866 | lr=2.71e-03
+ [P1] Epoch 016 | val_acc=0.9534 | val_loss=0.2243 | lr=2.56e-03
+ [P1] Epoch 017 | val_acc=0.9494 | val_loss=0.3321 | lr=2.38e-03
+ [P1] Epoch 018 | val_acc=0.9555 | val_loss=0.2488 | lr=2.18e-03
+ [P1] Epoch 019 | val_acc=0.9555 | val_loss=0.2303 | lr=1.97e-03
+ [P1] Early stop at epoch 19. Best val_acc=0.9595
+ [P2] Epoch 001 | val_acc=0.9575 | val_loss=0.2595 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9575 | val_loss=0.2487 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9575 | val_loss=0.2426 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9555 | val_loss=0.2390 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9514 | val_loss=0.2546 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9555 | val_loss=0.2459 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9575 | val_loss=0.2339 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9575 | val_loss=0.2348 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9514 | val_loss=0.2531 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.3050 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9555 | val_loss=0.2745 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9555 | val_loss=0.2492 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9575 | val_loss=0.2600 | head_lr=2.70e-06
+ [P2] Early stop at epoch 13. Best val_acc=0.9575
+ → acc=0.9575 | auc=0.9837
+
+==================================================
+ RUN 10/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9474 | val_loss=0.2330 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9514 | val_loss=0.1733 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9514 | val_loss=0.1776 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9433 | val_loss=0.3025 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9494 | val_loss=0.2669 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9514 | val_loss=0.2210 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.1744 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9514 | val_loss=0.1947 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9534 | val_loss=0.2153 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9555 | val_loss=0.2000 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9494 | val_loss=0.2213 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9514 | val_loss=0.3169 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9575 | val_loss=0.2154 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9494 | val_loss=0.2240 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9575 | val_loss=0.2081 | lr=2.71e-03
+ [P1] Epoch 016 | val_acc=0.9514 | val_loss=0.2638 | lr=2.56e-03
+ [P1] Epoch 017 | val_acc=0.9555 | val_loss=0.2337 | lr=2.38e-03
+ [P1] Epoch 018 | val_acc=0.9595 | val_loss=0.2353 | lr=2.18e-03
+ [P1] Epoch 019 | val_acc=0.9575 | val_loss=0.2425 | lr=1.97e-03
+ [P1] Epoch 020 | val_acc=0.9534 | val_loss=0.2482 | lr=1.74e-03
+ [P2] Epoch 001 | val_acc=0.9555 | val_loss=0.2440 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9575 | val_loss=0.2751 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9575 | val_loss=0.2366 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9575 | val_loss=0.2249 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.2219 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9555 | val_loss=0.2522 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.2575 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9595 | val_loss=0.2472 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9534 | val_loss=0.2438 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.2493 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9555 | val_loss=0.2813 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9555 | val_loss=0.2448 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9534 | val_loss=0.2466 | head_lr=2.70e-06
+ [P2] Epoch 014 | val_acc=0.9555 | val_loss=0.2382 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9534 | val_loss=0.2642 | head_lr=2.70e-06
+ [P2] Epoch 016 | val_acc=0.9555 | val_loss=0.2268 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9534 | val_loss=0.2307 | head_lr=2.70e-06
+ [P2] Epoch 018 | val_acc=0.9555 | val_loss=0.2314 | head_lr=8.10e-07
+ [P2] Epoch 019 | val_acc=0.9555 | val_loss=0.2452 | head_lr=8.10e-07
+ [P2] Epoch 020 | val_acc=0.9534 | val_loss=0.2695 | head_lr=8.10e-07
+ [P2] Early stop at epoch 20. Best val_acc=0.9595
+ → acc=0.9595 | auc=0.9872
+
+==================================================
+ RUN 11/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9130 | val_loss=0.2268 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9494 | val_loss=0.1609 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9534 | val_loss=0.2018 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9534 | val_loss=0.1703 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9514 | val_loss=0.2146 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9494 | val_loss=0.1909 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9555 | val_loss=0.2750 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9494 | val_loss=0.1933 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9555 | val_loss=0.1961 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9534 | val_loss=0.1778 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9494 | val_loss=0.1834 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9514 | val_loss=0.2493 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9494 | val_loss=0.1717 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9514 | val_loss=0.2658 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9555 | val_loss=0.1895 | lr=2.71e-03
+ [P1] Early stop at epoch 15. Best val_acc=0.9555
+ [P2] Epoch 001 | val_acc=0.9575 | val_loss=0.2304 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9575 | val_loss=0.2631 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9575 | val_loss=0.2236 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9575 | val_loss=0.2210 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.2321 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9575 | val_loss=0.2208 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9575 | val_loss=0.2254 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9575 | val_loss=0.2333 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9575 | val_loss=0.2381 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9555 | val_loss=0.2297 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9575 | val_loss=0.2181 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9575 | val_loss=0.2182 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9575 | val_loss=0.2191 | head_lr=2.70e-06
+ [P2] Early stop at epoch 13. Best val_acc=0.9575
+ → acc=0.9575 | auc=0.9866
+
+==================================================
+ RUN 12/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9474 | val_loss=0.1403 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9514 | val_loss=0.1466 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9352 | val_loss=0.3397 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9494 | val_loss=0.1510 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9494 | val_loss=0.2649 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9494 | val_loss=0.1901 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.2056 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9514 | val_loss=0.2594 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9494 | val_loss=0.2329 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9514 | val_loss=0.2144 | lr=8.32e-05
+ [P1] Early stop at epoch 10. Best val_acc=0.9514
+ [P2] Epoch 001 | val_acc=0.9555 | val_loss=0.1472 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9534 | val_loss=0.1599 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9514 | val_loss=0.1736 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9555 | val_loss=0.1590 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9494 | val_loss=0.1646 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9534 | val_loss=0.1729 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9474 | val_loss=0.1770 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9555 | val_loss=0.1914 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.1730 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.1719 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9514 | val_loss=0.1811 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9514 | val_loss=0.1777 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9494 | val_loss=0.1684 | head_lr=2.70e-06
+ [P2] Early stop at epoch 13. Best val_acc=0.9555
+ → acc=0.9555 | auc=0.9861
+
+==================================================
+ RUN 13/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9555 | val_loss=0.1514 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9474 | val_loss=0.2326 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9514 | val_loss=0.1429 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9534 | val_loss=0.1828 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9575 | val_loss=0.2305 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9555 | val_loss=0.1514 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9595 | val_loss=0.1549 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9555 | val_loss=0.1809 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9555 | val_loss=0.1595 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9575 | val_loss=0.1682 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9575 | val_loss=0.1917 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9514 | val_loss=0.1759 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9514 | val_loss=0.1905 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9575 | val_loss=0.2689 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9555 | val_loss=0.1788 | lr=2.71e-03
+ [P1] Early stop at epoch 15. Best val_acc=0.9595
+ [P2] Epoch 001 | val_acc=0.9595 | val_loss=0.1548 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9534 | val_loss=0.1613 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9575 | val_loss=0.1676 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9555 | val_loss=0.1885 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.1913 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9575 | val_loss=0.1695 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.1855 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9555 | val_loss=0.1768 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9595 | val_loss=0.1819 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9555 | val_loss=0.1776 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9615 | val_loss=0.1876 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9575 | val_loss=0.2134 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9615 | val_loss=0.1850 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9595 | val_loss=0.1692 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9575 | val_loss=0.1748 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9555 | val_loss=0.1714 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9595 | val_loss=0.1744 | head_lr=2.70e-06
+ [P2] Epoch 018 | val_acc=0.9615 | val_loss=0.1991 | head_lr=2.70e-06
+ [P2] Epoch 019 | val_acc=0.9615 | val_loss=0.1685 | head_lr=2.70e-06
+ [P2] Epoch 020 | val_acc=0.9615 | val_loss=0.1875 | head_lr=2.70e-06
+ [P2] Epoch 021 | val_acc=0.9575 | val_loss=0.1736 | head_lr=8.10e-07
+ [P2] Epoch 022 | val_acc=0.9615 | val_loss=0.1774 | head_lr=8.10e-07
+ [P2] Epoch 023 | val_acc=0.9595 | val_loss=0.1664 | head_lr=8.10e-07
+ [P2] Early stop at epoch 23. Best val_acc=0.9615
+ → acc=0.9615 | auc=0.9891
+
+==================================================
+ RUN 14/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9636 | val_loss=0.1598 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9372 | val_loss=0.1723 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9514 | val_loss=0.1801 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9494 | val_loss=0.2052 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9494 | val_loss=0.2777 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9494 | val_loss=0.2081 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9555 | val_loss=0.2202 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9555 | val_loss=0.2344 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9615 | val_loss=0.2426 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9636
+ [P2] Epoch 001 | val_acc=0.9575 | val_loss=0.1842 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9534 | val_loss=0.1678 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9555 | val_loss=0.1825 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9534 | val_loss=0.1688 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.1693 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9555 | val_loss=0.1747 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9534 | val_loss=0.1795 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9575 | val_loss=0.1711 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.1717 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9575 | val_loss=0.1696 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9555 | val_loss=0.1779 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9555 | val_loss=0.1812 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9575 | val_loss=0.1687 | head_lr=2.70e-06
+ [P2] Early stop at epoch 13. Best val_acc=0.9575
+ → acc=0.9575 | auc=0.9857
+
+==================================================
+ RUN 15/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9575 | val_loss=0.1371 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9393 | val_loss=0.3050 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9494 | val_loss=0.2785 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9474 | val_loss=0.1622 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9595 | val_loss=0.2099 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9453 | val_loss=0.1714 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9514 | val_loss=0.2947 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9514 | val_loss=0.2321 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9555 | val_loss=0.2318 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9534 | val_loss=0.2260 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9534 | val_loss=0.2289 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9555 | val_loss=0.2667 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9494 | val_loss=0.2344 | lr=2.93e-03
+ [P1] Early stop at epoch 13. Best val_acc=0.9595
+ [P2] Epoch 001 | val_acc=0.9595 | val_loss=0.2196 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9555 | val_loss=0.2153 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9534 | val_loss=0.2167 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9595 | val_loss=0.2046 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9575 | val_loss=0.2044 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9595 | val_loss=0.2064 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.2382 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9555 | val_loss=0.2373 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.2064 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9575 | val_loss=0.2087 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9595 | val_loss=0.2068 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9575 | val_loss=0.2142 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9595 | val_loss=0.2158 | head_lr=2.70e-06
+ [P2] Early stop at epoch 13. Best val_acc=0.9595
+ → acc=0.9595 | auc=0.9837
+
+==================================================
+ RUN 16/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9555 | val_loss=0.1561 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9534 | val_loss=0.1393 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9534 | val_loss=0.2046 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9494 | val_loss=0.1867 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9514 | val_loss=0.1663 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9474 | val_loss=0.3119 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9514 | val_loss=0.1918 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9494 | val_loss=0.2983 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9534 | val_loss=0.3244 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9555
+ [P2] Epoch 001 | val_acc=0.9534 | val_loss=0.1450 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9534 | val_loss=0.1433 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9534 | val_loss=0.1454 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9514 | val_loss=0.1450 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9534 | val_loss=0.1637 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9555 | val_loss=0.1545 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9555 | val_loss=0.1454 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9555 | val_loss=0.1502 | head_lr=3.00e-05
+ [P2] Epoch 009 | val_acc=0.9534 | val_loss=0.1526 | head_lr=3.00e-05
+ [P2] Epoch 010 | val_acc=0.9514 | val_loss=0.1516 | head_lr=3.00e-05
+ [P2] Epoch 011 | val_acc=0.9555 | val_loss=0.1499 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9555 | val_loss=0.1485 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9555 | val_loss=0.1587 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9555 | val_loss=0.1570 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9514 | val_loss=0.1565 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9534 | val_loss=0.1493 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9555 | val_loss=0.1521 | head_lr=2.70e-06
+ [P2] Epoch 018 | val_acc=0.9534 | val_loss=0.1550 | head_lr=2.70e-06
+ [P2] Early stop at epoch 18. Best val_acc=0.9555
+ → acc=0.9555 | auc=0.9868
+
+==================================================
+ RUN 17/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9514 | val_loss=0.1839 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9433 | val_loss=0.2807 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9453 | val_loss=0.1870 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9474 | val_loss=0.2507 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9474 | val_loss=0.2388 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9453 | val_loss=0.2083 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9534 | val_loss=0.2637 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9534 | val_loss=0.2696 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9534 | val_loss=0.2621 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9514 | val_loss=0.2986 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9534 | val_loss=0.2571 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9453 | val_loss=0.2533 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9393 | val_loss=0.4284 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9413 | val_loss=0.5118 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9312 | val_loss=0.5531 | lr=2.71e-03
+ [P1] Early stop at epoch 15. Best val_acc=0.9534
+ [P2] Epoch 001 | val_acc=0.9474 | val_loss=0.2811 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9474 | val_loss=0.3119 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9555 | val_loss=0.2846 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9534 | val_loss=0.2473 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9514 | val_loss=0.2523 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9555 | val_loss=0.2867 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9534 | val_loss=0.2383 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9514 | val_loss=0.2579 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.2452 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.2650 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9534 | val_loss=0.2507 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9514 | val_loss=0.2842 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9575 | val_loss=0.2696 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9534 | val_loss=0.2420 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9534 | val_loss=0.2539 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9555 | val_loss=0.2570 | head_lr=9.00e-06
+ [P2] Epoch 017 | val_acc=0.9534 | val_loss=0.2971 | head_lr=9.00e-06
+ [P2] Epoch 018 | val_acc=0.9514 | val_loss=0.2565 | head_lr=2.70e-06
+ [P2] Epoch 019 | val_acc=0.9514 | val_loss=0.2640 | head_lr=2.70e-06
+ [P2] Epoch 020 | val_acc=0.9555 | val_loss=0.2466 | head_lr=2.70e-06
+ [P2] Epoch 021 | val_acc=0.9534 | val_loss=0.2563 | head_lr=2.70e-06
+ [P2] Epoch 022 | val_acc=0.9494 | val_loss=0.2580 | head_lr=2.70e-06
+ [P2] Epoch 023 | val_acc=0.9534 | val_loss=0.2623 | head_lr=8.10e-07
+ [P2] Epoch 024 | val_acc=0.9494 | val_loss=0.2620 | head_lr=8.10e-07
+ [P2] Epoch 025 | val_acc=0.9514 | val_loss=0.2588 | head_lr=8.10e-07
+ [P2] Early stop at epoch 25. Best val_acc=0.9575
+ → acc=0.9575 | auc=0.9871
+
+==================================================
+ RUN 18/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9494 | val_loss=0.2059 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9332 | val_loss=0.3358 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9494 | val_loss=0.1777 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9474 | val_loss=0.1755 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9575 | val_loss=0.2313 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9534 | val_loss=0.1655 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9595 | val_loss=0.2156 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9514 | val_loss=0.2743 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9534 | val_loss=0.2826 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9595 | val_loss=0.2331 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9555 | val_loss=0.2403 | lr=3.00e-03
+ [P1] Epoch 012 | val_acc=0.9575 | val_loss=0.2270 | lr=2.98e-03
+ [P1] Epoch 013 | val_acc=0.9575 | val_loss=0.2660 | lr=2.93e-03
+ [P1] Epoch 014 | val_acc=0.9575 | val_loss=0.2791 | lr=2.84e-03
+ [P1] Epoch 015 | val_acc=0.9615 | val_loss=0.2177 | lr=2.71e-03
+ [P1] Epoch 016 | val_acc=0.9595 | val_loss=0.3270 | lr=2.56e-03
+ [P1] Epoch 017 | val_acc=0.9575 | val_loss=0.2131 | lr=2.38e-03
+ [P1] Epoch 018 | val_acc=0.9555 | val_loss=0.3244 | lr=2.18e-03
+ [P1] Epoch 019 | val_acc=0.9534 | val_loss=0.2205 | lr=1.97e-03
+ [P1] Epoch 020 | val_acc=0.9534 | val_loss=0.2321 | lr=1.74e-03
+ [P2] Epoch 001 | val_acc=0.9615 | val_loss=0.2292 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9615 | val_loss=0.2246 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9615 | val_loss=0.2161 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9615 | val_loss=0.2237 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9595 | val_loss=0.2176 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9615 | val_loss=0.2174 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9595 | val_loss=0.3153 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9615 | val_loss=0.2390 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9636 | val_loss=0.2204 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9595 | val_loss=0.2287 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9595 | val_loss=0.2306 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9595 | val_loss=0.2523 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9636 | val_loss=0.2110 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9595 | val_loss=0.2881 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9595 | val_loss=0.2215 | head_lr=2.70e-06
+ [P2] Epoch 016 | val_acc=0.9595 | val_loss=0.2403 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9615 | val_loss=0.2350 | head_lr=2.70e-06
+ [P2] Epoch 018 | val_acc=0.9636 | val_loss=0.2170 | head_lr=2.70e-06
+ [P2] Epoch 019 | val_acc=0.9615 | val_loss=0.2662 | head_lr=8.10e-07
+ [P2] Epoch 020 | val_acc=0.9595 | val_loss=0.2375 | head_lr=8.10e-07
+ [P2] Epoch 021 | val_acc=0.9615 | val_loss=0.2284 | head_lr=8.10e-07
+ [P2] Early stop at epoch 21. Best val_acc=0.9636
+ → acc=0.9636 | auc=0.9883
+
+==================================================
+ RUN 19/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9555 | val_loss=0.1414 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9453 | val_loss=0.1686 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9453 | val_loss=0.2565 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9494 | val_loss=0.2139 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9514 | val_loss=0.1741 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9514 | val_loss=0.2278 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.1681 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9494 | val_loss=0.2957 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9514 | val_loss=0.2699 | lr=2.96e-04
+ [P1] Early stop at epoch 9. Best val_acc=0.9555
+ [P2] Epoch 001 | val_acc=0.9474 | val_loss=0.1624 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9433 | val_loss=0.1732 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9433 | val_loss=0.1699 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9474 | val_loss=0.1787 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9453 | val_loss=0.1876 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9453 | val_loss=0.1688 | head_lr=9.00e-06
+ [P2] Epoch 007 | val_acc=0.9474 | val_loss=0.1837 | head_lr=9.00e-06
+ [P2] Epoch 008 | val_acc=0.9453 | val_loss=0.1714 | head_lr=9.00e-06
+ [P2] Epoch 009 | val_acc=0.9453 | val_loss=0.1787 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9474 | val_loss=0.1717 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9453 | val_loss=0.1796 | head_lr=2.70e-06
+ [P2] Epoch 012 | val_acc=0.9453 | val_loss=0.1838 | head_lr=2.70e-06
+ [P2] Epoch 013 | val_acc=0.9494 | val_loss=0.1628 | head_lr=2.70e-06
+ [P2] Epoch 014 | val_acc=0.9453 | val_loss=0.1747 | head_lr=2.70e-06
+ [P2] Epoch 015 | val_acc=0.9453 | val_loss=0.1737 | head_lr=2.70e-06
+ [P2] Epoch 016 | val_acc=0.9453 | val_loss=0.1734 | head_lr=2.70e-06
+ [P2] Epoch 017 | val_acc=0.9474 | val_loss=0.1963 | head_lr=2.70e-06
+ [P2] Epoch 018 | val_acc=0.9474 | val_loss=0.1693 | head_lr=8.10e-07
+ [P2] Epoch 019 | val_acc=0.9433 | val_loss=0.1865 | head_lr=8.10e-07
+ [P2] Epoch 020 | val_acc=0.9453 | val_loss=0.1890 | head_lr=8.10e-07
+ [P2] Epoch 021 | val_acc=0.9453 | val_loss=0.1717 | head_lr=8.10e-07
+ [P2] Epoch 022 | val_acc=0.9494 | val_loss=0.1637 | head_lr=8.10e-07
+ [P2] Epoch 023 | val_acc=0.9474 | val_loss=0.1798 | head_lr=2.43e-07
+ [P2] Epoch 024 | val_acc=0.9453 | val_loss=0.1759 | head_lr=2.43e-07
+ [P2] Epoch 025 | val_acc=0.9474 | val_loss=0.1748 | head_lr=2.43e-07
+ [P2] Early stop at epoch 25. Best val_acc=0.9494
+ → acc=0.9494 | auc=0.9840
+
+==================================================
+ RUN 20/20
+==================================================
+ [P1] Epoch 001 | val_acc=0.9514 | val_loss=0.2337 | lr=3.00e-03
+ [P1] Epoch 002 | val_acc=0.9474 | val_loss=0.2634 | lr=2.93e-03
+ [P1] Epoch 003 | val_acc=0.9575 | val_loss=0.1877 | lr=2.71e-03
+ [P1] Epoch 004 | val_acc=0.9474 | val_loss=0.2649 | lr=2.38e-03
+ [P1] Epoch 005 | val_acc=0.9534 | val_loss=0.2137 | lr=1.97e-03
+ [P1] Epoch 006 | val_acc=0.9534 | val_loss=0.2517 | lr=1.51e-03
+ [P1] Epoch 007 | val_acc=0.9494 | val_loss=0.2864 | lr=1.04e-03
+ [P1] Epoch 008 | val_acc=0.9575 | val_loss=0.1987 | lr=6.26e-04
+ [P1] Epoch 009 | val_acc=0.9494 | val_loss=0.2718 | lr=2.96e-04
+ [P1] Epoch 010 | val_acc=0.9534 | val_loss=0.2150 | lr=8.32e-05
+ [P1] Epoch 011 | val_acc=0.9514 | val_loss=0.2136 | lr=3.00e-03
+ [P1] Early stop at epoch 11. Best val_acc=0.9575
+ [P2] Epoch 001 | val_acc=0.9555 | val_loss=0.1962 | head_lr=3.00e-05
+ [P2] Epoch 002 | val_acc=0.9494 | val_loss=0.2409 | head_lr=3.00e-05
+ [P2] Epoch 003 | val_acc=0.9514 | val_loss=0.2661 | head_lr=3.00e-05
+ [P2] Epoch 004 | val_acc=0.9575 | val_loss=0.1967 | head_lr=3.00e-05
+ [P2] Epoch 005 | val_acc=0.9534 | val_loss=0.2051 | head_lr=3.00e-05
+ [P2] Epoch 006 | val_acc=0.9534 | val_loss=0.2219 | head_lr=3.00e-05
+ [P2] Epoch 007 | val_acc=0.9534 | val_loss=0.2052 | head_lr=3.00e-05
+ [P2] Epoch 008 | val_acc=0.9575 | val_loss=0.1919 | head_lr=3.00e-05
+ [P2] Epoch 009 | val_acc=0.9555 | val_loss=0.1947 | head_lr=9.00e-06
+ [P2] Epoch 010 | val_acc=0.9534 | val_loss=0.2032 | head_lr=9.00e-06
+ [P2] Epoch 011 | val_acc=0.9575 | val_loss=0.1946 | head_lr=9.00e-06
+ [P2] Epoch 012 | val_acc=0.9534 | val_loss=0.2051 | head_lr=9.00e-06
+ [P2] Epoch 013 | val_acc=0.9555 | val_loss=0.1947 | head_lr=9.00e-06
+ [P2] Epoch 014 | val_acc=0.9595 | val_loss=0.1923 | head_lr=9.00e-06
+ [P2] Epoch 015 | val_acc=0.9595 | val_loss=0.2029 | head_lr=9.00e-06
+ [P2] Epoch 016 | val_acc=0.9575 | val_loss=0.1945 | head_lr=9.00e-06
+ [P2] Epoch 017 | val_acc=0.9555 | val_loss=0.1940 | head_lr=9.00e-06
+ [P2] Epoch 018 | val_acc=0.9575 | val_loss=0.1901 | head_lr=9.00e-06
+ [P2] Epoch 019 | val_acc=0.9555 | val_loss=0.2048 | head_lr=2.70e-06
+ [P2] Epoch 020 | val_acc=0.9514 | val_loss=0.2102 | head_lr=2.70e-06
+ [P2] Epoch 021 | val_acc=0.9534 | val_loss=0.2045 | head_lr=2.70e-06
+ [P2] Epoch 022 | val_acc=0.9494 | val_loss=0.2124 | head_lr=2.70e-06
+ [P2] Epoch 023 | val_acc=0.9555 | val_loss=0.1975 | head_lr=2.70e-06
+ [P2] Epoch 024 | val_acc=0.9555 | val_loss=0.1986 | head_lr=8.10e-07
+ [P2] Epoch 025 | val_acc=0.9555 | val_loss=0.2304 | head_lr=8.10e-07
+ [P2] Epoch 026 | val_acc=0.9555 | val_loss=0.1993 | head_lr=8.10e-07
+ [P2] Early stop at epoch 26. Best val_acc=0.9595
+ → acc=0.9595 | auc=0.9835
+
+✔ tier2-grok_results.csv generated
+✔ tier2-grok_summary.csv generated
+
+── Summary ──
+                    mean         std          min          max
+run            10.500000    5.916080     1.000000    20.000000
+accuracy        0.956781    0.004063     0.945344     0.963563
+precision       0.990323    0.008984     0.974138     1.000000
+recall_pos      0.922672    0.005860     0.914980     0.935223
+recall_neg      0.990891    0.008500     0.975709     1.000000
+auc             0.985289    0.001873     0.982314     0.989051
+loss            0.198080    0.032931     0.148153     0.248550
+cpu_percent    66.980000    9.910101    48.500000    82.200000
+ram_percent    70.585000    3.445252    64.000000    76.500000
+time_sec     3113.499648  644.195423  1993.674034  4122.494578

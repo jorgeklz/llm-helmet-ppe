@@ -1,0 +1,604 @@
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+==================================================
+ RUN 1/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8598
+Epoch 2, Loss=0.3263
+Epoch 3, Loss=0.1246
+Epoch 4, Loss=0.0799
+Epoch 5, Loss=0.0615
+Epoch 6, Loss=0.0537
+Epoch 7, Loss=0.0807
+Epoch 8, Loss=0.0984
+Epoch 9, Loss=0.0514
+Epoch 10, Loss=0.0650
+Epoch 11, Loss=0.0266
+Epoch 12, Loss=0.0283
+Epoch 13, Loss=0.0280
+Epoch 14, Loss=0.0411
+Epoch 15, Loss=0.0486
+Epoch 16, Loss=0.0402
+⏸ Early stopping activado
+ → acc=0.9737 | loss=0.1060
+
+==================================================
+ RUN 2/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8079
+Epoch 2, Loss=0.2829
+Epoch 3, Loss=0.0846
+Epoch 4, Loss=0.1344
+Epoch 5, Loss=0.1488
+Epoch 6, Loss=0.0783
+Epoch 7, Loss=0.0942
+Epoch 8, Loss=0.0937
+Epoch 9, Loss=0.0697
+Epoch 10, Loss=0.0338
+Epoch 11, Loss=0.0173
+Epoch 12, Loss=0.0178
+Epoch 13, Loss=0.0130
+Epoch 14, Loss=0.0086
+Epoch 15, Loss=0.0081
+Epoch 16, Loss=0.0287
+Epoch 17, Loss=0.0123
+Epoch 18, Loss=0.0071
+Epoch 19, Loss=0.0227
+Epoch 20, Loss=0.0072
+ → acc=0.9676 | loss=0.1787
+
+==================================================
+ RUN 3/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8578
+Epoch 2, Loss=0.2660
+Epoch 3, Loss=0.1470
+Epoch 4, Loss=0.0551
+Epoch 5, Loss=0.0790
+Epoch 6, Loss=0.1159
+Epoch 7, Loss=0.0935
+Epoch 8, Loss=0.0562
+Epoch 9, Loss=0.0368
+Epoch 10, Loss=0.0707
+Epoch 11, Loss=0.0413
+Epoch 12, Loss=0.0379
+Epoch 13, Loss=0.0414
+Epoch 14, Loss=0.0187
+Epoch 15, Loss=0.0126
+Epoch 16, Loss=0.0049
+Epoch 17, Loss=0.0229
+Epoch 18, Loss=0.0094
+Epoch 19, Loss=0.0206
+Epoch 20, Loss=0.0825
+ → acc=0.9737 | loss=0.0984
+
+==================================================
+ RUN 4/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8704
+Epoch 2, Loss=0.3071
+Epoch 3, Loss=0.1339
+Epoch 4, Loss=0.1216
+Epoch 5, Loss=0.0612
+Epoch 6, Loss=0.0389
+Epoch 7, Loss=0.0537
+Epoch 8, Loss=0.0421
+Epoch 9, Loss=0.0247
+Epoch 10, Loss=0.0286
+Epoch 11, Loss=0.0212
+Epoch 12, Loss=0.0645
+Epoch 13, Loss=0.0186
+Epoch 14, Loss=0.0131
+Epoch 15, Loss=0.0105
+Epoch 16, Loss=0.0306
+Epoch 17, Loss=0.0192
+Epoch 18, Loss=0.0339
+Epoch 19, Loss=0.0802
+Epoch 20, Loss=0.0517
+⏸ Early stopping activado
+ → acc=0.9777 | loss=0.0872
+
+==================================================
+ RUN 5/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.7942
+Epoch 2, Loss=0.3093
+Epoch 3, Loss=0.1118
+Epoch 4, Loss=0.0578
+Epoch 5, Loss=0.0314
+Epoch 6, Loss=0.0601
+Epoch 7, Loss=0.1170
+Epoch 8, Loss=0.1184
+Epoch 9, Loss=0.0738
+Epoch 10, Loss=0.0368
+⏸ Early stopping activado
+ → acc=0.9636 | loss=0.1062
+
+==================================================
+ RUN 6/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8189
+Epoch 2, Loss=0.2201
+Epoch 3, Loss=0.1064
+Epoch 4, Loss=0.0876
+Epoch 5, Loss=0.0784
+Epoch 6, Loss=0.0897
+Epoch 7, Loss=0.0427
+Epoch 8, Loss=0.0772
+Epoch 9, Loss=0.0221
+Epoch 10, Loss=0.0278
+Epoch 11, Loss=0.0391
+Epoch 12, Loss=0.0247
+Epoch 13, Loss=0.0324
+Epoch 14, Loss=0.1030
+⏸ Early stopping activado
+ → acc=0.9717 | loss=0.1008
+
+==================================================
+ RUN 7/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8204
+Epoch 2, Loss=0.2347
+Epoch 3, Loss=0.1257
+Epoch 4, Loss=0.0766
+Epoch 5, Loss=0.0816
+Epoch 6, Loss=0.1214
+Epoch 7, Loss=0.0628
+Epoch 8, Loss=0.0317
+Epoch 9, Loss=0.0673
+Epoch 10, Loss=0.0337
+Epoch 11, Loss=0.0483
+Epoch 12, Loss=0.0742
+Epoch 13, Loss=0.0573
+⏸ Early stopping activado
+ → acc=0.9514 | loss=0.2134
+
+==================================================
+ RUN 8/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8838
+Epoch 2, Loss=0.2529
+Epoch 3, Loss=0.1789
+Epoch 4, Loss=0.1589
+Epoch 5, Loss=0.0695
+Epoch 6, Loss=0.0531
+Epoch 7, Loss=0.0317
+Epoch 8, Loss=0.0324
+Epoch 9, Loss=0.0217
+Epoch 10, Loss=0.0247
+Epoch 11, Loss=0.0343
+Epoch 12, Loss=0.0321
+Epoch 13, Loss=0.0732
+Epoch 14, Loss=0.0190
+Epoch 15, Loss=0.0349
+Epoch 16, Loss=0.0335
+Epoch 17, Loss=0.0126
+Epoch 18, Loss=0.0410
+Epoch 19, Loss=0.0335
+Epoch 20, Loss=0.0635
+ → acc=0.9575 | loss=0.1583
+
+==================================================
+ RUN 9/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8701
+Epoch 2, Loss=0.2824
+Epoch 3, Loss=0.1129
+Epoch 4, Loss=0.0810
+Epoch 5, Loss=0.0776
+Epoch 6, Loss=0.0701
+Epoch 7, Loss=0.0476
+Epoch 8, Loss=0.0592
+Epoch 9, Loss=0.1100
+Epoch 10, Loss=0.0249
+Epoch 11, Loss=0.0285
+Epoch 12, Loss=0.0225
+Epoch 13, Loss=0.0212
+Epoch 14, Loss=0.0927
+Epoch 15, Loss=0.0349
+Epoch 16, Loss=0.0302
+Epoch 17, Loss=0.0203
+Epoch 18, Loss=0.0422
+Epoch 19, Loss=0.0123
+Epoch 20, Loss=0.0057
+ → acc=0.9595 | loss=0.1452
+
+==================================================
+ RUN 10/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8830
+Epoch 2, Loss=0.3175
+Epoch 3, Loss=0.1724
+Epoch 4, Loss=0.0717
+Epoch 5, Loss=0.0933
+Epoch 6, Loss=0.0663
+Epoch 7, Loss=0.0582
+Epoch 8, Loss=0.0296
+Epoch 9, Loss=0.0231
+Epoch 10, Loss=0.0277
+Epoch 11, Loss=0.0466
+Epoch 12, Loss=0.0450
+Epoch 13, Loss=0.0331
+Epoch 14, Loss=0.0438
+⏸ Early stopping activado
+ → acc=0.9575 | loss=0.1502
+
+==================================================
+ RUN 11/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8378
+Epoch 2, Loss=0.2699
+Epoch 3, Loss=0.1389
+Epoch 4, Loss=0.1128
+Epoch 5, Loss=0.0649
+Epoch 6, Loss=0.0645
+Epoch 7, Loss=0.0642
+Epoch 8, Loss=0.1419
+Epoch 9, Loss=0.0367
+Epoch 10, Loss=0.0593
+Epoch 11, Loss=0.0267
+Epoch 12, Loss=0.0149
+Epoch 13, Loss=0.0162
+Epoch 14, Loss=0.0143
+Epoch 15, Loss=0.0096
+Epoch 16, Loss=0.0092
+Epoch 17, Loss=0.0045
+Epoch 18, Loss=0.0063
+Epoch 19, Loss=0.0076
+Epoch 20, Loss=0.0144
+ → acc=0.9595 | loss=0.1635
+
+==================================================
+ RUN 12/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8417
+Epoch 2, Loss=0.3201
+Epoch 3, Loss=0.1767
+Epoch 4, Loss=0.0969
+Epoch 5, Loss=0.1011
+Epoch 6, Loss=0.0733
+Epoch 7, Loss=0.0439
+Epoch 8, Loss=0.0756
+Epoch 9, Loss=0.1039
+Epoch 10, Loss=0.0536
+Epoch 11, Loss=0.0666
+Epoch 12, Loss=0.0192
+Epoch 13, Loss=0.0259
+Epoch 14, Loss=0.0108
+Epoch 15, Loss=0.0393
+Epoch 16, Loss=0.0230
+Epoch 17, Loss=0.0184
+Epoch 18, Loss=0.0169
+Epoch 19, Loss=0.0260
+⏸ Early stopping activado
+ → acc=0.9717 | loss=0.1130
+
+==================================================
+ RUN 13/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8337
+Epoch 2, Loss=0.2926
+Epoch 3, Loss=0.1110
+Epoch 4, Loss=0.0832
+Epoch 5, Loss=0.1160
+Epoch 6, Loss=0.0688
+Epoch 7, Loss=0.0568
+Epoch 8, Loss=0.0721
+Epoch 9, Loss=0.0594
+Epoch 10, Loss=0.0477
+Epoch 11, Loss=0.0231
+Epoch 12, Loss=0.0331
+Epoch 13, Loss=0.0366
+Epoch 14, Loss=0.0901
+Epoch 15, Loss=0.0661
+Epoch 16, Loss=0.0336
+⏸ Early stopping activado
+ → acc=0.9595 | loss=0.1166
+
+==================================================
+ RUN 14/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8928
+Epoch 2, Loss=0.3438
+Epoch 3, Loss=0.1878
+Epoch 4, Loss=0.0735
+Epoch 5, Loss=0.0490
+Epoch 6, Loss=0.0400
+Epoch 7, Loss=0.1145
+Epoch 8, Loss=0.1222
+Epoch 9, Loss=0.0391
+Epoch 10, Loss=0.0304
+Epoch 11, Loss=0.1046
+Epoch 12, Loss=0.0410
+Epoch 13, Loss=0.0218
+Epoch 14, Loss=0.0193
+Epoch 15, Loss=0.0101
+Epoch 16, Loss=0.0181
+Epoch 17, Loss=0.0324
+Epoch 18, Loss=0.0247
+Epoch 19, Loss=0.0164
+Epoch 20, Loss=0.0118
+⏸ Early stopping activado
+ → acc=0.9656 | loss=0.1334
+
+==================================================
+ RUN 15/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.7876
+Epoch 2, Loss=0.2631
+Epoch 3, Loss=0.1103
+Epoch 4, Loss=0.0459
+Epoch 5, Loss=0.1329
+Epoch 6, Loss=0.0909
+Epoch 7, Loss=0.0601
+Epoch 8, Loss=0.0304
+Epoch 9, Loss=0.0831
+Epoch 10, Loss=0.0353
+Epoch 11, Loss=0.0413
+Epoch 12, Loss=0.0123
+Epoch 13, Loss=0.0217
+Epoch 14, Loss=0.0474
+Epoch 15, Loss=0.0240
+Epoch 16, Loss=0.0120
+Epoch 17, Loss=0.0153
+Epoch 18, Loss=0.0326
+Epoch 19, Loss=0.0166
+Epoch 20, Loss=0.0088
+ → acc=0.9453 | loss=0.1721
+
+==================================================
+ RUN 16/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8011
+Epoch 2, Loss=0.2453
+Epoch 3, Loss=0.1658
+Epoch 4, Loss=0.1045
+Epoch 5, Loss=0.0482
+Epoch 6, Loss=0.0622
+Epoch 7, Loss=0.0587
+Epoch 8, Loss=0.0261
+Epoch 9, Loss=0.0203
+Epoch 10, Loss=0.1018
+Epoch 11, Loss=0.1221
+Epoch 12, Loss=0.0417
+Epoch 13, Loss=0.0297
+Epoch 14, Loss=0.0688
+⏸ Early stopping activado
+ → acc=0.9474 | loss=0.1752
+
+==================================================
+ RUN 17/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8410
+Epoch 2, Loss=0.2858
+Epoch 3, Loss=0.1452
+Epoch 4, Loss=0.0998
+Epoch 5, Loss=0.1001
+Epoch 6, Loss=0.0733
+Epoch 7, Loss=0.0272
+Epoch 8, Loss=0.0310
+Epoch 9, Loss=0.0231
+Epoch 10, Loss=0.0142
+Epoch 11, Loss=0.0145
+Epoch 12, Loss=0.0353
+Epoch 13, Loss=0.0227
+Epoch 14, Loss=0.0270
+Epoch 15, Loss=0.0491
+⏸ Early stopping activado
+ → acc=0.9717 | loss=0.1011
+
+==================================================
+ RUN 18/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8420
+Epoch 2, Loss=0.2828
+Epoch 3, Loss=0.1902
+Epoch 4, Loss=0.1285
+Epoch 5, Loss=0.0588
+Epoch 6, Loss=0.0568
+Epoch 7, Loss=0.0972
+Epoch 8, Loss=0.0679
+Epoch 9, Loss=0.0643
+Epoch 10, Loss=0.0310
+Epoch 11, Loss=0.0594
+Epoch 12, Loss=0.0577
+Epoch 13, Loss=0.0488
+Epoch 14, Loss=0.0416
+Epoch 15, Loss=0.0407
+⏸ Early stopping activado
+ → acc=0.9413 | loss=0.1666
+
+==================================================
+ RUN 19/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8471
+Epoch 2, Loss=0.2860
+Epoch 3, Loss=0.1431
+Epoch 4, Loss=0.0739
+Epoch 5, Loss=0.0785
+Epoch 6, Loss=0.0901
+Epoch 7, Loss=0.0890
+Epoch 8, Loss=0.0433
+Epoch 9, Loss=0.0494
+Epoch 10, Loss=0.0236
+Epoch 11, Loss=0.0098
+Epoch 12, Loss=0.0840
+Epoch 13, Loss=0.0450
+Epoch 14, Loss=0.0284
+Epoch 15, Loss=0.0297
+Epoch 16, Loss=0.0268
+⏸ Early stopping activado
+ → acc=0.9676 | loss=0.1117
+
+==================================================
+ RUN 20/20
+==================================================
+
+===== FASE DE ENTRENAMIENTO =====
+
+Epoch 1, Loss=0.8124
+Epoch 2, Loss=0.2523
+Epoch 3, Loss=0.1383
+Epoch 4, Loss=0.0844
+Epoch 5, Loss=0.0952
+Epoch 6, Loss=0.0862
+Epoch 7, Loss=0.0418
+Epoch 8, Loss=0.0672
+Epoch 9, Loss=0.0403
+Epoch 10, Loss=0.0293
+Epoch 11, Loss=0.0328
+Epoch 12, Loss=0.0336
+Epoch 13, Loss=0.0631
+Epoch 14, Loss=0.0427
+Epoch 15, Loss=0.0480
+⏸ Early stopping activado
+ → acc=0.9696 | loss=0.1081
+✔ tier3-chatgpt_results.csv generado
+✔ tier3-chatgpt_summary.csv generado
+                   mean        std         min         max
+run           10.500000   5.916080    1.000000   20.000000
+accuracy       0.962652   0.010311    0.941296    0.977733
+precision      0.994878   0.006626    0.974895    1.000000
+recall_pos     0.930162   0.021134    0.886640    0.955466
+recall_neg     0.995142   0.006381    0.975709    1.000000
+auc            0.992604   0.001604    0.989002    0.995247
+loss           0.135277   0.035126    0.087162    0.213359
+time_sec     361.355396  67.407406  226.415421  467.903247
+cpu_percent   42.690000   3.581517   38.900000   53.200000
+ram_percent   76.420000   2.710914   73.500000   82.100000

@@ -1,0 +1,188 @@
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+--- Iniciando Carga de Datos ---
+Cargando imágenes de: ./dataset/train ...
+Cargando imágenes de: ./dataset/test ...
+Train shape: (478, 224, 224, 3)  Test shape: (494, 224, 224, 3)
+Usando dispositivo: cpu
+
+Iniciando evaluación de 20 corridas...
+
+[RUN 1/20] Training...
+[RUN 1/20] Testing...
+--> Run 1 Result: Acc=0.9656 | Loss=0.1205 | Time=448.73s
+
+[RUN 2/20] Training...
+[RUN 2/20] Testing...
+--> Run 2 Result: Acc=0.9656 | Loss=0.1303 | Time=465.64s
+
+[RUN 3/20] Training...
+[RUN 3/20] Testing...
+--> Run 3 Result: Acc=0.9615 | Loss=0.1265 | Time=415.91s
+
+[RUN 4/20] Training...
+[RUN 4/20] Testing...
+--> Run 4 Result: Acc=0.9676 | Loss=0.1224 | Time=393.46s
+
+[RUN 5/20] Training...
+[RUN 5/20] Testing...
+--> Run 5 Result: Acc=0.9636 | Loss=0.1194 | Time=393.37s
+
+[RUN 6/20] Training...
+[RUN 6/20] Testing...
+--> Run 6 Result: Acc=0.9636 | Loss=0.1286 | Time=398.79s
+
+[RUN 7/20] Training...
+[RUN 7/20] Testing...
+--> Run 7 Result: Acc=0.9636 | Loss=0.1351 | Time=399.12s
+
+[RUN 8/20] Training...
+[RUN 8/20] Testing...
+--> Run 8 Result: Acc=0.9636 | Loss=0.1297 | Time=392.84s
+
+[RUN 9/20] Training...
+[RUN 9/20] Testing...
+--> Run 9 Result: Acc=0.9615 | Loss=0.1238 | Time=402.38s
+
+[RUN 10/20] Training...
+[RUN 10/20] Testing...
+--> Run 10 Result: Acc=0.9676 | Loss=0.1215 | Time=392.97s
+
+[RUN 11/20] Training...
+[RUN 11/20] Testing...
+--> Run 11 Result: Acc=0.9676 | Loss=0.1235 | Time=393.38s
+
+[RUN 12/20] Training...
+[RUN 12/20] Testing...
+--> Run 12 Result: Acc=0.9575 | Loss=0.1365 | Time=393.24s
+
+[RUN 13/20] Training...
+[RUN 13/20] Testing...
+--> Run 13 Result: Acc=0.9595 | Loss=0.1370 | Time=403.08s
+
+[RUN 14/20] Training...
+[RUN 14/20] Testing...
+--> Run 14 Result: Acc=0.9656 | Loss=0.1262 | Time=405.63s
+
+[RUN 15/20] Training...
+[RUN 15/20] Testing...
+--> Run 15 Result: Acc=0.9615 | Loss=0.1329 | Time=406.87s
+
+[RUN 16/20] Training...
+[RUN 16/20] Testing...
+--> Run 16 Result: Acc=0.9615 | Loss=0.1232 | Time=404.37s
+
+[RUN 17/20] Training...
+[RUN 17/20] Testing...
+--> Run 17 Result: Acc=0.9656 | Loss=0.1246 | Time=404.15s
+
+[RUN 18/20] Training...
+[RUN 18/20] Testing...
+--> Run 18 Result: Acc=0.9615 | Loss=0.1331 | Time=421.05s
+
+[RUN 19/20] Training...
+[RUN 19/20] Testing...
+--> Run 19 Result: Acc=0.9656 | Loss=0.1108 | Time=404.16s
+
+[RUN 20/20] Training...
+[RUN 20/20] Testing...
+--> Run 20 Result: Acc=0.9595 | Loss=0.1320 | Time=404.98s
+
+================================================================================
+FINAL SUMMARY (20 RUNS)
+================================================================================
+Metric          Mean         Std          Min          Max         
+--------------------------------------------------------------------------------
+Accuracy        0.9635       0.0028       0.9575       0.9676      
+Precision       0.9942       0.0036       0.9872       1.0000      
+Recall+         0.9324       0.0057       0.9231       0.9433      
+Recall-         0.9945       0.0035       0.9879       1.0000      
+F1-Score        0.9623       0.0030       0.9560       0.9668      
+Loss            0.1269       0.0064       0.1108       0.1370      
+AUC             0.9918       0.0008       0.9895       0.9929      
+CPU %           50.7750      5.0266       45.3000      65.9000     
+RAM %           67.7550      2.3729       64.2000      73.1000     
+Disk %          1.9000       0.0000       1.9000       1.9000      
+Exec Time (s)   407.2056     18.4294      392.8361     465.6387    
+================================================================================
+
+Results saved to 'tier1-gemini_results.csv'
+Summary saved to 'tier1-gemini_summary.csv'

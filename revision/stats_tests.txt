@@ -1,0 +1,116 @@
+==============================================================================
+INFERENTIAL STATISTICS  (independent-samples, runs not paired across configs)
+==============================================================================
+Note: runs across configurations are INDEPENDENT (different seeds, separate
+executions), so Welch's unequal-variance t-test + Mann-Whitney U are used
+instead of paired tests. Effect size = Cohen's d (pooled) / Hedges' g.
+
+--- Tier 1: pairwise accuracy contrasts among the four LLMs ---
+T1 chatgpt vs claude (accuracy)
+   mean A=0.9576  mean B=0.9668  diff=-0.0092
+   Welch t=-4.024  df=19.1  p=7.20e-04
+   Mann-Whitney U=44.2  p=6.95e-06
+   Cohen d=-1.27  Hedges g=-1.25
+
+T1 chatgpt vs gemini (accuracy)
+   mean A=0.9576  mean B=0.9635  diff=-0.0059
+   Welch t=-8.950  df=19.9  p=2.04e-08
+   Mann-Whitney U=-16.6  p=3.68e-10
+   Cohen d=-2.83  Hedges g=-2.77
+
+T1 chatgpt vs grok (accuracy)
+   mean A=0.9576  mean B=0.9572  diff=+0.0004
+   Welch t=0.194  df=19.1  p=8.49e-01
+   Mann-Whitney U=184.4  p=6.59e-01
+   Cohen d=0.06  Hedges g=0.06
+
+T1 claude vs gemini (accuracy)
+   mean A=0.9668  mean B=0.9635  diff=+0.0033
+   Welch t=1.405  df=22.0  p=1.74e-01
+   Mann-Whitney U=120.4  p=3.16e-02
+   Cohen d=0.44  Hedges g=0.44
+
+T1 claude vs grok (accuracy)
+   mean A=0.9668  mean B=0.9572  diff=+0.0096
+   Welch t=3.105  df=37.7  p=3.60e-03
+   Mann-Whitney U=92.1  p=3.58e-03
+   Cohen d=0.98  Hedges g=0.96
+
+T1 gemini vs grok (accuracy)
+   mean A=0.9635  mean B=0.9572  diff=+0.0063
+   Welch t=2.870  df=22.6  p=8.75e-03
+   Mann-Whitney U=84.5  p=1.73e-03
+   Cohen d=0.91  Hedges g=0.89
+
+--- Across tiers, converging models (accuracy) ---
+chatgpt T1 vs T3 (accuracy)
+   mean A=0.9576  mean B=0.9627  diff=-0.0051
+   Welch t=-2.193  df=19.1  p=4.09e-02
+   Mann-Whitney U=74.0  p=2.39e-04
+   Cohen d=-0.69  Hedges g=-0.68
+
+chatgpt T1 vs T2 (accuracy)
+   mean A=0.9576  mean B=0.9627  diff=-0.0051
+   Welch t=-3.286  df=19.2  p=3.85e-03
+   Mann-Whitney U=79.1  p=5.62e-04
+   Cohen d=-1.04  Hedges g=-1.02
+
+claude T1 vs T3 (accuracy)
+   mean A=0.9668  mean B=0.9623  diff=+0.0045
+   Welch t=1.475  df=37.2  p=1.49e-01
+   Mann-Whitney U=131.7  p=6.54e-02
+   Cohen d=0.47  Hedges g=0.46
+
+claude T1 vs T2 (accuracy)
+   mean A=0.9668  mean B=0.9583  diff=+0.0085
+   Welch t=3.413  df=25.9  p=2.13e-03
+   Mann-Whitney U=84.5  p=1.81e-03
+   Cohen d=1.08  Hedges g=1.06
+
+--- Convergence-failure contrasts (accuracy) ---
+chatgpt T3 vs gemini T3
+   mean A=0.9627  mean B=0.5759  diff=+0.3867
+   Welch t=68.897  df=26.4  p=2.44e-31
+   Mann-Whitney U=1.2  p=7.99e-08
+   Cohen d=21.79  Hedges g=21.35
+
+gemini T2 vs gemini T3
+   mean A=0.9634  mean B=0.5759  diff=+0.3874
+   Welch t=73.416  df=21.4  p=3.35e-27
+   Mann-Whitney U=0.6  p=7.17e-08
+   Cohen d=23.22  Hedges g=22.75
+
+grok T2 vs grok T3
+   mean A=0.9568  mean B=0.5908  diff=+0.3659
+   Welch t=25.976  df=7.1  p=2.87e-08
+   Mann-Whitney U=3.5  p=9.61e-05
+   Cohen d=17.49  Hedges g=16.98
+
+--- Claude loss trajectory (calibration) ---
+claude T1 vs T2 (loss)
+   mean A=0.5211  mean B=0.1898  diff=+0.3313
+   Welch t=45.090  df=19.5  p=3.76e-21
+   Mann-Whitney U=0.0  p=6.80e-08
+   Cohen d=14.26  Hedges g=13.98
+
+claude T2 vs T3 (loss)
+   mean A=0.1898  mean B=0.3030  diff=-0.1132
+   Welch t=-4.267  df=22.1  p=3.12e-04
+   Mann-Whitney U=55.0  p=9.28e-05
+   Cohen d=-1.35  Hedges g=-1.32
+
+claude T1 vs T3 (loss)
+   mean A=0.5211  mean B=0.3030  diff=+0.2181
+   Welch t=8.552  df=19.0  p=6.04e-08
+   Mann-Whitney U=20.0  p=1.20e-06
+   Cohen d=2.70  Hedges g=2.65
+
+==============================================================================
+TWO-WAY ANOVA on accuracy  (factors: LLM x Tier) -- tests H3 interaction
+unweighted-means method (handles unequal cell n; grok-T3 n=8, others n=20)
+==============================================================================
+LLM          SS=0.8621  df=3  MS=0.2874  F=2032.43  p=5.71e-158
+Tier         SS=1.6726  df=2  MS=0.8363  F=5914.64  p=2.47e-189
+LLM x Tier   SS=1.6969  df=6  MS=0.2828  F=2000.24  p=3.09e-186
+Within       SS=0.0305  df=216  MS=0.00014
+harmonic-mean cell n = 17.78

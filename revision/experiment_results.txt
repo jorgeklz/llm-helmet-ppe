@@ -1,0 +1,25 @@
+======================================================================
+CONSOLIDATED EXPERIMENT RESULTS (paste these into the response letter)
+======================================================================
+
+1) STRATIFIED K-FOLD CROSS-VALIDATION (Reviewers 2, 4, 5)
+   Pooled dataset: 972 images, class balance = [486 486]
+   Fold 1: acc=0.9949 auc=0.9997
+   Fold 2: acc=0.9846 auc=0.9989
+   Fold 3: acc=0.9794 auc=0.9991
+   Fold 4: acc=0.9948 auc=1.0000
+   Fold 5: acc=0.9897 auc=0.9996
+   Accuracy: mean=0.9887 sd=0.0067 95%CI=[0.9803,0.9970]
+   AUC: mean=0.9995 sd=0.0004 95%CI=[0.9989,1.0000]
+
+2) EXPERT-OPTIMIZED STANDARDIZED BASELINE (Reviewers 2, 4)
+   Accuracy: mean=0.9680 sd=0.0047
+   AUC: mean=0.9920 sd=0.0015
+
+3) TIER-3 FACTORIAL ABLATION (Reviewers 2, 3, 4, 5)
+   backbone x scheduler -> test accuracy (mean +/- sd). Expect the
+   from-scratch + cosine_annealing cell to collapse toward chance.
+   [pretrained_resnet18      | cosine_annealing  ] acc mean=0.9453 sd=0.0153
+   [pretrained_resnet18      | reduce_on_plateau ] acc mean=0.9474 sd=0.0076
+   [fromscratch_multiscale   | cosine_annealing  ] acc mean=0.5328 sd=0.0165
+   [fromscratch_multiscale   | reduce_on_plateau ] acc mean=0.5700 sd=0.0308

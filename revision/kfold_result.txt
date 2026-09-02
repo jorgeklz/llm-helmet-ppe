@@ -1,0 +1,8 @@
+Pooled dataset: 972 images, class balance = [486 486]
+Fold 1: acc=0.9949 auc=0.9997
+Fold 2: acc=0.9846 auc=0.9989
+Fold 3: acc=0.9794 auc=0.9991
+Fold 4: acc=0.9948 auc=1.0000
+Fold 5: acc=0.9897 auc=0.9996
+Accuracy: mean=0.9887 sd=0.0067 95%CI=[0.9803,0.9970]
+AUC: mean=0.9995 sd=0.0004 95%CI=[0.9989,1.0000]

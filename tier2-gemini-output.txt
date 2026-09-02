@@ -1,0 +1,690 @@
+
+==================================================
+  RUN 1/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1087 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0852 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.1468 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0835 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.1128 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0895 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.1362 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0675 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0737 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0889 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0958 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0863 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0824 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 007/30 | val_loss: 0.0820 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 008/30 | val_loss: 0.0751 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 009/30 | val_loss: 0.0875 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9575 | auc=0.9864
+
+==================================================
+  RUN 2/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1226 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0728 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0712 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0429 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0499 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0422 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0284 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0438 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0391 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0303 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0337 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0374 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0358 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0276 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0281 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0211 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0224 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0266 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0294 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0256 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0201 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0169 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0170 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0189 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 015/30 | val_loss: 0.0200 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 016/30 | val_loss: 0.0181 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 017/30 | val_loss: 0.0207 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 018/30 | val_loss: 0.0192 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 019/30 | val_loss: 0.0258 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 020/30 | val_loss: 0.0293 | val_acc: 0.9722 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9595 | auc=0.9881
+
+==================================================
+  RUN 3/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1480 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1158 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.1963 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.1025 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.1751 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.1379 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.1527 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0857 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0945 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0857 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0852 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0859 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0885 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0882 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0880 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0977 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.0867 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.1045 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0786 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0758 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0912 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 015/30 | val_loss: 0.0719 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 016/30 | val_loss: 0.0698 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 017/30 | val_loss: 0.0702 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 018/30 | val_loss: 0.0775 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 019/30 | val_loss: 0.0822 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 020/30 | val_loss: 0.0795 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 021/30 | val_loss: 0.0985 | val_acc: 0.9722 | lr: 1.25e-05
+  [P2] Epoch 022/30 | val_loss: 0.0879 | val_acc: 0.9722 | lr: 1.25e-05
+  [P2] Epoch 023/30 | val_loss: 0.1026 | val_acc: 0.9722 | lr: 1.25e-05
+  [P2] Epoch 024/30 | val_loss: 0.0929 | val_acc: 0.9722 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9615 | auc=0.9904
+
+==================================================
+  RUN 4/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1092 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0638 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0562 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0424 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0370 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0369 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0348 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0250 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0461 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0176 | val_acc: 1.0000 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0211 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0121 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0109 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0186 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0169 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0155 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0140 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0102 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 009/30 | val_loss: 0.0069 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.0047 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.0059 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0034 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0040 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0034 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 015/30 | val_loss: 0.0021 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 016/30 | val_loss: 0.0020 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 017/30 | val_loss: 0.0026 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 018/30 | val_loss: 0.0022 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 019/30 | val_loss: 0.0021 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 020/30 | val_loss: 0.0034 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 021/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 022/30 | val_loss: 0.0023 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 023/30 | val_loss: 0.0025 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 024/30 | val_loss: 0.0026 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9757 | auc=0.9922
+
+==================================================
+  RUN 5/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1819 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1530 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.1591 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.1096 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.1381 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.1018 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.1015 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.1248 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.1006 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.1074 | val_acc: 0.9722 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0944 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0836 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.1094 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0922 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0809 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0905 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0979 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0946 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0883 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0887 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.0870 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0931 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0977 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9615 | auc=0.9908
+
+==================================================
+  RUN 6/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0745 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0561 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0285 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0235 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0210 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0227 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0395 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0164 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0188 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0145 | val_acc: 1.0000 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0121 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0086 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0058 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0082 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0047 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0032 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0033 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0037 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0047 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0045 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0035 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0039 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0042 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0035 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9555 | auc=0.9889
+
+==================================================
+  RUN 7/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0829 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0618 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0603 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0684 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0648 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0608 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0362 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0385 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0307 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0267 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0248 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0245 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0252 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0243 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0233 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0228 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0194 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0197 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 013/30 | val_loss: 0.0206 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 014/30 | val_loss: 0.0196 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 015/30 | val_loss: 0.0202 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 016/30 | val_loss: 0.0197 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 017/30 | val_loss: 0.0197 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 018/30 | val_loss: 0.0202 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 019/30 | val_loss: 0.0187 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 020/30 | val_loss: 0.0207 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 021/30 | val_loss: 0.0207 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 022/30 | val_loss: 0.0207 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 023/30 | val_loss: 0.0203 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 024/30 | val_loss: 0.0207 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 025/30 | val_loss: 0.0214 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 026/30 | val_loss: 0.0207 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 027/30 | val_loss: 0.0214 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9636 | auc=0.9891
+
+==================================================
+  RUN 8/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1761 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1993 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.1328 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.1435 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.1368 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.1437 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.1651 | val_acc: 0.9583 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.1404 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.1096 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0937 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0924 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0807 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0832 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0859 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0844 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0814 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0881 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0912 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.1022 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.1000 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9676 | auc=0.9914
+
+==================================================
+  RUN 9/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1662 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1068 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0790 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0630 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0521 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0522 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0440 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0407 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0444 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0402 | val_acc: 0.9861 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0412 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0244 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0297 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0314 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0330 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0336 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0328 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 008/30 | val_loss: 0.0317 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 009/30 | val_loss: 0.0316 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.0335 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9615 | auc=0.9894
+
+==================================================
+  RUN 10/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1469 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0844 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0629 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0742 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0362 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0481 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0430 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0343 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0619 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0450 | val_acc: 0.9861 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0249 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0291 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0184 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0238 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0230 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0222 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0218 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0262 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 009/30 | val_loss: 0.0231 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.0229 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.0238 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9636 | auc=0.9906
+
+==================================================
+  RUN 11/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.2511 | val_acc: 0.9028 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1479 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.2932 | val_acc: 0.9167 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.1698 | val_acc: 0.9306 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.1731 | val_acc: 0.9306 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.1768 | val_acc: 0.9306 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.1430 | val_acc: 0.9583 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.1100 | val_acc: 0.9583 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.1348 | val_acc: 0.9583 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.1143 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.1170 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.1214 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.1211 | val_acc: 0.9583 | lr: 2.50e-05
+  [P2] Epoch 009/30 | val_loss: 0.1258 | val_acc: 0.9583 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.1205 | val_acc: 0.9583 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.1217 | val_acc: 0.9583 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9555 | auc=0.9891
+
+==================================================
+  RUN 12/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0836 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0530 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0473 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0647 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0628 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0455 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0355 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0365 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0331 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0355 | val_acc: 0.9861 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0309 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0076 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0055 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0030 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0025 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0025 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0028 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0031 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0041 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0032 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0023 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 015/30 | val_loss: 0.0027 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 016/30 | val_loss: 0.0032 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 017/30 | val_loss: 0.0042 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 018/30 | val_loss: 0.0031 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 019/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 020/30 | val_loss: 0.0028 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 021/30 | val_loss: 0.0027 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 022/30 | val_loss: 0.0025 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9676 | auc=0.9900
+
+==================================================
+  RUN 13/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1868 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0753 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0946 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0580 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0785 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0676 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0832 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0541 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0458 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0390 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0383 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0391 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0355 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0334 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0295 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0307 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0300 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0286 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0274 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 013/30 | val_loss: 0.0273 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 014/30 | val_loss: 0.0255 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 015/30 | val_loss: 0.0275 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 016/30 | val_loss: 0.0243 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 017/30 | val_loss: 0.0280 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 018/30 | val_loss: 0.0262 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 019/30 | val_loss: 0.0237 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 020/30 | val_loss: 0.0239 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 021/30 | val_loss: 0.0266 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 022/30 | val_loss: 0.0230 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 023/30 | val_loss: 0.0242 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 024/30 | val_loss: 0.0280 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 025/30 | val_loss: 0.0299 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 026/30 | val_loss: 0.0300 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 027/30 | val_loss: 0.0288 | val_acc: 0.9722 | lr: 2.50e-05
+  [P2] Epoch 028/30 | val_loss: 0.0254 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 029/30 | val_loss: 0.0299 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 030/30 | val_loss: 0.0297 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9636 | auc=0.9897
+
+==================================================
+  RUN 14/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1426 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0917 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0762 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0755 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0892 | val_acc: 0.9444 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0738 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0769 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0764 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0779 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0571 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0487 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0445 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0490 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0519 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0495 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0486 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0470 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 009/30 | val_loss: 0.0474 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.0466 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.0462 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9555 | auc=0.9893
+
+==================================================
+  RUN 15/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0814 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1191 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0233 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0338 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0146 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0244 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0217 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0224 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0103 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0099 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0035 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0036 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0026 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0033 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0025 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0025 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0016 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0016 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0015 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0014 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 013/30 | val_loss: 0.0014 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 014/30 | val_loss: 0.0011 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 015/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 016/30 | val_loss: 0.0008 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 017/30 | val_loss: 0.0012 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 018/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 019/30 | val_loss: 0.0010 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 020/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 021/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 022/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 023/30 | val_loss: 0.0014 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 024/30 | val_loss: 0.0007 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 025/30 | val_loss: 0.0008 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 026/30 | val_loss: 0.0007 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 027/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 028/30 | val_loss: 0.0009 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 029/30 | val_loss: 0.0007 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 030/30 | val_loss: 0.0008 | val_acc: 1.0000 | lr: 2.50e-05
+  → acc=0.9717 | auc=0.9928
+
+==================================================
+  RUN 16/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0827 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0379 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0216 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0123 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0094 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0080 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0071 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0106 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0108 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0091 | val_acc: 1.0000 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0043 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0040 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0049 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0039 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0057 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0046 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0036 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0056 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 010/30 | val_loss: 0.0047 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 011/30 | val_loss: 0.0029 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 012/30 | val_loss: 0.0031 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9575 | auc=0.9875
+
+==================================================
+  RUN 17/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1029 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0748 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0475 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0357 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0360 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0329 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0457 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0472 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0420 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0293 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0202 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0222 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0217 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0144 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0249 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0132 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0110 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0380 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0326 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0278 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0323 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 013/30 | val_loss: 0.0276 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0281 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 015/30 | val_loss: 0.0328 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 016/30 | val_loss: 0.0286 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9676 | auc=0.9920
+
+==================================================
+  RUN 18/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0752 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.0684 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0454 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0633 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0435 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0509 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0313 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0325 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0343 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0308 | val_acc: 0.9861 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0256 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0181 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0110 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0092 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0085 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0081 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0074 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0065 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0076 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0055 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0065 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0056 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 013/30 | val_loss: 0.0043 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 014/30 | val_loss: 0.0050 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 015/30 | val_loss: 0.0044 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 016/30 | val_loss: 0.0040 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 017/30 | val_loss: 0.0053 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 018/30 | val_loss: 0.0046 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 019/30 | val_loss: 0.0042 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 020/30 | val_loss: 0.0047 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 021/30 | val_loss: 0.0042 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 022/30 | val_loss: 0.0036 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 023/30 | val_loss: 0.0042 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 024/30 | val_loss: 0.0048 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 025/30 | val_loss: 0.0043 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 026/30 | val_loss: 0.0043 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 027/30 | val_loss: 0.0045 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 028/30 | val_loss: 0.0047 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 029/30 | val_loss: 0.0038 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 030/30 | val_loss: 0.0043 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9717 | auc=0.9934
+
+==================================================
+  RUN 19/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.0927 | val_acc: 0.9583 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1195 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0401 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0709 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0557 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0398 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0357 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0344 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0416 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0432 | val_acc: 0.9861 | lr: 1.00e-03
+  [P2] Epoch 001/30 | val_loss: 0.0229 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0208 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0164 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0186 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0232 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0220 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0162 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0148 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0156 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0126 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0121 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0162 | val_acc: 0.9861 | lr: 5.00e-05
+  [P2] Epoch 013/30 | val_loss: 0.0113 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 014/30 | val_loss: 0.0143 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 015/30 | val_loss: 0.0126 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 016/30 | val_loss: 0.0140 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 017/30 | val_loss: 0.0129 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 018/30 | val_loss: 0.0098 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 019/30 | val_loss: 0.0108 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 020/30 | val_loss: 0.0137 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 021/30 | val_loss: 0.0131 | val_acc: 0.9861 | lr: 2.50e-05
+  [P2] Epoch 022/30 | val_loss: 0.0118 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 023/30 | val_loss: 0.0127 | val_acc: 0.9861 | lr: 1.25e-05
+  [P2] Epoch 024/30 | val_loss: 0.0115 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 025/30 | val_loss: 0.0124 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Epoch 026/30 | val_loss: 0.0102 | val_acc: 1.0000 | lr: 1.25e-05
+  [P2] Early stopping triggered.
+  → acc=0.9656 | auc=0.9893
+
+==================================================
+  RUN 20/20
+==================================================
+  [P1] Epoch 001/10 | val_loss: 0.1397 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 002/10 | val_loss: 0.1083 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 003/10 | val_loss: 0.0534 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 004/10 | val_loss: 0.0391 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 005/10 | val_loss: 0.0421 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 006/10 | val_loss: 0.0359 | val_acc: 0.9722 | lr: 1.00e-03
+  [P1] Epoch 007/10 | val_loss: 0.0244 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 008/10 | val_loss: 0.0352 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 009/10 | val_loss: 0.0328 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Epoch 010/10 | val_loss: 0.0446 | val_acc: 0.9861 | lr: 1.00e-03
+  [P1] Early stopping triggered.
+  [P2] Epoch 001/30 | val_loss: 0.0423 | val_acc: 0.9722 | lr: 5.00e-05
+  [P2] Epoch 002/30 | val_loss: 0.0153 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 003/30 | val_loss: 0.0091 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 004/30 | val_loss: 0.0095 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 005/30 | val_loss: 0.0072 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 006/30 | val_loss: 0.0069 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 007/30 | val_loss: 0.0032 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 008/30 | val_loss: 0.0059 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 009/30 | val_loss: 0.0064 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 010/30 | val_loss: 0.0080 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 011/30 | val_loss: 0.0093 | val_acc: 1.0000 | lr: 5.00e-05
+  [P2] Epoch 012/30 | val_loss: 0.0080 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 013/30 | val_loss: 0.0063 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 014/30 | val_loss: 0.0050 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Epoch 015/30 | val_loss: 0.0049 | val_acc: 1.0000 | lr: 2.50e-05
+  [P2] Early stopping triggered.
+  → acc=0.9636 | auc=0.9884
+
+✔ tier2-gemini_results.csv generated
+✔ tier2-gemini_summary.csv generated
+
+── Summary ──
+                    mean         std         min          max
+run            10.500000    5.916080    1.000000    20.000000
+accuracy        0.963360    0.005759    0.955466     0.975709
+precision       0.994407    0.005906    0.978814     1.000000
+recall_pos      0.931984    0.009062    0.914980     0.951417
+recall_neg      0.994737    0.005588    0.979757     1.000000
+auc             0.989937    0.001795    0.986363     0.993411
+loss            0.175181    0.019302    0.137678     0.205811
+cpu_percent    47.880000    5.717802   44.100000    63.800000
+ram_percent    67.640000    1.504520   64.600000    71.200000
+time_sec     1420.862547  425.834930  844.381666  2125.396586

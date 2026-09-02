@@ -1,0 +1,47 @@
+# =====================================================================
+# Whitelist policy: ignore everything at the top level, then allow ONLY
+# the code and data requested by the reviewers. The manuscript folder,
+# trained weights, editor/design sources and scratch files stay OUT.
+# =====================================================================
+/*
+
+# top-level files to include
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/push_to_github.sh
+!/run_experiments.sh
+!/rerun_rest.sh
+
+# dataset (images + .txt labels)
+!/dataset/
+
+# LLM-generated training scripts (the twelve, by tier and model)
+!/tier1-*.py
+!/tier2-*.py
+!/tier3-*.py
+
+# raw per-run logs and summaries
+!/tier1-*_results.csv
+!/tier2-*_results.csv
+!/tier3-*_results.csv
+!/tier1-*_summary.csv
+!/tier2-*_summary.csv
+!/tier3-*_summary.csv
+!/tier1-*-output.txt
+!/tier2-*-output.txt
+!/tier3-*-output.txt
+
+# revision package (analysis + reproducibility)
+!/revision/
+
+# ...but keep only code/data inside revision/, not review artifacts
+/revision/logs/
+/revision/_edit_helpers/
+/revision/__pycache__/
+/revision/dataset.tar
+/revision/Response_to_Reviewers.docx
+/revision/revised_manuscript_preview.pdf
+
+# macOS junk anywhere
+.DS_Store

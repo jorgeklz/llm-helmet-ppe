@@ -1,0 +1,290 @@
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+==================================================
+ RUN 1/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.6838, Val Loss: 0.6986
+Epoch 2/15 - Train Loss: 0.6890, Val Loss: 0.6984
+Epoch 3/15 - Train Loss: 0.6657, Val Loss: 0.6853
+Epoch 4/15 - Train Loss: 0.6784, Val Loss: 0.6821
+Epoch 5/15 - Train Loss: 0.6787, Val Loss: 0.6826
+Epoch 6/15 - Train Loss: 0.6612, Val Loss: 0.6830
+Epoch 7/15 - Train Loss: 0.6955, Val Loss: 0.6911
+Epoch 8/15 - Train Loss: 0.6612, Val Loss: 0.6796
+Epoch 9/15 - Train Loss: 0.6624, Val Loss: 0.6758
+Epoch 10/15 - Train Loss: 0.6592, Val Loss: 0.6791
+Epoch 11/15 - Train Loss: 0.6697, Val Loss: 0.6716
+Epoch 12/15 - Train Loss: 0.6460, Val Loss: 0.6702
+Epoch 13/15 - Train Loss: 0.6666, Val Loss: 0.6693
+Epoch 14/15 - Train Loss: 0.6517, Val Loss: 0.6681
+Epoch 15/15 - Train Loss: 0.6555, Val Loss: 0.6654
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6512, Val Loss: 0.6495
+Epoch 2/20 - Train Loss: 0.6157, Val Loss: 0.8926
+Epoch 3/20 - Train Loss: 0.5695, Val Loss: 0.7539
+Epoch 4/20 - Train Loss: 0.5656, Val Loss: 0.6604
+Epoch 5/20 - Train Loss: 0.5203, Val Loss: 0.7454
+Epoch 6/20 - Train Loss: 0.5155, Val Loss: 0.7334
+Epoch 7/20 - Train Loss: 0.4881, Val Loss: 0.6480
+Epoch 8/20 - Train Loss: 0.5042, Val Loss: 0.6589
+Epoch 9/20 - Train Loss: 0.4689, Val Loss: 0.7671
+Epoch 10/20 - Train Loss: 0.4694, Val Loss: 0.7599
+Epoch 11/20 - Train Loss: 0.4574, Val Loss: 0.7349
+Epoch 12/20 - Train Loss: 0.4734, Val Loss: 0.7391
+Epoch 13/20 - Train Loss: 0.4670, Val Loss: 0.7208
+Epoch 14/20 - Train Loss: 0.4436, Val Loss: 0.7727
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 54.53 ms/image (Target: <30 ms)
+ → acc=0.5405 | loss=0.7727
+
+==================================================
+ RUN 2/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.7044, Val Loss: 0.6958
+Epoch 2/15 - Train Loss: 0.6843, Val Loss: 0.6978
+Epoch 3/15 - Train Loss: 0.6669, Val Loss: 0.6785
+Epoch 4/15 - Train Loss: 0.6745, Val Loss: 0.6641
+Epoch 5/15 - Train Loss: 0.6546, Val Loss: 0.6568
+Epoch 6/15 - Train Loss: 0.6782, Val Loss: 0.6573
+Epoch 7/15 - Train Loss: 0.6700, Val Loss: 0.6539
+Epoch 8/15 - Train Loss: 0.6376, Val Loss: 0.6486
+Epoch 9/15 - Train Loss: 0.6433, Val Loss: 0.6441
+Epoch 10/15 - Train Loss: 0.6650, Val Loss: 0.6442
+Epoch 11/15 - Train Loss: 0.6550, Val Loss: 0.6447
+Epoch 12/15 - Train Loss: 0.6474, Val Loss: 0.6419
+Epoch 13/15 - Train Loss: 0.6534, Val Loss: 0.6410
+Epoch 14/15 - Train Loss: 0.6475, Val Loss: 0.6389
+Epoch 15/15 - Train Loss: 0.6541, Val Loss: 0.6400
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6302, Val Loss: 0.6086
+Epoch 2/20 - Train Loss: 0.5845, Val Loss: 0.6453
+Epoch 3/20 - Train Loss: 0.5693, Val Loss: 0.6299
+Epoch 4/20 - Train Loss: 0.5512, Val Loss: 0.6668
+Epoch 5/20 - Train Loss: 0.5445, Val Loss: 0.7113
+Epoch 6/20 - Train Loss: 0.5354, Val Loss: 0.7113
+Epoch 7/20 - Train Loss: 0.5209, Val Loss: 0.6744
+Epoch 8/20 - Train Loss: 0.5180, Val Loss: 0.6670
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 55.55 ms/image (Target: <30 ms)
+ → acc=0.6457 | loss=0.6670
+
+==================================================
+ RUN 3/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.6959, Val Loss: 0.6936
+Epoch 2/15 - Train Loss: 0.6902, Val Loss: 0.6879
+Epoch 3/15 - Train Loss: 0.6810, Val Loss: 0.6739
+Epoch 4/15 - Train Loss: 0.6830, Val Loss: 0.6712
+Epoch 5/15 - Train Loss: 0.6697, Val Loss: 0.6729
+Epoch 6/15 - Train Loss: 0.6721, Val Loss: 0.6639
+Epoch 7/15 - Train Loss: 0.6710, Val Loss: 0.6637
+Epoch 8/15 - Train Loss: 0.6670, Val Loss: 0.6674
+Epoch 9/15 - Train Loss: 0.6597, Val Loss: 0.6669
+Epoch 10/15 - Train Loss: 0.6532, Val Loss: 0.6632
+Epoch 11/15 - Train Loss: 0.6590, Val Loss: 0.6584
+Epoch 12/15 - Train Loss: 0.6502, Val Loss: 0.6599
+Epoch 13/15 - Train Loss: 0.6664, Val Loss: 0.6595
+Epoch 14/15 - Train Loss: 0.6622, Val Loss: 0.6587
+Epoch 15/15 - Train Loss: 0.6593, Val Loss: 0.6523
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6732, Val Loss: 0.6406
+Epoch 2/20 - Train Loss: 0.6287, Val Loss: 0.7034
+Epoch 3/20 - Train Loss: 0.5789, Val Loss: 0.6730
+Epoch 4/20 - Train Loss: 0.5499, Val Loss: 0.7355
+Epoch 5/20 - Train Loss: 0.5360, Val Loss: 0.8883
+Epoch 6/20 - Train Loss: 0.5367, Val Loss: 0.7250
+Epoch 7/20 - Train Loss: 0.4947, Val Loss: 0.8403
+Epoch 8/20 - Train Loss: 0.5118, Val Loss: 0.7250
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 54.47 ms/image (Target: <30 ms)
+ → acc=0.6012 | loss=0.7250
+
+==================================================
+ RUN 4/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.6953, Val Loss: 0.7000
+Epoch 2/15 - Train Loss: 0.6791, Val Loss: 0.6996
+Epoch 3/15 - Train Loss: 0.6771, Val Loss: 0.6662
+Epoch 4/15 - Train Loss: 0.6760, Val Loss: 0.6645
+Epoch 5/15 - Train Loss: 0.6743, Val Loss: 0.6820
+Epoch 6/15 - Train Loss: 0.6655, Val Loss: 0.6644
+Epoch 7/15 - Train Loss: 0.6564, Val Loss: 0.6663
+Epoch 8/15 - Train Loss: 0.6565, Val Loss: 0.6589
+Epoch 9/15 - Train Loss: 0.6525, Val Loss: 0.6544
+Epoch 10/15 - Train Loss: 0.6462, Val Loss: 0.6535
+Epoch 11/15 - Train Loss: 0.6569, Val Loss: 0.6517
+Epoch 12/15 - Train Loss: 0.6442, Val Loss: 0.6475
+Epoch 13/15 - Train Loss: 0.6635, Val Loss: 0.6489
+Epoch 14/15 - Train Loss: 0.6532, Val Loss: 0.6557
+Epoch 15/15 - Train Loss: 0.6525, Val Loss: 0.6502
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6363, Val Loss: 0.6647
+Epoch 2/20 - Train Loss: 0.6021, Val Loss: 0.7167
+Epoch 3/20 - Train Loss: 0.5813, Val Loss: 0.6520
+Epoch 4/20 - Train Loss: 0.5413, Val Loss: 0.6806
+Epoch 5/20 - Train Loss: 0.5252, Val Loss: 0.6670
+Epoch 6/20 - Train Loss: 0.5212, Val Loss: 0.7412
+Epoch 7/20 - Train Loss: 0.4916, Val Loss: 0.8922
+Epoch 8/20 - Train Loss: 0.4801, Val Loss: 0.9212
+Epoch 9/20 - Train Loss: 0.4882, Val Loss: 0.7649
+Epoch 10/20 - Train Loss: 0.4969, Val Loss: 0.7534
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 53.61 ms/image (Target: <30 ms)
+ → acc=0.6093 | loss=0.7534
+
+==================================================
+ RUN 5/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.6950, Val Loss: 0.7023
+Epoch 2/15 - Train Loss: 0.6758, Val Loss: 0.6797
+Epoch 3/15 - Train Loss: 0.6863, Val Loss: 0.6624
+Epoch 4/15 - Train Loss: 0.6839, Val Loss: 0.6656
+Epoch 5/15 - Train Loss: 0.6602, Val Loss: 0.6600
+Epoch 6/15 - Train Loss: 0.6691, Val Loss: 0.6562
+Epoch 7/15 - Train Loss: 0.6595, Val Loss: 0.6536
+Epoch 8/15 - Train Loss: 0.6624, Val Loss: 0.6476
+Epoch 9/15 - Train Loss: 0.6724, Val Loss: 0.6464
+Epoch 10/15 - Train Loss: 0.6577, Val Loss: 0.6461
+Epoch 11/15 - Train Loss: 0.6604, Val Loss: 0.6425
+Epoch 12/15 - Train Loss: 0.6520, Val Loss: 0.6383
+Epoch 13/15 - Train Loss: 0.6587, Val Loss: 0.6439
+Epoch 14/15 - Train Loss: 0.6680, Val Loss: 0.6377
+Epoch 15/15 - Train Loss: 0.6544, Val Loss: 0.6349
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6635, Val Loss: 0.6734
+Epoch 2/20 - Train Loss: 0.6266, Val Loss: 0.6090
+Epoch 3/20 - Train Loss: 0.5958, Val Loss: 0.6549
+Epoch 4/20 - Train Loss: 0.5747, Val Loss: 0.6615
+Epoch 5/20 - Train Loss: 0.5471, Val Loss: 0.6466
+Epoch 6/20 - Train Loss: 0.5366, Val Loss: 0.7459
+Epoch 7/20 - Train Loss: 0.5204, Val Loss: 0.6461
+Epoch 8/20 - Train Loss: 0.5200, Val Loss: 0.6962
+Epoch 9/20 - Train Loss: 0.4822, Val Loss: 0.7324
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 53.79 ms/image (Target: <30 ms)
+ → acc=0.6154 | loss=0.7324
+
+==================================================
+ RUN 6/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.7017, Val Loss: 0.6972
+Epoch 2/15 - Train Loss: 0.6796, Val Loss: 0.7001
+Epoch 3/15 - Train Loss: 0.6789, Val Loss: 0.6706
+Epoch 4/15 - Train Loss: 0.6753, Val Loss: 0.6631
+Epoch 5/15 - Train Loss: 0.6592, Val Loss: 0.6587
+Epoch 6/15 - Train Loss: 0.6671, Val Loss: 0.6531
+Epoch 7/15 - Train Loss: 0.6395, Val Loss: 0.6494
+Epoch 8/15 - Train Loss: 0.6522, Val Loss: 0.6450
+Epoch 9/15 - Train Loss: 0.6541, Val Loss: 0.6507
+Epoch 10/15 - Train Loss: 0.6619, Val Loss: 0.6406
+Epoch 11/15 - Train Loss: 0.6476, Val Loss: 0.6383
+Epoch 12/15 - Train Loss: 0.6339, Val Loss: 0.6365
+Epoch 13/15 - Train Loss: 0.6241, Val Loss: 0.6354
+Epoch 14/15 - Train Loss: 0.6465, Val Loss: 0.6391
+Epoch 15/15 - Train Loss: 0.6260, Val Loss: 0.6407
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6651, Val Loss: 0.7333
+Epoch 2/20 - Train Loss: 0.6069, Val Loss: 0.8296
+Epoch 3/20 - Train Loss: 0.5477, Val Loss: 0.6942
+Epoch 4/20 - Train Loss: 0.5334, Val Loss: 0.7680
+Epoch 5/20 - Train Loss: 0.5349, Val Loss: 0.8607
+Epoch 6/20 - Train Loss: 0.5387, Val Loss: 0.9037
+Epoch 7/20 - Train Loss: 0.5203, Val Loss: 0.7276
+Epoch 8/20 - Train Loss: 0.4897, Val Loss: 0.8719
+Epoch 9/20 - Train Loss: 0.4956, Val Loss: 0.8021
+Epoch 10/20 - Train Loss: 0.4767, Val Loss: 0.7772
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 53.63 ms/image (Target: <30 ms)
+ → acc=0.5951 | loss=0.7772
+
+==================================================
+ RUN 7/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.6931, Val Loss: 0.7040
+Epoch 2/15 - Train Loss: 0.6725, Val Loss: 0.6832
+Epoch 3/15 - Train Loss: 0.6753, Val Loss: 0.6799
+Epoch 4/15 - Train Loss: 0.6719, Val Loss: 0.6730
+Epoch 5/15 - Train Loss: 0.6660, Val Loss: 0.6709
+Epoch 6/15 - Train Loss: 0.6564, Val Loss: 0.6776
+Epoch 7/15 - Train Loss: 0.6603, Val Loss: 0.6725
+Epoch 8/15 - Train Loss: 0.6575, Val Loss: 0.6690
+Epoch 9/15 - Train Loss: 0.6647, Val Loss: 0.6665
+Epoch 10/15 - Train Loss: 0.6690, Val Loss: 0.6685
+Epoch 11/15 - Train Loss: 0.6726, Val Loss: 0.6662
+Epoch 12/15 - Train Loss: 0.6697, Val Loss: 0.6676
+Epoch 13/15 - Train Loss: 0.6401, Val Loss: 0.6647
+Epoch 14/15 - Train Loss: 0.6567, Val Loss: 0.6714
+Epoch 15/15 - Train Loss: 0.6475, Val Loss: 0.6612
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6603, Val Loss: 0.6860
+Epoch 2/20 - Train Loss: 0.6143, Val Loss: 0.7099
+Epoch 3/20 - Train Loss: 0.5817, Val Loss: 0.6638
+Epoch 4/20 - Train Loss: 0.5568, Val Loss: 0.6804
+Epoch 5/20 - Train Loss: 0.5445, Val Loss: 0.9445
+Epoch 6/20 - Train Loss: 0.5285, Val Loss: 0.7745
+Epoch 7/20 - Train Loss: 0.5394, Val Loss: 0.7258
+Epoch 8/20 - Train Loss: 0.5072, Val Loss: 0.7379
+Epoch 9/20 - Train Loss: 0.5135, Val Loss: 0.7167
+Epoch 10/20 - Train Loss: 0.5141, Val Loss: 0.8811
+Early stopping triggered
+/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 llm helmet/.venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Inference latency: 53.59 ms/image (Target: <30 ms)
+ → acc=0.5243 | loss=0.8811
+
+==================================================
+ RUN 8/8
+==================================================
+Phase 1: Training classification head
+Epoch 1/15 - Train Loss: 0.6941, Val Loss: 0.6940
+Epoch 2/15 - Train Loss: 0.6712, Val Loss: 0.6951
+Epoch 3/15 - Train Loss: 0.6764, Val Loss: 0.6669
+Epoch 4/15 - Train Loss: 0.6639, Val Loss: 0.6719
+Epoch 5/15 - Train Loss: 0.6755, Val Loss: 0.6628
+Epoch 6/15 - Train Loss: 0.6595, Val Loss: 0.6645
+Epoch 7/15 - Train Loss: 0.6554, Val Loss: 0.6682
+Epoch 8/15 - Train Loss: 0.6633, Val Loss: 0.6668
+Epoch 9/15 - Train Loss: 0.6620, Val Loss: 0.6651
+Epoch 10/15 - Train Loss: 0.6628, Val Loss: 0.6578
+Epoch 11/15 - Train Loss: 0.6507, Val Loss: 0.6581
+Epoch 12/15 - Train Loss: 0.6429, Val Loss: 0.6534
+Epoch 13/15 - Train Loss: 0.6505, Val Loss: 0.6556
+Epoch 14/15 - Train Loss: 0.6572, Val Loss: 0.6501
+Epoch 15/15 - Train Loss: 0.6485, Val Loss: 0.6573
+Phase 2: Fine-tuning entire model
+Epoch 1/20 - Train Loss: 0.6404, Val Loss: 0.6878
+Epoch 2/20 - Train Loss: 0.6171, Val Loss: 0.6617
+Epoch 3/20 - Train Loss: 0.5711, Val Loss: 0.7681
+Epoch 4/20 - Train Loss: 0.5893, Val Loss: 0.6153
+Epoch 5/20 - Train Loss: 0.5436, Val Loss: 0.6827
+Epoch 6/20 - Train Loss: 0.5388, Val Loss: 0.6686
+Epoch 7/20 - Train Loss: 0.4938, Val Loss: 0.7151
+Epoch 8/20 - Train Loss: 0.4792, Val Loss: 0.6664
+Epoch 9/20 - Train Loss: 0.5001, Val Loss: 0.7099
+Epoch 10/20 - Train Loss: 0.4691, Val Loss: 0.8457
+Epoch 11/20 - Train Loss: 0.4705, Val Loss: 0.7222
+Early stopping triggered
+Inference latency: 53.76 ms/image (Target: <30 ms)
+ → acc=0.5951 | loss=0.7222
+✔ tier3-grok_results.csv generado
+✔ tier3-grok_summary.csv generado
