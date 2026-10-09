@@ -6,8 +6,8 @@ pipeline for a binary helmet / no-helmet classifier under three levels of prompt
 instruction. Every generated script was run repeatedly on the same images and every run
 was logged. The manuscript itself is not included.
 
-**Interactive results:** <https://jorgeklz.github.io/llm-helmet-ppe/>, an animated,
-bilingual (ES/EN) page built only from the files in this repository. Its source is in
+**Interactive results:** <https://jorgeklz.github.io/llm-helmet-ppe/>, an animated
+page built only from the files in this repository. Its source is in
 [`docs/`](docs/); every push to `main` that touches `docs/` republishes it through
 `.github/workflows/pages.yml` (branch `gh-pages`).
 
@@ -90,4 +90,4 @@ website. Volume, issue and DOI will be added on publication.
 
 ## Contact
 
-Jorge Párraga-Álava · jorge.parraga@utm.edu.ec · Universidad Técnica de Manabí
+Jorge Parraga-Alava · jorge.parraga@utm.edu.ec · Universidad Técnica de Manabí

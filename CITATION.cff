@@ -1,11 +1,12 @@
 # Update authors, volume and DOI when the article is published
-# (the same data lives in the CITA object of docs/index.html).
+# (the same data lives in the CITA object of docs/index.html,
+# which also uses the DOI for the website footer).
 cff-version: 1.2.0
 message: "If you use this code, data or results, please cite the article below."
 title: "llm-helmet-ppe: Code, data and logs"
 type: software
 authors:
-  - family-names: "Párraga-Álava"
+  - family-names: "Parraga-Alava"
     given-names: "Jorge"
     email: "jorge.parraga@utm.edu.ec"
     affiliation: "Universidad Técnica de Manabí"
@@ -15,7 +16,7 @@ preferred-citation:
   type: article
   title: "LLM-generated CNNs for helmet-wearing compliance classification"
   authors:
-    - family-names: "Párraga-Álava"
+    - family-names: "Parraga-Alava"
       given-names: "Jorge"
       affiliation: "Universidad Técnica de Manabí"
   journal: "Discover Artificial Intelligence"
