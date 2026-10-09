@@ -82,6 +82,12 @@ python docs/build_data.py
 Run everything from the repository root. See `revision/RUN_INSTRUCTIONS.md` for run sizes
 and the optional external-dataset evaluation.
 
+## How to cite
+
+The article is under review in *Discover Artificial Intelligence*. Citation metadata is in
+[`CITATION.cff`](CITATION.cff) (GitHub shows it under *Cite this repository*) and at the end of the
+website. Volume, issue and DOI will be added on publication.
+
 ## Contact
 
 Jorge Párraga-Álava · jorge.parraga@utm.edu.ec · Universidad Técnica de Manabí
