@@ -123,12 +123,12 @@ def mannwhitney(a, b):
     na, nb = len(a), len(b)
     allv = np.concatenate([a, b])
     order = allv.argsort()
-    ranks = np.empty(len(allv)); ranks[order] = np.arange(1, len(allv)+1)
-    # tie correction
+    raw = np.empty(len(allv)); raw[order] = np.arange(1, len(allv)+1)
+    # tie correction: every tied value gets the mean of the ORIGINAL ranks of
+    # its group (averaging in place would feed already-averaged ranks back in)
     _, inv, cnt = np.unique(allv, return_inverse=True, return_counts=True)
-    for i in range(len(allv)):
-        grp = np.where(inv == inv[i])[0]
-        ranks[i] = ranks[grp].mean()
+    inv = np.asarray(inv).ravel()
+    ranks = np.array([raw[inv == inv[i]].mean() for i in range(len(allv))])
     Ra = ranks[:na].sum()
     Ua = Ra - na*(na+1)/2.0
     U = min(Ua, na*nb - Ua)

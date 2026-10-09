@@ -1,13 +1,13 @@
-# How to run the four experiments in the background (on your Mac)
+# How to run the revision experiments in the background
 
-Open Terminal, go to the project folder, and launch one command. PyTorch must be
+Open a terminal in the repository root and launch one command. PyTorch must be
 available (the same environment where you ran the original tier*.py scripts). If
 no torch is found, the runner creates a local .venv_torch and installs it (needs
 internet).
 
-## Launch (background; keeps running if you close Terminal)
+## Launch (background; keeps running if you close the terminal)
 ```
-cd "/Users/jorge/Library/CloudStorage/Dropbox/Papers/2026 - LLM helmet"
+mkdir -p revision/logs
 nohup bash run_experiments.sh > revision/logs/run_all.log 2>&1 &
 ```
 
@@ -20,9 +20,7 @@ tail -f revision/logs/run_all.log
 ```
 cat revision/experiment_results.txt
 ```
-Send me that file (or paste its contents) and I will insert the numbers into the
-response letter and the manuscript, and change the wording from "provided as a
-reproducible script" to the actual results.
+After a re-run, refresh the website data with `python docs/build_data.py`.
 
 ## Run sizes (optional overrides)
 Defaults: k-fold k=5; expert baseline 30 runs; ablation 5 runs x 20 epochs.
