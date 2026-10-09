@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 99.51 54.23">
-  <!-- JPA logo recoloured to the UTM palette for dark backgrounds -->
+  <!-- JPA logo in white for the dark green app bar -->
   <defs>
     <linearGradient id="logoGradA" x1="0%" y1="0%" x2="100%" y2="25%">
-      <stop offset="0%" stop-color="#4aab30"/>
-      <stop offset="100%" stop-color="#2e8a1f"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
     <linearGradient id="logoGradB" x1="0%" y1="0%" x2="100%" y2="25%">
-      <stop offset="0%" stop-color="#72c255"/>
-      <stop offset="100%" stop-color="#4aab30"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
     <linearGradient id="logoGradC" x1="0%" y1="0%" x2="100%" y2="25%">
-      <stop offset="0%" stop-color="#f2c94c"/>
-      <stop offset="100%" stop-color="#d4a80a"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
     <linearGradient id="logoGradText" gradientUnits="userSpaceOnUse" x1="0" y1="44" x2="99.51" y2="52">
-      <stop offset="0%" stop-color="#e2f2da"/>
-      <stop offset="100%" stop-color="#b9d9a8"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
     <style>
       .st0 {
