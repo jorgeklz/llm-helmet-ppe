@@ -35,7 +35,7 @@ def read_runs(tier, llm):
     out = {}
     for key, names in ALIASES.items():
         col = next((n for n in names if n in rows[0]), None)
-        out[key] = [round(float(r[col]), 4) for r in rows] if col else None
+        out[key] = [round(float(r[col]), 6) for r in rows] if col else None
     return out
 
 
@@ -83,6 +83,18 @@ def read_anova():
             for f, ss, df, ms, F, p in rows]
 
 
+def script_info(tier, llm):
+    """Backbone and size of each LLM-generated script, read from its source."""
+    src = open(os.path.join(ROOT, f"tier{tier}-{llm}.py")).read()
+    if "resnet50" in src:
+        backbone = "ResNet50 (ImageNet)"
+    elif "resnet18" in src:
+        backbone = "ResNet18 (ImageNet)"
+    else:
+        backbone = "Multi-scale CNN from scratch"
+    return {"file": f"tier{tier}-{llm}.py", "backbone": backbone, "lines": src.count("\n")}
+
+
 def samples(k=3, size=360):
     """A few test images (with their YOLO-style box) to animate in the hero."""
     from PIL import Image
@@ -111,6 +123,7 @@ def main():
         "dataset": {"train": count("train"), "test": count("test")},
         "llms": LLMS, "tiers": TIERS,
         "runs": runs, "summary": read_summary(),
+        "scripts": {f"{t}-{m}": script_info(t, m) for t in TIERS for m in LLMS},
         "anova": read_anova(), "samples": samples(),
         **read_revision(),
     }
