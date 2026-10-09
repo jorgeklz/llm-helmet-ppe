@@ -16,6 +16,9 @@
 # dataset (images + .txt labels)
 !/dataset/
 
+# results website (GitHub Pages from /docs)
+!/docs/
+
 # LLM-generated training scripts (the twelve, by tier and model)
 !/tier1-*.py
 !/tier2-*.py

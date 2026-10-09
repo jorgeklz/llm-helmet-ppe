@@ -9,81 +9,81 @@ instead of paired tests. Effect size = Cohen's d (pooled) / Hedges' g.
 T1 chatgpt vs claude (accuracy)
    mean A=0.9576  mean B=0.9668  diff=-0.0092
    Welch t=-4.024  df=19.1  p=7.20e-04
-   Mann-Whitney U=44.2  p=6.95e-06
+   Mann-Whitney U=71.0  p=2.00e-04
    Cohen d=-1.27  Hedges g=-1.25
 
 T1 chatgpt vs gemini (accuracy)
    mean A=0.9576  mean B=0.9635  diff=-0.0059
    Welch t=-8.950  df=19.9  p=2.04e-08
-   Mann-Whitney U=-16.6  p=3.68e-10
+   Mann-Whitney U=11.5  p=4.96e-08
    Cohen d=-2.83  Hedges g=-2.77
 
 T1 chatgpt vs grok (accuracy)
    mean A=0.9576  mean B=0.9572  diff=+0.0004
    Welch t=0.194  df=19.1  p=8.49e-01
-   Mann-Whitney U=184.4  p=6.59e-01
+   Mann-Whitney U=198.0  p=9.65e-01
    Cohen d=0.06  Hedges g=0.06
 
 T1 claude vs gemini (accuracy)
    mean A=0.9668  mean B=0.9635  diff=+0.0033
    Welch t=1.405  df=22.0  p=1.74e-01
-   Mann-Whitney U=120.4  p=3.16e-02
+   Mann-Whitney U=119.0  p=2.87e-02
    Cohen d=0.44  Hedges g=0.44
 
 T1 claude vs grok (accuracy)
    mean A=0.9668  mean B=0.9572  diff=+0.0096
    Welch t=3.105  df=37.7  p=3.60e-03
-   Mann-Whitney U=92.1  p=3.58e-03
+   Mann-Whitney U=89.5  p=2.86e-03
    Cohen d=0.98  Hedges g=0.96
 
 T1 gemini vs grok (accuracy)
    mean A=0.9635  mean B=0.9572  diff=+0.0063
    Welch t=2.870  df=22.6  p=8.75e-03
-   Mann-Whitney U=84.5  p=1.73e-03
+   Mann-Whitney U=84.5  p=1.72e-03
    Cohen d=0.91  Hedges g=0.89
 
 --- Across tiers, converging models (accuracy) ---
 chatgpt T1 vs T3 (accuracy)
    mean A=0.9576  mean B=0.9627  diff=-0.0051
    Welch t=-2.193  df=19.1  p=4.09e-02
-   Mann-Whitney U=74.0  p=2.39e-04
+   Mann-Whitney U=102.5  p=4.52e-03
    Cohen d=-0.69  Hedges g=-0.68
 
 chatgpt T1 vs T2 (accuracy)
    mean A=0.9576  mean B=0.9627  diff=-0.0051
    Welch t=-3.286  df=19.2  p=3.85e-03
-   Mann-Whitney U=79.1  p=5.62e-04
+   Mann-Whitney U=101.0  p=4.78e-03
    Cohen d=-1.04  Hedges g=-1.02
 
 claude T1 vs T3 (accuracy)
    mean A=0.9668  mean B=0.9623  diff=+0.0045
    Welch t=1.475  df=37.2  p=1.49e-01
-   Mann-Whitney U=131.7  p=6.54e-02
+   Mann-Whitney U=130.0  p=5.89e-02
    Cohen d=0.47  Hedges g=0.46
 
 claude T1 vs T2 (accuracy)
    mean A=0.9668  mean B=0.9583  diff=+0.0085
    Welch t=3.413  df=25.9  p=2.13e-03
-   Mann-Whitney U=84.5  p=1.81e-03
+   Mann-Whitney U=82.5  p=1.50e-03
    Cohen d=1.08  Hedges g=1.06
 
 --- Convergence-failure contrasts (accuracy) ---
 chatgpt T3 vs gemini T3
    mean A=0.9627  mean B=0.5759  diff=+0.3867
    Welch t=68.897  df=26.4  p=2.44e-31
-   Mann-Whitney U=1.2  p=7.99e-08
+   Mann-Whitney U=0.0  p=6.67e-08
    Cohen d=21.79  Hedges g=21.35
 
 gemini T2 vs gemini T3
    mean A=0.9634  mean B=0.5759  diff=+0.3874
    Welch t=73.416  df=21.4  p=3.35e-27
-   Mann-Whitney U=0.6  p=7.17e-08
+   Mann-Whitney U=0.0  p=6.55e-08
    Cohen d=23.22  Hedges g=22.75
 
 grok T2 vs grok T3
    mean A=0.9568  mean B=0.5908  diff=+0.3659
    Welch t=25.976  df=7.1  p=2.87e-08
-   Mann-Whitney U=3.5  p=9.61e-05
+   Mann-Whitney U=0.0  p=4.56e-05
    Cohen d=17.49  Hedges g=16.98
 
 --- Claude loss trajectory (calibration) ---

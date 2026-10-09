@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LLM Helmet CNN Study</title>
+<meta name="description" content="Resultados animados del estudio de CNN generadas por cuatro LLM para clasificar el uso de casco de seguridad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a site-inspection report. Hard-hat amber is the single accent; every
+   section is a numbered inspection step because the study is a real pipeline. */
+:root{
+  --bg:#e8ebee; --surface:#f6f7f8; --ink:#141a20; --muted:#59646f; --rule:#c5ccd3;
+  --amber:#e3a008; --amber-ink:#8d5b00; --hatch:#141a20;
+  --c-chatgpt:#2b7f86; --c-claude:#b45c33; --c-gemini:#4763c4; --c-grok:#68707b;
+  --ok:#2c7a4b; --fail:#b8401a; --code-bg:#141a20; --code-fg:#e6e9ec;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1317; --surface:#161b21; --ink:#e6e9ec; --muted:#93a0ab; --rule:#2a333c;
+  --amber:#f2b52e; --amber-ink:#f2b52e; --hatch:#0f1317;
+  --c-chatgpt:#4fb3ba; --c-claude:#e08a5c; --c-gemini:#7d95ec; --c-grok:#a3aab4;
+  --ok:#5cc48a; --fail:#f07a4e; --code-bg:#0a0d10; --code-fg:#e6e9ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1317; --surface:#161b21; --ink:#e6e9ec; --muted:#93a0ab; --rule:#2a333c;
+  --amber:#f2b52e; --amber-ink:#f2b52e; --hatch:#0f1317;
+  --c-chatgpt:#4fb3ba; --c-claude:#e08a5c; --c-gemini:#7d95ec; --c-grok:#a3aab4;
+  --ok:#5cc48a; --fail:#f07a4e; --code-bg:#0a0d10; --code-fg:#e6e9ec; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f-body)}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration-color:var(--amber);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
+.brand{font:800 20px/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.brand i{width:22px;height:12px;border-radius:12px 12px 2px 2px;background:var(--amber);display:inline-block;box-shadow:0 3px 0 -1px var(--ink)}
+.bar nav{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap;font:500 13px/1 var(--f-mono)}
+.bar nav a{text-decoration:none;color:var(--muted)}
+.bar nav a:hover{color:var(--ink)}
+.lang{font:500 12px/1 var(--f-mono);border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:6px 9px;border-radius:4px;cursor:pointer}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(36px,7vw,80px) 32px}
+.eyebrow{font:500 12px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink)}
+h1{font:900 clamp(44px,8vw,96px)/.9 var(--f-display);text-transform:uppercase;letter-spacing:.005em;margin:.25em 0 .3em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--amber-ink)}
+.lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:56ch;margin:0}
+.lede b{color:var(--ink);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{font:600 14px/1 var(--f-body);padding:12px 16px;border-radius:4px;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:var(--amber);border-color:var(--amber);color:#141a20}
+
+/* scanner */
+.scanner{position:relative;background:var(--ink);border-radius:6px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
+.scanner .frame{position:relative;aspect-ratio:1;max-width:100%;overflow:hidden;border-radius:3px;background:#222}
+.scanner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.scanner svg{position:absolute;inset:0;width:100%;height:100%}
+.scanline{position:absolute;left:0;right:0;height:2px;background:var(--amber);box-shadow:0 0 18px 4px color-mix(in srgb,var(--amber) 60%,transparent);top:0;opacity:0}
+.scanner.run .scanline{animation:scan 1.1s ease-in-out forwards}
+@keyframes scan{0%{top:0;opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.box{fill:none;stroke-width:.8;stroke-dasharray:400;stroke-dashoffset:400}
+.scanner.run .box{animation:draw .7s 1s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.stamp{position:absolute;left:14px;bottom:14px;font:800 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.06em;
+  padding:8px 12px 7px;border:3px solid currentColor;border-radius:3px;background:rgba(15,19,23,.78);transform:rotate(-4deg) scale(1.6);opacity:0}
+.scanner.run .stamp{animation:stamp .35s 1.6s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes stamp{to{opacity:1;transform:rotate(-4deg) scale(1)}}
+.stamp small{display:block;font:500 10px/1.3 var(--f-mono);letter-spacing:.05em;text-transform:none;opacity:.85;margin-top:3px}
+.scanmeta{display:flex;justify-content:space-between;gap:8px;font:500 11px/1.4 var(--f-mono);color:#aeb7c0;padding:8px 2px 0}
+.dots{display:flex;gap:5px}.dots span{width:7px;height:7px;border-radius:50%;background:#3a434d}.dots span.on{background:var(--amber)}
+
+/* key figures */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);margin-block:8px 0}
+.fig{padding:18px 16px 16px 0}
+.fig + .fig{padding-left:16px;border-left:1px solid var(--rule)}
+.fig b{display:block;font:800 clamp(34px,5vw,52px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.fig span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section.step{padding-block:clamp(48px,8vw,88px) 0}
+.sh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;align-items:baseline;margin-bottom:24px}
+.sh .n{font:900 clamp(48px,7vw,72px)/.8 var(--f-display);color:transparent;-webkit-text-stroke:1.5px var(--amber-ink);grid-row:span 2}
+h2{font:800 clamp(30px,4vw,44px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.01em;margin:0;text-wrap:balance}
+.sh p{margin:6px 0 0;color:var(--muted);max-width:68ch}
+.note{font-size:13.5px;color:var(--muted);max-width:75ch}
+.mono{font-family:var(--f-mono)}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:minmax(0,.8fr) 28px minmax(0,2.2fr) 28px minmax(0,.8fr);gap:0;align-items:stretch}
+.stage{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:16px;min-width:0}
+.stage h3{font:700 13px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px;color:var(--amber-ink)}
+.stage p{margin:0;font-size:14px;color:var(--muted)}
+.stage .big{font:800 34px/1 var(--f-display);color:var(--ink);display:block;margin-bottom:6px}
+.arrow{align-self:center;height:2px;background:var(--rule);position:relative;overflow:hidden}
+.arrow::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;background:var(--amber);animation:flow 1.8s linear infinite}
+@keyframes flow{to{left:100%}}
+.matrix{display:grid;grid-template-columns:auto repeat(4,minmax(0,1fr));gap:6px;font-size:13px}
+.matrix .hd{font:600 11px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);align-self:end;padding-bottom:2px}
+.matrix .tl{font:600 12px/1.3 var(--f-mono);align-self:center;padding-right:6px}
+.matrix .tl small{display:block;font-weight:400;color:var(--muted);font-family:var(--f-body)}
+.cell{border-radius:3px;padding:8px 6px;text-align:center;font:500 12px/1.2 var(--f-mono);border:1px solid var(--rule);background:var(--bg);font-variant-numeric:tabular-nums;position:relative}
+.cell b{display:block;font:800 20px/1 var(--f-display);margin-bottom:2px}
+.cell.bad{background:repeating-linear-gradient(-45deg,var(--amber) 0 7px,var(--hatch) 7px 14px);color:#fff;border-color:transparent}
+.cell.bad b,.cell.bad span{background:rgba(15,19,23,.82);padding:1px 4px;border-radius:2px}
+.cell.lit{animation:lit .6s ease-out backwards}
+@keyframes lit{from{transform:scale(.85);opacity:.2}}
+
+/* chart */
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:clamp(12px,2.4vw,24px)}
+.controls{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-bottom:14px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.seg button{font:500 12.5px/1 var(--f-mono);padding:8px 10px;background:transparent;color:var(--muted);border:0;border-right:1px solid var(--rule);cursor:pointer}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.ctl-label{font:600 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:640px;height:auto}
+.chart text{fill:var(--muted);font:11px var(--f-mono)}
+.chart .tier{fill:var(--ink);font:800 15px var(--f-display);letter-spacing:.06em}
+.grid line{stroke:var(--rule)}
+.dot{animation:drop .6s cubic-bezier(.3,1.4,.5,1) backwards}
+@keyframes drop{from{opacity:0;transform:translateY(-26px)}}
+.mean{stroke:var(--ink);stroke-width:2.5;transform-box:fill-box;transform-origin:center;animation:grow .5s ease-out backwards}
+@keyframes grow{from{opacity:0;transform:scaleX(0)}}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 12.5px var(--f-mono);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font:500 12px/1.45 var(--f-mono);padding:8px 10px;border-radius:4px;z-index:20;max-width:240px}
+
+/* ablation */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.abl{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:8px}
+.abl .hd{font:600 11px/1.3 var(--f-mono);overflow-wrap:anywhere;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);align-self:end}
+.abl .rl{font:600 12.5px/1.3 var(--f-mono);align-self:center;padding-right:6px;max-width:150px}
+.abl > *{min-width:0}
+.acell{border-radius:4px;padding:14px;border:1px solid var(--rule);background:var(--bg);min-height:118px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.acell b{font:800 38px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.acell small{font:500 11.5px var(--f-mono);color:var(--muted)}
+.meter{height:8px;background:var(--rule);border-radius:4px;overflow:hidden;position:relative}
+.meter i{position:absolute;inset:0 auto 0 0;background:var(--ok);border-radius:4px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.acell.fail .meter i{background:var(--fail)}
+.acell.fail b{color:var(--fail)}
+.chance{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);left:50%}
+.verdict{font-size:15px;max-width:60ch}
+.verdict strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--amber) 45%,transparent) 60%)}
+
+/* robustness */
+.bars{display:flex;flex-direction:column;gap:10px}
+.brow{display:grid;grid-template-columns:150px minmax(0,1fr) 64px;gap:12px;align-items:center;font:500 13px var(--f-mono)}
+.brow .track{height:22px;background:var(--bg);border:1px solid var(--rule);border-radius:3px;position:relative;overflow:hidden}
+.brow .fill{position:absolute;inset:0 auto 0 0;background:var(--ink);transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.brow.kf .fill{background:var(--amber)}
+.brow .v{text-align:right;font-variant-numeric:tabular-nums}
+.axisnote{display:flex;justify-content:space-between;font:11px var(--f-mono);color:var(--muted);margin-left:162px;margin-right:76px}
+
+/* anova */
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);font-size:14px}
+th{font:600 11px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+td.num{font-family:var(--f-mono);text-align:right}
+.fbar{height:10px;background:var(--amber);border-radius:2px;transition:width 1.2s ease-out;min-width:2px}
+
+/* reproduce */
+pre{background:var(--code-bg);color:var(--code-fg);border:1px solid var(--rule);font:13px/1.6 var(--f-mono);padding:16px 18px;border-radius:6px;overflow-x:auto;margin:0}
+pre .c{color:#8d99a5}
+.files{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.files div{border-top:2px solid var(--ink);padding-top:10px;min-width:0}
+.files h3{font:700 13px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}
+.files p{margin:0;font-size:14px;color:var(--muted)}
+.files code{font:12.5px var(--f-mono);color:var(--ink);word-break:break-word}
+footer{margin-top:72px;border-top:1px solid var(--rule);padding-block:24px 40px;font-size:13px;color:var(--muted)}
+.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--amber) 0 12px,var(--ink) 12px 24px);margin-top:56px}
+
+@media (max-width:860px){
+  .hero,.two{grid-template-columns:minmax(0,1fr)}
+  .scanner{max-width:420px}
+  .pipe{grid-template-columns:minmax(0,1fr)}
+  .arrow{height:22px;width:2px;justify-self:center}
+  .arrow::after{left:0;top:-40%;width:100%;height:40%;animation-name:flowv}
+  .files{grid-template-columns:minmax(0,1fr)}
+  .figs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fig:nth-child(3){padding-left:0;border-left:0}
+  .fig:nth-child(n+3){border-top:1px solid var(--rule)}
+}
+@keyframes flowv{to{top:100%}}
+@media (max-width:520px){
+  .brow{grid-template-columns:96px minmax(0,1fr) 56px;gap:8px;font-size:12px}
+  .axisnote{margin-left:104px;margin-right:64px}
+  .matrix{font-size:12px}.cell b{font-size:17px}
+  .bar nav{display:none}
+  .abl .rl{font-size:11px;max-width:84px}
+  .acell{padding:10px;min-height:96px}.acell b{font-size:28px}
+  .anova-bar{display:none}
+  th,td{padding:8px 6px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .scanline{display:none}.box{stroke-dashoffset:0}.stamp{opacity:1;transform:rotate(-4deg)}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brand"><i aria-hidden="true"></i>LLM · Helmet · CNN</div>
+    <nav aria-label="Secciones">
+      <a href="#protocolo" data-i18n="nav1">Protocolo</a>
+      <a href="#resultados" data-i18n="nav2">Resultados</a>
+      <a href="#tier3" data-i18n="nav3">Tier 3</a>
+      <a href="#robustez" data-i18n="nav4">Robustez</a>
+      <a href="#reproducir" data-i18n="nav5">Reproducir</a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Cambiar idioma">EN</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow" data-i18n="eyebrow">Discover Artificial Intelligence · material de revisión</div>
+      <h1 data-i18n-html="h1">Doce CNN escritas por LLM. Una pregunta: <em>¿lleva casco?</em></h1>
+      <p class="lede" data-i18n-html="lede">ChatGPT, Claude, Gemini y Grok generaron el código de entrenamiento con tres niveles de instrucción. Cada script se ejecutó hasta <b>20 veces</b> sobre el mismo conjunto de imágenes. Aquí está lo que salió de esos registros, sin retoques.</p>
+      <div class="cta">
+        <a class="btn primary" href="#resultados" data-i18n="cta1">Ver los resultados</a>
+        <a class="btn" href="https://github.com/jorgeklz/llm-helmet-ppe" data-i18n="cta2">Código en GitHub</a>
+      </div>
+    </div>
+    <figure class="scanner" id="scanner" style="margin:0" aria-label="Ejemplos del conjunto de prueba">
+      <div class="frame">
+        <img id="scanImg" alt="">
+        <div class="scanline"></div>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect id="scanBox" class="box" x="0" y="0" width="0" height="0"/></svg>
+        <div class="stamp" id="stamp"></div>
+      </div>
+      <figcaption class="scanmeta"><span id="scanCap">dataset/test</span><span class="dots" id="dots"></span></figcaption>
+    </figure>
+  </div>
+
+  <div class="figs" id="figs">
+    <div class="fig"><b data-count="972">972</b><span data-i18n="f1">imágenes, 486 por clase</span></div>
+    <div class="fig"><b data-count="12">12</b><span data-i18n="f2">scripts generados por LLM</span></div>
+    <div class="fig"><b data-count="228">228</b><span data-i18n="f3">ejecuciones registradas</span></div>
+    <div class="fig"><b data-count="0.989" data-dec="3">0.989</b><span data-i18n="f4">exactitud media en 5-fold CV</span></div>
+  </div>
+
+  <!-- 1 -->
+  <section class="step" id="protocolo">
+    <div class="sh"><span class="n">01</span><h2 data-i18n="s1t">Protocolo</h2>
+      <p data-i18n="s1p">Mismo conjunto de datos, cuatro modelos de lenguaje, tres niveles de prompt. Lo único que cambia entre celdas es quién escribió el código y con cuántas restricciones.</p></div>
+    <div class="pipe" id="pipe">
+      <div class="stage"><h3 data-i18n="p1h">Datos</h3><span class="big" id="dsBig">478 / 494</span><p data-i18n="p1p">entrenamiento / prueba. Imágenes 640×640 con etiqueta .txt: 0 = casco, 1 = sin casco.</p></div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="stage">
+        <h3 data-i18n="p2h">Tier × LLM → exactitud media</h3>
+        <div class="matrix" id="matrix"></div>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="stage"><h3 data-i18n="p3h">Estadística</h3><span class="big">n = 20</span><p data-i18n="p3p">por configuración (8 en Grok Tier 3). Welch, Mann-Whitney, d de Cohen y ANOVA de dos vías.</p></div>
+    </div>
+    <p class="note" data-i18n-html="tiersNote"><b>Tier 1</b>: instrucción básica. <b>Tier 2</b>: añade el vector de hiperparámetros θ (dropout, tasas de aprendizaje, lote, unidades). <b>Tier 3</b>: prescribe además arquitectura y calendario de aprendizaje. Las celdas rayadas no convergieron.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="step" id="resultados">
+    <div class="sh"><span class="n">02</span><h2 data-i18n="s2t">Cada ejecución, un punto</h2>
+      <p data-i18n="s2p">Los puntos son ejecuciones individuales leídas de los CSV crudos. La raya horizontal es la media y la franja, su IC del 95 %. Pasa el cursor por un punto para ver su valor.</p></div>
+    <div class="panel">
+      <div class="controls">
+        <span class="ctl-label" data-i18n="metric">Métrica</span>
+        <div class="seg" id="metricSeg" role="group"></div>
+        <span class="ctl-label" data-i18n="scale">Escala</span>
+        <div class="seg" id="scaleSeg" role="group">
+          <button type="button" data-scale="full" aria-pressed="true" data-i18n="full">completa</button>
+          <button type="button" data-scale="zoom" aria-pressed="false" data-i18n="zoom">zoom</button>
+        </div>
+      </div>
+      <div class="chart" id="chart"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <p class="note" id="metricNote"></p>
+  </section>
+
+  <!-- 3 -->
+  <section class="step" id="tier3">
+    <div class="sh"><span class="n">03</span><h2 data-i18n="s3t">Por qué colapsa el Tier 3</h2>
+      <p data-i18n="s3p">Gemini y Grok siguieron al pie de la letra la arquitectura multiescala entrenada desde cero. ChatGPT y Claude la sustituyeron por una ResNet18 preentrenada. Un diseño factorial 2×2 aísla la causa.</p></div>
+    <div class="two">
+      <div class="panel">
+        <div class="abl" id="abl"></div>
+      </div>
+      <div>
+        <p class="verdict" data-i18n-html="verdict">Con el mismo calendario, la red preentrenada llega a <strong>0.945–0.947</strong> y la red desde cero se queda en <strong>0.53–0.57</strong>, cerca del azar. Cambiar el planificador apenas mueve el resultado. El factor decisivo es <strong>partir de cero con 478 imágenes</strong>.</p>
+        <p class="note" data-i18n="ablNote">5 ejecuciones × 20 épocas por celda. Misma partición, aumentos, optimizador y parada temprana. La línea vertical marca 0.5 (azar).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="step" id="robustez">
+    <div class="sh"><span class="n">04</span><h2 data-i18n="s4t">Fuera de una sola partición</h2>
+      <p data-i18n="s4p">Validación cruzada estratificada de 5 pliegues sobre las 972 imágenes y una línea base diseñada por un experto con protocolo fijo de 30 ejecuciones.</p></div>
+    <div class="panel">
+      <div class="bars" id="bars"></div>
+      <div class="axisnote"><span>0.90</span><span>0.95</span><span>1.00</span></div>
+    </div>
+    <p class="note" id="kfNote"></p>
+  </section>
+
+  <!-- 5 -->
+  <section class="step" id="anova">
+    <div class="sh"><span class="n">05</span><h2 data-i18n="s5t">ANOVA de dos vías</h2>
+      <p data-i18n="s5p">Exactitud con factores LLM y Tier, método de medias no ponderadas (celdas con n desigual). La interacción es tan fuerte como los efectos principales: el efecto del nivel de prompt depende de qué LLM lo recibe.</p></div>
+    <div class="panel tbl">
+      <table><thead><tr><th data-i18n="factor">Factor</th><th class="num">SS</th><th class="num">df</th><th class="num">F</th><th class="num">p</th><th class="anova-bar" style="width:30%"></th></tr></thead><tbody id="anovaBody"></tbody></table>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="step" id="reproducir">
+    <div class="sh"><span class="n">06</span><h2 data-i18n="s6t">Reproducir</h2>
+      <p data-i18n="s6p">Todo lo que muestra esta página sale de archivos del repositorio. Con PyTorch instalado, un comando relanza los experimentos de la revisión y otro regenera los datos de esta web.</p></div>
+    <pre><span class="c"># experimentos de revisión (k-fold, línea base, ablación)</span>
+pip install -r requirements.txt
+nohup bash run_experiments.sh &gt; revision/logs/run_all.log 2&gt;&amp;1 &amp;
+
+<span class="c"># estadística a partir de los registros crudos (sin entrenar)</span>
+python revision/stats_analysis.py
+
+<span class="c"># datos de esta web</span>
+python docs/build_data.py</pre>
+    <div class="files" style="margin-top:24px">
+      <div><h3 data-i18n="fa">Scripts</h3><p><code>tier{1,2,3}-{chatgpt,claude,gemini,grok}.py</code> <span data-i18n="fap">tal como los generó cada LLM.</span></p></div>
+      <div><h3 data-i18n="fb">Registros</h3><p><code>*_results.csv · *_summary.csv · *-output.txt</code> <span data-i18n="fbp">por ejecución.</span></p></div>
+      <div><h3 data-i18n="fc">Revisión</h3><p><code>revision/</code> <span data-i18n="fcp">estadística, k-fold, línea base, ablación y matriz de confusión regenerada.</span></p></div>
+    </div>
+  </section>
+</main>
+
+<div class="hazard" aria-hidden="true"></div>
+<footer><div class="wrap">Jorge Párraga-Álava · <span class="mono">jorge.parraga@utm.edu.ec</span> · Universidad Técnica de Manabí</div></footer>
+
+<script src="data.js"></script>
+<script>
+(function(){
+const D = window.STUDY;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const LLM_NAME = {chatgpt:'ChatGPT',claude:'Claude',gemini:'Gemini',grok:'Grok'};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const svgNS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs={}, parent) => { const e=document.createElementNS(svgNS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; };
+
+/* ---------- i18n ---------- */
+const T = {
+ en:{nav1:'Protocol',nav2:'Results',nav3:'Tier 3',nav4:'Robustness',nav5:'Reproduce',
+  eyebrow:'Discover Artificial Intelligence · revision material',
+  h1:'Twelve CNNs written by LLMs. One question: <em>helmet on?</em>',
+  lede:'ChatGPT, Claude, Gemini and Grok generated the training code under three levels of instruction. Each script ran up to <b>20 times</b> on the same image set. This is what came out of those logs, untouched.',
+  cta1:'See the results',cta2:'Code on GitHub',
+  f1:'images, 486 per class',f2:'LLM-generated scripts',f3:'logged runs',f4:'mean accuracy, 5-fold CV',
+  s1t:'Protocol',s1p:'Same data, four language models, three prompt levels. The only thing that changes between cells is who wrote the code and under how many constraints.',
+  p1h:'Data',p1p:'train / test. 640×640 images with a .txt label: 0 = helmet, 1 = no helmet.',
+  p2h:'Tier × LLM → mean accuracy',p3h:'Statistics',p3p:'per configuration (8 for Grok Tier 3). Welch, Mann-Whitney, Cohen d and two-way ANOVA.',
+  tiersNote:'<b>Tier 1</b>: basic instruction. <b>Tier 2</b>: adds the hyperparameter vector θ (dropout, learning rates, batch, units). <b>Tier 3</b>: also prescribes architecture and learning-rate schedule. Hatched cells did not converge.',
+  s2t:'Every run, one dot',s2p:'Dots are individual runs read from the raw CSVs. The horizontal tick is the mean and the band its 95% CI. Hover a dot to see its value.',
+  metric:'Metric',scale:'Scale',full:'full',zoom:'zoom',
+  s3t:'Why Tier 3 collapses',s3p:'Gemini and Grok followed the prescribed from-scratch multi-scale architecture to the letter. ChatGPT and Claude swapped it for a pretrained ResNet18. A 2×2 factorial design isolates the cause.',
+  verdict:'Under the same schedule the pretrained network reaches <strong>0.945–0.947</strong> while the from-scratch network stays at <strong>0.53–0.57</strong>, close to chance. Changing the scheduler barely moves the result. The decisive factor is <strong>training from scratch on 478 images</strong>.',
+  ablNote:'5 runs × 20 epochs per cell. Same split, augmentation, optimizer and early stopping. The vertical line marks 0.5 (chance).',
+  s4t:'Beyond a single split',s4p:'Stratified 5-fold cross-validation over all 972 images, and an expert-designed baseline with a fixed 30-run protocol.',
+  s5t:'Two-way ANOVA',s5p:'Accuracy with LLM and Tier as factors, unweighted-means method (unequal cell n). The interaction is as strong as the main effects: what a prompt level does depends on which LLM receives it.',
+  factor:'Factor',s6t:'Reproduce',s6p:'Everything on this page comes from files in the repository. With PyTorch installed, one command re-runs the revision experiments and another regenerates this site’s data.',
+  fa:'Scripts',fap:'exactly as each LLM generated them.',fb:'Logs',fbp:'per run.',fc:'Revision',fcp:'statistics, k-fold, baseline, ablation and the regenerated confusion matrix.',
+  helmet:'Helmet',nohelmet:'No helmet',label:'label',
+  m_accuracy:'Accuracy',m_auc:'AUC',m_precision:'Precision',m_recall_pos:'Recall+',m_recall_neg:'Recall−',m_loss:'Loss',m_time_sec:'Time (min)',
+  note_loss:'Loss is reported as each script computed it (different criteria and reductions), so compare it within a script, not across LLMs. Not recovered for Gemini Tier 3.',
+  note_time:'Wall-clock time per run on the author’s CPU. Gemini Tier 3 logged time in a different unit and is left out.',
+  note_def:'Test set of 494 images. Grok Tier 3 has 8 runs; every other configuration has 20.',
+  pre:'pretrained ResNet18',scratch:'from-scratch multi-scale',cos:'CosineAnnealingLR',rop:'ReduceLROnPlateau',
+  run:'run',mean:'mean',fold:'Fold',kfmean:'5-fold mean',baseline:'Expert baseline',bestllm:'Best LLM (Claude T1)',
+  kfNote:(m,lo,hi,auc)=>`5-fold accuracy ${m} (95% CI [${lo}, ${hi}]), AUC ${auc}. The expert baseline and the best LLM configuration land within 0.002 of each other.`},
+ es:{m_accuracy:'Exactitud',m_auc:'AUC',m_precision:'Precisión',m_recall_pos:'Recall+',m_recall_neg:'Recall−',m_loss:'Pérdida',m_time_sec:'Tiempo (min)',
+  helmet:'Con casco',nohelmet:'Sin casco',label:'etiqueta',
+  note_loss:'La pérdida se reporta tal como la calculó cada script (criterios y reducciones distintos), así que conviene compararla dentro de un mismo script y no entre LLM. No se recuperó para Gemini Tier 3.',
+  note_time:'Tiempo de reloj por ejecución en la CPU del autor. Gemini Tier 3 registró el tiempo en otra unidad y queda fuera.',
+  note_def:'Conjunto de prueba de 494 imágenes. Grok Tier 3 tiene 8 ejecuciones; el resto, 20.',
+  pre:'ResNet18 preentrenada',scratch:'multiescala desde cero',cos:'CosineAnnealingLR',rop:'ReduceLROnPlateau',
+  run:'ejecución',mean:'media',fold:'Pliegue',kfmean:'Media 5-fold',baseline:'Línea base experta',bestllm:'Mejor LLM (Claude T1)',
+  kfNote:(m,lo,hi,auc)=>`Exactitud 5-fold ${m} (IC 95 % [${lo}, ${hi}]), AUC ${auc}. La línea base experta y la mejor configuración LLM quedan a menos de 0.002 entre sí.`}
+};
+const ES_STATIC = {};
+document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(n=>{
+  const k=n.dataset.i18n||n.dataset.i18nHtml; ES_STATIC[k]=n.dataset.i18nHtml?n.innerHTML:n.textContent;
+});
+let lang='es';
+try{ lang = localStorage.getItem('helmet-lang') || (navigator.language||'es').slice(0,2); }catch(e){ lang=(navigator.language||'es').slice(0,2); }
+if(lang!=='en') lang='es';
+const t = k => (T[lang] && T[lang][k]!==undefined) ? T[lang][k] : (T.es[k]!==undefined ? T.es[k] : ES_STATIC[k]);
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(n=>{ n.textContent = lang==='en' ? (T.en[n.dataset.i18n]??ES_STATIC[n.dataset.i18n]) : ES_STATIC[n.dataset.i18n]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(n=>{ n.innerHTML = lang==='en' ? (T.en[n.dataset.i18nHtml]??ES_STATIC[n.dataset.i18nHtml]) : ES_STATIC[n.dataset.i18nHtml]; });
+  const b=document.getElementById('lang'); b.textContent = lang==='en'?'ES':'EN'; b.setAttribute('aria-label', lang==='en'?'Cambiar a español':'Switch to English');
+  buildMetricSeg(); renderChart(false); buildAblation(false); buildBars(false); scanShow(scanI, false);
+}
+document.getElementById('lang').addEventListener('click',()=>{ lang = lang==='en'?'es':'en'; try{localStorage.setItem('helmet-lang',lang)}catch(e){} applyLang(); });
+
+/* ---------- scanner ---------- */
+const S = D.samples, img=document.getElementById('scanImg'), box=document.getElementById('scanBox'),
+      stamp=document.getElementById('stamp'), scanner=document.getElementById('scanner'), dots=document.getElementById('dots'), cap=document.getElementById('scanCap');
+S.forEach(()=>dots.appendChild(document.createElement('span')));
+let scanI=0;
+function scanShow(i, animate=true){
+  const s=S[i]; img.src=s.src;
+  const [cx,cy,w,h]=s.box; box.setAttribute('x',(cx-w/2)*100); box.setAttribute('y',(cy-h/2)*100); box.setAttribute('width',w*100); box.setAttribute('height',h*100);
+  const col = s.label===0 ? css('--amber') : css('--fail');
+  box.style.stroke=col; stamp.style.color=col;
+  stamp.innerHTML = (s.label===0?t('helmet'):t('nohelmet')) + `<small>${t('label')} ${s.label} · test ${i+1}/${S.length}</small>`;
+  img.alt = s.label===0?t('helmet'):t('nohelmet');
+  [...dots.children].forEach((d,j)=>d.classList.toggle('on',j===i));
+  cap.textContent = `dataset/test · ${s.label===0?'CON_Casco':'SIN_Casco'}`;
+  if(animate && !reduce){ scanner.classList.remove('run'); void scanner.offsetWidth; scanner.classList.add('run'); }
+  else scanner.classList.add('run');
+}
+scanShow(0);
+if(!reduce) setInterval(()=>{ if(document.hidden) return; scanI=(scanI+1)%S.length; scanShow(scanI); }, 3600);
+
+/* ---------- counters + reveal ---------- */
+function countUp(n){
+  const end=parseFloat(n.dataset.count), dec=+(n.dataset.dec||0); if(reduce) return;
+  const t0=performance.now(), dur=1300;
+  (function f(now){ const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3); n.textContent=(end*e).toFixed(dec); if(p<1) requestAnimationFrame(f); })(t0);
+}
+const once = (node, fn) => {
+  if(!('IntersectionObserver' in window)) return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ io.disconnect(); fn(); } }),{threshold:.25});
+  io.observe(node);
+};
+once(document.getElementById('figs'), ()=>document.querySelectorAll('[data-count]').forEach(countUp));
+
+/* ---------- matrix ---------- */
+document.getElementById('dsBig').textContent = `${D.dataset.train} / ${D.dataset.test}`;
+function buildMatrix(play){
+  const m=document.getElementById('matrix'); m.innerHTML='<span></span>'+D.llms.map(l=>`<span class="hd">${LLM_NAME[l]}</span>`).join('');
+  let k=0;
+  D.tiers.forEach(tr=>{
+    m.insertAdjacentHTML('beforeend',`<span class="tl">Tier ${tr}</span>`);
+    D.llms.forEach(l=>{
+      const s=D.summary[`${tr}-${l}`].accuracy, bad=s.mean<0.8;
+      m.insertAdjacentHTML('beforeend',`<div class="cell${bad?' bad':''}${play?' lit':''}" style="animation-delay:${(k++)*90}ms"><b>${s.mean.toFixed(3)}</b><span>n=${s.n}</span></div>`);
+    });
+  });
+}
+buildMatrix(false); once(document.getElementById('pipe'), ()=>buildMatrix(true));
+
+/* ---------- strip chart ---------- */
+const METRICS=['accuracy','auc','precision','recall_pos','recall_neg','loss','time_sec'];
+let metric='accuracy', scale='full';
+function buildMetricSeg(){
+  const seg=document.getElementById('metricSeg'); seg.innerHTML='';
+  METRICS.forEach(m=>{ const b=document.createElement('button'); b.type='button'; b.textContent=t('m_'+m); b.setAttribute('aria-pressed',m===metric); b.onclick=()=>{metric=m; buildMetricSeg(); renderChart(true);}; seg.appendChild(b); });
+  document.querySelectorAll('#scaleSeg button').forEach(b=>{ b.setAttribute('aria-pressed', b.dataset.scale===scale); b.onclick=()=>{scale=b.dataset.scale; buildMetricSeg(); renderChart(true);}; });
+  document.getElementById('legend').innerHTML = D.llms.map(l=>`<span><i style="background:var(--c-${l})"></i>${LLM_NAME[l]}</span>`).join('');
+}
+function vals(key){ const r=D.runs[key][metric]; if(!r) return null; return metric==='time_sec' ? r.map(v=>v/60) : r; }
+function niceTicks(lo,hi,n=5){ const span=hi-lo, step0=span/n, mag=Math.pow(10,Math.floor(Math.log10(step0))), err=step0/mag, step=(err>=7.5?10:err>=3.5?5:err>=1.5?2:1)*mag;
+  const out=[]; for(let v=Math.ceil(lo/step)*step; v<=hi+1e-9; v+=step) out.push(+v.toFixed(10)); return {ticks:out,step}; }
+const tip=document.createElement('div'); tip.className='tip'; tip.hidden=true; document.body.appendChild(tip);
+function renderChart(play){
+  const host=document.getElementById('chart'); host.innerHTML='';
+  const W=960,H=420,ml=58,mr=12,mt=34,mb=40, iw=W-ml-mr, ih=H-mt-mb;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':t('m_'+metric)},host);
+  let all=[]; D.tiers.forEach(tr=>D.llms.forEach(l=>{const v=vals(`${tr}-${l}`); if(v) all=all.concat(v);}));
+  let lo=Math.min(...all), hi=Math.max(...all);
+  const bounded = ['accuracy','auc','precision','recall_pos','recall_neg'].includes(metric);
+  if(bounded){
+    if(scale==='zoom'){ const conv=all.filter(v=>v>0.85); lo=Math.min(...conv); hi=1; }
+    else { lo=Math.min(lo,0.5); hi=1; }
+  } else if(scale==='zoom'){ const s=[...all].sort((a,b)=>a-b); hi=s[Math.floor(s.length*0.9)]; lo=0; } else lo=0;
+  const {ticks,step}=niceTicks(lo,hi); lo=Math.min(lo,ticks[0]); if(!bounded) hi=Math.max(hi,ticks[ticks.length-1]);
+  if(bounded && scale==='zoom') lo=Math.floor(lo/step)*step;
+  const y=v=>mt+ih-(Math.min(Math.max(v,lo),hi)-lo)/(hi-lo)*ih;
+  const g=el('g',{class:'grid'},svg);
+  niceTicks(lo,hi).ticks.forEach(v=>{ el('line',{x1:ml,x2:W-mr,y1:y(v),y2:y(v)},g); const tx=el('text',{x:ml-8,y:y(v)+4,'text-anchor':'end'},svg); tx.textContent = metric==='time_sec'? v.toFixed(0) : (v<1&&v>0? v.toFixed(step<0.01?3:2): v); });
+  if(bounded && lo<=0.5){ el('line',{x1:ml,x2:W-mr,y1:y(.5),y2:y(.5),stroke:css('--fail'),'stroke-dasharray':'4 4'},svg); const c=el('text',{x:W-mr,y:y(.5)-6,'text-anchor':'end',fill:css('--fail')},svg); c.textContent=lang==='en'?'chance':'azar'; c.style.fill='var(--fail)'; }
+  const gw=iw/3, cw=gw/4; let k=0;
+  D.tiers.forEach((tr,ti)=>{
+    const gx=ml+ti*gw;
+    if(ti) el('line',{x1:gx,x2:gx,y1:mt-18,y2:H-mb+6,stroke:css('--rule')},svg);
+    const tt=el('text',{x:gx+gw/2,y:mt-14,'text-anchor':'middle',class:'tier'},svg); tt.textContent='TIER '+tr;
+    D.llms.forEach((l,li)=>{
+      const cx=gx+cw*li+cw/2, key=`${tr}-${l}`, v=vals(key);
+      const lab=el('text',{x:cx,y:H-mb+20,'text-anchor':'middle'},svg); lab.textContent=LLM_NAME[l];
+      if(!v){ const na=el('text',{x:cx,y:mt+ih/2,'text-anchor':'middle'},svg); na.textContent='n/d'; return; }
+      const col=`var(--c-${l})`, s=D.summary[key]&&D.summary[key][metric];
+      if(s && metric!=='time_sec'){ el('rect',{x:cx-cw*.36,width:cw*.72,y:y(s.hi),height:Math.max(2,y(s.lo)-y(s.hi)),fill:col,opacity:.18,rx:2},svg); }
+      v.forEach((val,i)=>{
+        const jx=cx+(((i*37)%17)/16-.5)*cw*.5;
+        const c=el('circle',{cx:jx,cy:y(val),r:4.2,fill:col,'fill-opacity':.78,stroke:css('--surface'),'stroke-width':1},svg);
+        if(play&&!reduce){ c.classList.add('dot'); c.style.animationDelay=(k*40+i*18)+'ms'; }
+        c.addEventListener('pointerenter',e=>{ tip.hidden=false; tip.innerHTML=`${LLM_NAME[l]} · Tier ${tr}<br>${t('run')} ${i+1}: <b>${val.toFixed(4)}</b>${s?`<br>${t('mean')} ${s.mean.toFixed(4)} ± ${s.sd.toFixed(4)}`:''}`; });
+        c.addEventListener('pointermove',e=>{ tip.style.left=Math.min(e.clientX+14, innerWidth-250)+'px'; tip.style.top=(e.clientY+14)+'px'; });
+        c.addEventListener('pointerleave',()=>tip.hidden=true);
+      });
+      const mean = v.reduce((a,b)=>a+b,0)/v.length;
+      const ml_=el('line',{x1:cx-cw*.36,x2:cx+cw*.36,y1:y(mean),y2:y(mean),class:'mean'},svg);
+      if(play&&!reduce) ml_.style.animationDelay=(k*40+500)+'ms'; else ml_.style.animation='none';
+      k++;
+    });
+  });
+  const yl=el('text',{x:14,y:mt+ih/2,transform:`rotate(-90 14 ${mt+ih/2})`,'text-anchor':'middle'},svg); yl.textContent=t('m_'+metric);
+  document.getElementById('metricNote').textContent = metric==='loss'?t('note_loss'): metric==='time_sec'?t('note_time'):t('note_def');
+}
+buildMetricSeg(); renderChart(false); once(document.getElementById('chart'), ()=>renderChart(true));
+
+/* ---------- ablation ---------- */
+function buildAblation(play){
+  const a=document.getElementById('abl');
+  const get=(b,s)=>D.ablation.find(x=>x.backbone===b&&x.scheduler===s);
+  a.innerHTML=`<span></span><span class="hd">${t('cos')}</span><span class="hd">${t('rop')}</span>`;
+  [['pretrained_resnet18','pre'],['fromscratch_multiscale','scratch']].forEach(([b,lab])=>{
+    a.insertAdjacentHTML('beforeend',`<span class="rl">${t(lab)}</span>`);
+    ['cosine_annealing','reduce_on_plateau'].forEach(s=>{
+      const c=get(b,s), fail=c.mean<0.8;
+      a.insertAdjacentHTML('beforeend',`<div class="acell${fail?' fail':''}"><div><b data-v="${c.mean}">${c.mean.toFixed(3)}</b><br><small>± ${c.sd.toFixed(3)}</small></div><div class="meter"><i style="width:${play?0:c.mean*100}%" data-w="${c.mean*100}"></i><span class="chance"></span></div></div>`);
+    });
+  });
+  if(play && !reduce){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>a.querySelectorAll('.meter i').forEach(i=>i.style.width=i.dataset.w+'%')));
+    a.querySelectorAll('b[data-v]').forEach(n=>{ n.dataset.count=n.dataset.v; n.dataset.dec=3; countUp(n); });
+  }
+}
+buildAblation(false); once(document.getElementById('abl'), ()=>buildAblation(true));
+
+/* ---------- k-fold bars ---------- */
+function buildBars(play){
+  const best=D.summary['1-claude'].accuracy.mean, kf=D.kfold;
+  const rows=[...kf.folds.map((f,i)=>({l:`${t('fold')} ${i+1}`,v:f.acc,c:'kf'})),{l:t('kfmean'),v:kf.mean,c:'kf'},{l:t('baseline'),v:D.baseline.acc},{l:t('bestllm'),v:best}];
+  const pos=v=>Math.max(0,(v-0.9)/0.1*100);
+  document.getElementById('bars').innerHTML=rows.map(r=>`<div class="brow ${r.c||''}"><span>${r.l}</span><div class="track"><div class="fill" style="width:${play?0:pos(r.v)}%" data-w="${pos(r.v)}"></div></div><span class="v">${r.v.toFixed(4)}</span></div>`).join('');
+  if(play&&!reduce) requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll('#bars .fill').forEach((f,i)=>{f.style.transitionDelay=(i*90)+'ms'; f.style.width=f.dataset.w+'%';})));
+  document.getElementById('kfNote').textContent = t('kfNote')(kf.mean.toFixed(3),kf.lo.toFixed(3),kf.hi.toFixed(3),kf.auc.toFixed(4));
+}
+buildBars(false); once(document.getElementById('bars'), ()=>buildBars(true));
+
+/* ---------- anova ---------- */
+(function(){
+  const maxF=Math.max(...D.anova.map(r=>r.F)), body=document.getElementById('anovaBody');
+  body.innerHTML=D.anova.map(r=>`<tr><td><b>${r.factor}</b></td><td class="num">${r.ss.toFixed(4)}</td><td class="num">${r.df}</td><td class="num">${r.F.toFixed(1)}</td><td class="num" style="white-space:nowrap">${r.p.replace('e-',' × 10<sup>−')}</sup></td><td class="anova-bar"><div class="fbar" style="width:${r.F/maxF*100}%" data-w="${r.F/maxF*100}"></div></td></tr>`).join('');
+  once(body,()=>{ if(reduce) return; const b=body.querySelectorAll('.fbar'); b.forEach(x=>x.style.width='0%'); requestAnimationFrame(()=>requestAnimationFrame(()=>b.forEach((x,i)=>{x.style.transitionDelay=i*150+'ms'; x.style.width=x.dataset.w+'%';}))); });
+})();
+
+if(lang==='en') applyLang();
+})();
+</script>
+</body>
+</html>
