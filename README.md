@@ -6,10 +6,10 @@ pipeline for a binary helmet / no-helmet classifier under three levels of prompt
 instruction. Every generated script was run repeatedly on the same images and every run
 was logged. The manuscript itself is not included.
 
-**Interactive results:** [`docs/index.html`](docs/index.html) is an animated, bilingual (ES/EN)
-page built only from the files in this repository. Once GitHub Pages is enabled
-(Settings → Pages → *Deploy from a branch* → `main` / `/docs`) it is served at
-<https://jorgeklz.github.io/llm-helmet-ppe/>.
+**Interactive results:** <https://jorgeklz.github.io/llm-helmet-ppe/>, an animated,
+bilingual (ES/EN) page built only from the files in this repository. Its source is in
+[`docs/`](docs/); every push to `main` that touches `docs/` republishes it through
+`.github/workflows/pages.yml` (branch `gh-pages`).
 
 ## Study design
 

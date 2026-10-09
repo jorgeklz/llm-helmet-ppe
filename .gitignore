@@ -16,8 +16,9 @@
 # dataset (images + .txt labels)
 !/dataset/
 
-# results website (GitHub Pages from /docs)
+# results website (published to GitHub Pages by .github/workflows/pages.yml)
 !/docs/
+!/.github/
 
 # LLM-generated training scripts (the twelve, by tier and model)
 !/tier1-*.py
