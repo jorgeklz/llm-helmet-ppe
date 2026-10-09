@@ -4,569 +4,572 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LLM Helmet CNN Study</title>
-<meta name="description" content="Resultados animados del estudio de CNN generadas por cuatro LLM para clasificar el uso de casco de seguridad.">
+<meta name="description" content="Resultados animados del estudio de CNN generadas por cuatro LLM para clasificar el uso de casco de seguridad. Universidad Técnica de Manabí.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
 <style>
-/* Layout: a site-inspection report. Hard-hat amber is the single accent; every
-   section is a numbered inspection step because the study is a real pipeline. */
+/* Paleta institucional UTM (verde minimalista), un solo tema claro.
+   Layout: cabecera con logo, columna central de tarjetas blancas. */
 :root{
-  --bg:#e8ebee; --surface:#f6f7f8; --ink:#141a20; --muted:#59646f; --rule:#c5ccd3;
-  --amber:#e3a008; --amber-ink:#8d5b00; --hatch:#141a20;
-  --c-chatgpt:#2b7f86; --c-claude:#b45c33; --c-gemini:#4763c4; --c-grok:#68707b;
-  --ok:#2c7a4b; --fail:#b8401a; --code-bg:#141a20; --code-fg:#e6e9ec;
-  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
-  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#f7f8f5; --superficie:#ffffff; --superficie2:#f0f2ec; --borde:#e1e5db;
+  --texto:#17220f; --texto2:#55604a; --texto3:#98a18d;
+  --g1:#1e6b14; --g2:#2e8a1f; --g3:#4aab30; --g4:#72c255; --g6:#e2f2da;
+  --y3:#d4a80a; --y6:#fdf3cc; --rojo:#b3261e; --rojo6:#fceeed;
+  --c-chatgpt:#1e6b14; --c-claude:#d4a80a; --c-gemini:#72c255; --c-grok:#7a8470;
+  --r:12px;
+  --sombra:0 1px 3px rgba(20,40,10,.06),0 4px 18px rgba(20,40,10,.05);
+  --fs-micro:10.5px; --fs-xs:11.5px; --fs-sm:12.5px; --fs-md:13.5px; --fs-base:14px;
+  --fs-lg:16px; --fs-xl:19px; --fs-2xl:22px; --fs-3xl:26px;
+  --f-titulo:"Playfair Display",Georgia,serif;
+  --f-texto:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0f1317; --surface:#161b21; --ink:#e6e9ec; --muted:#93a0ab; --rule:#2a333c;
-  --amber:#f2b52e; --amber-ink:#f2b52e; --hatch:#0f1317;
-  --c-chatgpt:#4fb3ba; --c-claude:#e08a5c; --c-gemini:#7d95ec; --c-grok:#a3aab4;
-  --ok:#5cc48a; --fail:#f07a4e; --code-bg:#0a0d10; --code-fg:#e6e9ec; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f1317; --surface:#161b21; --ink:#e6e9ec; --muted:#93a0ab; --rule:#2a333c;
-  --amber:#f2b52e; --amber-ink:#f2b52e; --hatch:#0f1317;
-  --c-chatgpt:#4fb3ba; --c-claude:#e08a5c; --c-gemini:#7d95ec; --c-grok:#a3aab4;
-  --ok:#5cc48a; --fail:#f07a4e; --code-bg:#0a0d10; --code-fg:#e6e9ec; color-scheme:dark}
-
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f-body)}
+body{margin:0;font:400 var(--fs-base)/1.6 var(--f-texto);background:var(--bg);color:var(--texto)}
 img{max-width:100%}
 [hidden]{display:none!important}
-a{color:inherit;text-decoration-color:var(--amber);text-underline-offset:3px}
-a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:var(--g1);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:2px;border-radius:6px}
 
-/* top bar */
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
-.bar .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
-.brand{font:800 20px/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
-.brand i{width:22px;height:12px;border-radius:12px 12px 2px 2px;background:var(--amber);display:inline-block;box-shadow:0 3px 0 -1px var(--ink)}
-.bar nav{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap;font:500 13px/1 var(--f-mono)}
-.bar nav a{text-decoration:none;color:var(--muted)}
-.bar nav a:hover{color:var(--ink)}
-.lang{font:500 12px/1 var(--f-mono);border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:6px 9px;border-radius:4px;cursor:pointer}
+.contenedor{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
 
-/* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(36px,7vw,80px) 32px}
-.eyebrow{font:500 12px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink)}
-h1{font:900 clamp(44px,8vw,96px)/.9 var(--f-display);text-transform:uppercase;letter-spacing:.005em;margin:.25em 0 .3em;text-wrap:balance}
-h1 em{font-style:normal;color:var(--amber-ink)}
-.lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:56ch;margin:0}
-.lede b{color:var(--ink);font-weight:600}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.btn{font:600 14px/1 var(--f-body);padding:12px 16px;border-radius:4px;text-decoration:none;border:1px solid var(--ink)}
-.btn.primary{background:var(--ink);color:var(--bg)}
-.btn.primary:hover{background:var(--amber);border-color:var(--amber);color:#141a20}
+/* cabecera */
+.cabecera{background:var(--superficie);border-bottom:1px solid var(--borde);position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
+.cabecera .contenedor{display:flex;align-items:center;gap:18px;padding-block:10px;flex-wrap:wrap}
+.cabecera img{height:44px;width:auto;display:block}
+.cabecera nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav-item{padding:7px 11px;border-radius:8px;font-size:var(--fs-md);color:var(--texto2)}
+.nav-item:hover{background:var(--superficie2);color:var(--texto);text-decoration:none}
+.idioma{font-size:var(--fs-sm);font-weight:600;padding:6px 11px;border-radius:8px;border:1px solid var(--borde);background:var(--superficie2);color:var(--texto2)}
+.idioma:hover{background:var(--g6);color:var(--g1)}
+.franja{height:4px;background:linear-gradient(90deg,var(--g1) 0 70%,var(--y3) 70% 100%)}
 
-/* scanner */
-.scanner{position:relative;background:var(--ink);border-radius:6px;padding:10px;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
-.scanner .frame{position:relative;aspect-ratio:1;max-width:100%;overflow:hidden;border-radius:3px;background:#222}
-.scanner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s}
-.scanner svg{position:absolute;inset:0;width:100%;height:100%}
-.scanline{position:absolute;left:0;right:0;height:2px;background:var(--amber);box-shadow:0 0 18px 4px color-mix(in srgb,var(--amber) 60%,transparent);top:0;opacity:0}
-.scanner.run .scanline{animation:scan 1.1s ease-in-out forwards}
-@keyframes scan{0%{top:0;opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
-.box{fill:none;stroke-width:.8;stroke-dasharray:400;stroke-dashoffset:400}
-.scanner.run .box{animation:draw .7s 1s ease-out forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.stamp{position:absolute;left:14px;bottom:14px;font:800 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.06em;
-  padding:8px 12px 7px;border:3px solid currentColor;border-radius:3px;background:rgba(15,19,23,.78);transform:rotate(-4deg) scale(1.6);opacity:0}
-.scanner.run .stamp{animation:stamp .35s 1.6s cubic-bezier(.2,1.6,.4,1) forwards}
-@keyframes stamp{to{opacity:1;transform:rotate(-4deg) scale(1)}}
-.stamp small{display:block;font:500 10px/1.3 var(--f-mono);letter-spacing:.05em;text-transform:none;opacity:.85;margin-top:3px}
-.scanmeta{display:flex;justify-content:space-between;gap:8px;font:500 11px/1.4 var(--f-mono);color:#aeb7c0;padding:8px 2px 0}
-.dots{display:flex;gap:5px}.dots span{width:7px;height:7px;border-radius:50%;background:#3a434d}.dots span.on{background:var(--amber)}
+/* portada */
+.portada{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center;padding-block:36px 8px}
+.etiqueta{font-size:var(--fs-micro);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--texto3)}
+h1{font:700 clamp(28px,4vw,40px)/1.18 var(--f-titulo);color:var(--g1);margin:8px 0 12px;text-wrap:balance}
+.lede{font-size:var(--fs-lg);color:var(--texto2);margin:0;max-width:58ch}
+.acciones{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.boton{display:inline-flex;align-items:center;padding:9px 16px;border-radius:8px;background:var(--g1);color:#fff;font-size:var(--fs-md);font-weight:600;border:1px solid var(--g1)}
+.boton:hover{background:var(--g2);text-decoration:none}
+.boton.secundario{background:var(--superficie2);color:var(--texto2);border-color:var(--borde)}
+.boton.secundario:hover{background:var(--g6);color:var(--g1)}
 
-/* key figures */
-.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);margin-block:8px 0}
-.fig{padding:18px 16px 16px 0}
-.fig + .fig{padding-left:16px;border-left:1px solid var(--rule)}
-.fig b{display:block;font:800 clamp(34px,5vw,52px)/1 var(--f-display);font-variant-numeric:tabular-nums}
-.fig span{font-size:13px;color:var(--muted)}
+/* tarjetas */
+.tarjeta{background:var(--superficie);border:1px solid var(--borde);border-radius:var(--r);padding:18px;box-shadow:var(--sombra);min-width:0}
+.titulo-tarjeta{font-size:var(--fs-xs);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--texto3);margin:0 0 12px}
 
-/* sections */
-section.step{padding-block:clamp(48px,8vw,88px) 0}
-.sh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;align-items:baseline;margin-bottom:24px}
-.sh .n{font:900 clamp(48px,7vw,72px)/.8 var(--f-display);color:transparent;-webkit-text-stroke:1.5px var(--amber-ink);grid-row:span 2}
-h2{font:800 clamp(30px,4vw,44px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.01em;margin:0;text-wrap:balance}
-.sh p{margin:6px 0 0;color:var(--muted);max-width:68ch}
-.note{font-size:13.5px;color:var(--muted);max-width:75ch}
-.mono{font-family:var(--f-mono)}
+/* visor de ejemplos */
+.visor .marco{position:relative;aspect-ratio:1;max-width:100%;border-radius:8px;overflow:hidden;background:var(--superficie2)}
+.visor img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.visor svg{position:absolute;inset:0;width:100%;height:100%}
+.caja{fill:none;stroke-width:.7;stroke-dasharray:400;stroke-dashoffset:400}
+.visor.anima .caja{animation:trazo .8s .25s ease-out forwards}
+@keyframes trazo{to{stroke-dashoffset:0}}
+.visor-pie{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px;font-size:var(--fs-xs);color:var(--texto3)}
+.insignia{display:inline-block;padding:2px 10px;border-radius:99px;font-size:var(--fs-xs);font-weight:600;white-space:nowrap}
+.insignia.si{background:var(--g6);color:var(--g1)}
+.insignia.no{background:var(--rojo6);color:var(--rojo)}
+.puntos{display:flex;gap:5px}.puntos span{width:6px;height:6px;border-radius:50%;background:var(--borde)}.puntos span.on{background:var(--g3)}
 
-/* pipeline */
-.pipe{display:grid;grid-template-columns:minmax(0,.8fr) 28px minmax(0,2.2fr) 28px minmax(0,.8fr);gap:0;align-items:stretch}
-.stage{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:16px;min-width:0}
-.stage h3{font:700 13px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px;color:var(--amber-ink)}
-.stage p{margin:0;font-size:14px;color:var(--muted)}
-.stage .big{font:800 34px/1 var(--f-display);color:var(--ink);display:block;margin-bottom:6px}
-.arrow{align-self:center;height:2px;background:var(--rule);position:relative;overflow:hidden}
-.arrow::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;background:var(--amber);animation:flow 1.8s linear infinite}
-@keyframes flow{to{left:100%}}
-.matrix{display:grid;grid-template-columns:auto repeat(4,minmax(0,1fr));gap:6px;font-size:13px}
-.matrix .hd{font:600 11px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);align-self:end;padding-bottom:2px}
-.matrix .tl{font:600 12px/1.3 var(--f-mono);align-self:center;padding-right:6px}
-.matrix .tl small{display:block;font-weight:400;color:var(--muted);font-family:var(--f-body)}
-.cell{border-radius:3px;padding:8px 6px;text-align:center;font:500 12px/1.2 var(--f-mono);border:1px solid var(--rule);background:var(--bg);font-variant-numeric:tabular-nums;position:relative}
-.cell b{display:block;font:800 20px/1 var(--f-display);margin-bottom:2px}
-.cell.bad{background:repeating-linear-gradient(-45deg,var(--amber) 0 7px,var(--hatch) 7px 14px);color:#fff;border-color:transparent}
-.cell.bad b,.cell.bad span{background:rgba(15,19,23,.82);padding:1px 4px;border-radius:2px}
-.cell.lit{animation:lit .6s ease-out backwards}
-@keyframes lit{from{transform:scale(.85);opacity:.2}}
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-block:22px 0}
+.kpi-valor{font-size:var(--fs-3xl);font-weight:700;color:var(--g1);font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi-etiqueta{font-size:var(--fs-xs);font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--texto3);margin-top:4px}
 
-/* chart */
-.panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:clamp(12px,2.4vw,24px)}
-.controls{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-bottom:14px}
-.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:4px;overflow:hidden}
-.seg button{font:500 12.5px/1 var(--f-mono);padding:8px 10px;background:transparent;color:var(--muted);border:0;border-right:1px solid var(--rule);cursor:pointer}
-.seg button:last-child{border-right:0}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.ctl-label{font:600 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.chart{overflow-x:auto}
-.chart svg{display:block;width:100%;min-width:640px;height:auto}
-.chart text{fill:var(--muted);font:11px var(--f-mono)}
-.chart .tier{fill:var(--ink);font:800 15px var(--f-display);letter-spacing:.06em}
-.grid line{stroke:var(--rule)}
-.dot{animation:drop .6s cubic-bezier(.3,1.4,.5,1) backwards}
-@keyframes drop{from{opacity:0;transform:translateY(-26px)}}
-.mean{stroke:var(--ink);stroke-width:2.5;transform-box:fill-box;transform-origin:center;animation:grow .5s ease-out backwards}
-@keyframes grow{from{opacity:0;transform:scaleX(0)}}
-.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 12.5px var(--f-mono);margin-top:12px}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
-.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font:500 12px/1.45 var(--f-mono);padding:8px 10px;border-radius:4px;z-index:20;max-width:240px}
+/* secciones */
+section{padding-top:44px}
+h2{font:700 var(--fs-2xl)/1.3 var(--f-titulo);color:var(--texto);margin:0 0 4px}
+.sub{color:var(--texto2);font-size:var(--fs-md);margin:0 0 16px;max-width:72ch}
+.nota{font-size:var(--fs-xs);color:var(--texto3);margin:10px 0 0;max-width:80ch}
 
-/* ablation */
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
-.abl{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:8px}
-.abl .hd{font:600 11px/1.3 var(--f-mono);overflow-wrap:anywhere;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);align-self:end}
-.abl .rl{font:600 12.5px/1.3 var(--f-mono);align-self:center;padding-right:6px;max-width:150px}
-.abl > *{min-width:0}
-.acell{border-radius:4px;padding:14px;border:1px solid var(--rule);background:var(--bg);min-height:118px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
-.acell b{font:800 38px/1 var(--f-display);font-variant-numeric:tabular-nums}
-.acell small{font:500 11.5px var(--f-mono);color:var(--muted)}
-.meter{height:8px;background:var(--rule);border-radius:4px;overflow:hidden;position:relative}
-.meter i{position:absolute;inset:0 auto 0 0;background:var(--ok);border-radius:4px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
-.acell.fail .meter i{background:var(--fail)}
-.acell.fail b{color:var(--fail)}
-.chance{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);left:50%}
-.verdict{font-size:15px;max-width:60ch}
-.verdict strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--amber) 45%,transparent) 60%)}
+/* matriz */
+.matriz{display:grid;grid-template-columns:auto repeat(4,minmax(0,1fr));gap:8px;align-items:center}
+.matriz .cab{font-size:var(--fs-micro);font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--texto3);text-align:center}
+.matriz .fila{font-size:var(--fs-md);font-weight:600;color:var(--texto2);padding-right:8px}
+.celda{border-radius:8px;padding:10px 6px;text-align:center;background:var(--superficie2);font-variant-numeric:tabular-nums}
+.celda b{display:block;font-size:var(--fs-lg);font-weight:700;color:var(--g1)}
+.celda span{font-size:var(--fs-xs);color:var(--texto3)}
+.celda.mal{background:var(--rojo6)}
+.celda.mal b{color:var(--rojo)}
+.celda.entra{animation:entra .5s ease-out backwards}
+@keyframes entra{from{opacity:.15;transform:translateY(6px)}}
+.niveles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.niveles div{font-size:var(--fs-sm);color:var(--texto2)}
+.niveles b{display:block;color:var(--texto);font-size:var(--fs-md);margin-bottom:2px}
 
-/* robustness */
-.bars{display:flex;flex-direction:column;gap:10px}
-.brow{display:grid;grid-template-columns:150px minmax(0,1fr) 64px;gap:12px;align-items:center;font:500 13px var(--f-mono)}
-.brow .track{height:22px;background:var(--bg);border:1px solid var(--rule);border-radius:3px;position:relative;overflow:hidden}
-.brow .fill{position:absolute;inset:0 auto 0 0;background:var(--ink);transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
-.brow.kf .fill{background:var(--amber)}
-.brow .v{text-align:right;font-variant-numeric:tabular-nums}
-.axisnote{display:flex;justify-content:space-between;font:11px var(--f-mono);color:var(--muted);margin-left:162px;margin-right:76px}
+/* gráfico */
+.controles{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px}
+.pestanas{display:flex;flex-wrap:wrap;gap:4px}
+.pestana{padding:6px 11px;border-radius:99px;border:1px solid var(--borde);background:var(--superficie);font-size:var(--fs-sm);font-weight:600;color:var(--texto2)}
+.pestana:hover{border-color:var(--g4);color:var(--g1)}
+.pestana[aria-pressed="true"]{background:var(--g1);border-color:var(--g1);color:#fff}
+.sep{width:1px;height:22px;background:var(--borde)}
+.grafico{overflow-x:auto}
+.grafico svg{display:block;width:100%;min-width:620px;height:auto}
+.grafico text{fill:var(--texto3);font:11px var(--f-texto)}
+.grafico .tier{fill:var(--texto2);font-weight:600;font-size:12px;letter-spacing:.06em}
+.punto{animation:cae .55s cubic-bezier(.3,1.3,.5,1) backwards}
+@keyframes cae{from{opacity:0;transform:translateY(-18px)}}
+.media{stroke:var(--texto);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:crece .45s ease-out backwards}
+@keyframes crece{from{opacity:0;transform:scaleX(0)}}
+.leyenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--fs-sm);color:var(--texto2);margin-top:10px}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.tip{position:fixed;pointer-events:none;background:var(--superficie);border:1px solid var(--borde);box-shadow:0 6px 20px rgba(20,40,10,.16);
+  color:var(--texto2);font-size:var(--fs-sm);line-height:1.45;padding:8px 10px;border-radius:10px;z-index:30;max-width:240px}
+.tip b{color:var(--texto)}
 
-/* anova */
-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-.tbl{overflow-x:auto}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);font-size:14px}
-th{font:600 11px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-td.num{font-family:var(--f-mono);text-align:right}
-.fbar{height:10px;background:var(--amber);border-radius:2px;transition:width 1.2s ease-out;min-width:2px}
+/* dos columnas */
+.dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.abl{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:center}
+.abl .cab{font-size:var(--fs-micro);font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--texto3);overflow-wrap:anywhere}
+.abl .fila{font-size:var(--fs-sm);font-weight:600;color:var(--texto2);max-width:140px}
+.acelda{border-radius:8px;padding:12px;background:var(--superficie2);display:flex;flex-direction:column;gap:8px}
+.acelda b{font-size:var(--fs-3xl);font-weight:700;color:var(--g1);font-variant-numeric:tabular-nums;line-height:1}
+.acelda small{font-size:var(--fs-xs);color:var(--texto3)}
+.acelda.mal b{color:var(--rojo)}
+.barra-progreso{height:8px;background:var(--superficie);border:1px solid var(--borde);border-radius:99px;overflow:hidden;position:relative}
+.barra-progreso > div{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--g2),var(--g3));transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.acelda.mal .barra-progreso > div{background:var(--rojo)}
+.azar{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--texto3)}
+.conclusion{font-size:var(--fs-base);color:var(--texto2);margin:0}
+.conclusion strong{color:var(--texto)}
 
-/* reproduce */
-pre{background:var(--code-bg);color:var(--code-fg);border:1px solid var(--rule);font:13px/1.6 var(--f-mono);padding:16px 18px;border-radius:6px;overflow-x:auto;margin:0}
-pre .c{color:#8d99a5}
-.files{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.files div{border-top:2px solid var(--ink);padding-top:10px;min-width:0}
-.files h3{font:700 13px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}
-.files p{margin:0;font-size:14px;color:var(--muted)}
-.files code{font:12.5px var(--f-mono);color:var(--ink);word-break:break-word}
-footer{margin-top:72px;border-top:1px solid var(--rule);padding-block:24px 40px;font-size:13px;color:var(--muted)}
-.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--amber) 0 12px,var(--ink) 12px 24px);margin-top:56px}
+/* barras horizontales */
+.barras{display:flex;flex-direction:column;gap:9px}
+.bfila{display:grid;grid-template-columns:150px minmax(0,1fr) 58px;gap:12px;align-items:center;font-size:var(--fs-md);color:var(--texto2)}
+.bfila .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--texto);font-weight:600}
+.bfila.resalta{color:var(--texto);font-weight:600}
+.bfila .barra-progreso{height:12px}
+.bfila.ref .barra-progreso > div{background:var(--y3)}
+.eje{display:flex;justify-content:space-between;font-size:var(--fs-xs);color:var(--texto3);margin:6px 70px 0 162px}
+
+/* tabla */
+.tabla-wrap{overflow-x:auto}
+.tabla{width:100%;border-collapse:collapse;font-size:var(--fs-md)}
+.tabla th{text-align:left;padding:9px 10px;font-size:var(--fs-micro);text-transform:uppercase;letter-spacing:.06em;color:var(--texto3);border-bottom:2px solid var(--borde);white-space:nowrap;font-weight:600}
+.tabla td{padding:9px 10px;border-bottom:1px solid var(--borde)}
+.tabla tr:hover td{background:var(--superficie2)}
+.tabla .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+
+/* reproducir y citar */
+pre{margin:0;background:var(--superficie2);border:1px solid var(--borde);border-radius:8px;padding:14px 16px;overflow-x:auto;
+  font:12.5px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--texto)}
+pre .c{color:var(--texto3)}
+.cita{font-size:var(--fs-base);line-height:1.65;color:var(--texto);margin:0;overflow-wrap:anywhere}
+.cita-cab{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.cita-cab .titulo-tarjeta{margin:0}
+.copiar{margin-left:auto;padding:4px 10px;border-radius:8px;border:1px solid var(--borde);background:var(--superficie2);font-size:var(--fs-sm);font-weight:600;color:var(--texto2)}
+.copiar:hover{background:var(--g6);color:var(--g1)}
+.aviso{background:var(--y6);border:1px solid #ecd9a0;color:#8a6500;border-radius:8px;padding:9px 12px;font-size:var(--fs-sm);margin-top:12px}
+
+footer{margin-top:48px;background:var(--superficie);border-top:1px solid var(--borde)}
+footer .contenedor{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-block:20px;font-size:var(--fs-sm);color:var(--texto2)}
+footer .lema{margin-left:auto;font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--texto3)}
 
 @media (max-width:860px){
-  .hero,.two{grid-template-columns:minmax(0,1fr)}
-  .scanner{max-width:420px}
-  .pipe{grid-template-columns:minmax(0,1fr)}
-  .arrow{height:22px;width:2px;justify-self:center}
-  .arrow::after{left:0;top:-40%;width:100%;height:40%;animation-name:flowv}
-  .files{grid-template-columns:minmax(0,1fr)}
-  .figs{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .fig:nth-child(3){padding-left:0;border-left:0}
-  .fig:nth-child(n+3){border-top:1px solid var(--rule)}
+  .portada,.dos{grid-template-columns:minmax(0,1fr)}
+  .visor{max-width:380px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .niveles{grid-template-columns:minmax(0,1fr)}
+  .cabecera nav{display:none}
 }
-@keyframes flowv{to{top:100%}}
 @media (max-width:520px){
-  .brow{grid-template-columns:96px minmax(0,1fr) 56px;gap:8px;font-size:12px}
-  .axisnote{margin-left:104px;margin-right:64px}
-  .matrix{font-size:12px}.cell b{font-size:17px}
-  .bar nav{display:none}
-  .abl .rl{font-size:11px;max-width:84px}
-  .acell{padding:10px;min-height:96px}.acell b{font-size:28px}
-  .anova-bar{display:none}
-  th,td{padding:8px 6px;font-size:13px}
+  .cabecera img{height:36px}
+  .bfila{grid-template-columns:96px minmax(0,1fr) 52px;gap:8px;font-size:var(--fs-sm)}
+  .eje{margin-left:104px;margin-right:60px}
+  .abl .fila{font-size:var(--fs-xs);max-width:80px}
+  .acelda b{font-size:var(--fs-2xl)}
+  .celda b{font-size:var(--fs-md)}
+  .matriz{gap:5px}
+  .kpi-valor{font-size:var(--fs-2xl)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .scanline{display:none}.box{stroke-dashoffset:0}.stamp{opacity:1;transform:rotate(-4deg)}
+  .caja{stroke-dashoffset:0}
 }
 </style>
 </head>
 <body>
 
-<header class="bar">
-  <div class="wrap">
-    <div class="brand"><i aria-hidden="true"></i>LLM · Helmet · CNN</div>
+<header class="cabecera">
+  <div class="contenedor">
+    <a href="https://www.utm.edu.ec/" aria-label="Universidad Técnica de Manabí"><img src="utm-logo.png" alt="Universidad Técnica de Manabí" width="483" height="189"></a>
     <nav aria-label="Secciones">
-      <a href="#protocolo" data-i18n="nav1">Protocolo</a>
-      <a href="#resultados" data-i18n="nav2">Resultados</a>
-      <a href="#tier3" data-i18n="nav3">Tier 3</a>
-      <a href="#robustez" data-i18n="nav4">Robustez</a>
-      <a href="#reproducir" data-i18n="nav5">Reproducir</a>
+      <a class="nav-item" href="#protocolo" data-i18n="nav1">Protocolo</a>
+      <a class="nav-item" href="#resultados" data-i18n="nav2">Resultados</a>
+      <a class="nav-item" href="#tier3" data-i18n="nav3">Tier 3</a>
+      <a class="nav-item" href="#robustez" data-i18n="nav4">Robustez</a>
+      <a class="nav-item" href="#citar" data-i18n="nav5">Cómo citar</a>
     </nav>
-    <button class="lang" id="lang" type="button" aria-label="Cambiar idioma">EN</button>
+    <button class="idioma" id="idioma" type="button">EN</button>
   </div>
+  <div class="franja" aria-hidden="true"></div>
 </header>
 
-<main class="wrap">
-  <div class="hero">
+<main class="contenedor">
+  <div class="portada">
     <div>
-      <div class="eyebrow" data-i18n="eyebrow">Discover Artificial Intelligence · material de revisión</div>
-      <h1 data-i18n-html="h1">Doce CNN escritas por LLM. Una pregunta: <em>¿lleva casco?</em></h1>
-      <p class="lede" data-i18n-html="lede">ChatGPT, Claude, Gemini y Grok generaron el código de entrenamiento con tres niveles de instrucción. Cada script se ejecutó hasta <b>20 veces</b> sobre el mismo conjunto de imágenes. Aquí está lo que salió de esos registros, sin retoques.</p>
-      <div class="cta">
-        <a class="btn primary" href="#resultados" data-i18n="cta1">Ver los resultados</a>
-        <a class="btn" href="https://github.com/jorgeklz/llm-helmet-ppe" data-i18n="cta2">Código en GitHub</a>
+      <div class="etiqueta" data-i18n="eyebrow">Discover Artificial Intelligence · material de revisión</div>
+      <h1 data-i18n="h1">CNN generadas por LLM para verificar el uso de casco de seguridad</h1>
+      <p class="lede" data-i18n="lede">ChatGPT, Claude, Gemini y Grok escribieron el código de entrenamiento con tres niveles de instrucción. Cada script se ejecutó hasta 20 veces sobre las mismas imágenes y todo quedó registrado.</p>
+      <div class="acciones">
+        <a class="boton" href="#resultados" data-i18n="cta1">Ver resultados</a>
+        <a class="boton secundario" href="https://github.com/jorgeklz/llm-helmet-ppe" data-i18n="cta2">Código y datos</a>
       </div>
     </div>
-    <figure class="scanner" id="scanner" style="margin:0" aria-label="Ejemplos del conjunto de prueba">
-      <div class="frame">
-        <img id="scanImg" alt="">
-        <div class="scanline"></div>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect id="scanBox" class="box" x="0" y="0" width="0" height="0"/></svg>
-        <div class="stamp" id="stamp"></div>
+    <figure class="tarjeta visor" id="visor" style="margin:0">
+      <div class="titulo-tarjeta" data-i18n="visorT">Ejemplos del conjunto de prueba</div>
+      <div class="marco">
+        <img id="visorImg" alt="">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect id="visorCaja" class="caja" x="0" y="0" width="0" height="0"/></svg>
       </div>
-      <figcaption class="scanmeta"><span id="scanCap">dataset/test</span><span class="dots" id="dots"></span></figcaption>
+      <figcaption class="visor-pie"><span class="insignia" id="visorEtq"></span><span class="puntos" id="puntos"></span></figcaption>
     </figure>
   </div>
 
-  <div class="figs" id="figs">
-    <div class="fig"><b data-count="972">972</b><span data-i18n="f1">imágenes, 486 por clase</span></div>
-    <div class="fig"><b data-count="12">12</b><span data-i18n="f2">scripts generados por LLM</span></div>
-    <div class="fig"><b data-count="228">228</b><span data-i18n="f3">ejecuciones registradas</span></div>
-    <div class="fig"><b data-count="0.989" data-dec="3">0.989</b><span data-i18n="f4">exactitud media en 5-fold CV</span></div>
+  <div class="kpis" id="kpis">
+    <div class="tarjeta"><div class="kpi-valor" data-count="972">972</div><div class="kpi-etiqueta" data-i18n="f1">Imágenes balanceadas</div></div>
+    <div class="tarjeta"><div class="kpi-valor" data-count="12">12</div><div class="kpi-etiqueta" data-i18n="f2">Scripts generados</div></div>
+    <div class="tarjeta"><div class="kpi-valor" data-count="228">228</div><div class="kpi-etiqueta" data-i18n="f3">Ejecuciones registradas</div></div>
+    <div class="tarjeta"><div class="kpi-valor" data-count="0.989" data-dec="3">0.989</div><div class="kpi-etiqueta" data-i18n="f4">Exactitud 5-fold CV</div></div>
   </div>
 
-  <!-- 1 -->
-  <section class="step" id="protocolo">
-    <div class="sh"><span class="n">01</span><h2 data-i18n="s1t">Protocolo</h2>
-      <p data-i18n="s1p">Mismo conjunto de datos, cuatro modelos de lenguaje, tres niveles de prompt. Lo único que cambia entre celdas es quién escribió el código y con cuántas restricciones.</p></div>
-    <div class="pipe" id="pipe">
-      <div class="stage"><h3 data-i18n="p1h">Datos</h3><span class="big" id="dsBig">478 / 494</span><p data-i18n="p1p">entrenamiento / prueba. Imágenes 640×640 con etiqueta .txt: 0 = casco, 1 = sin casco.</p></div>
-      <div class="arrow" aria-hidden="true"></div>
-      <div class="stage">
-        <h3 data-i18n="p2h">Tier × LLM → exactitud media</h3>
-        <div class="matrix" id="matrix"></div>
+  <section id="protocolo">
+    <h2 data-i18n="s1t">Protocolo</h2>
+    <p class="sub" data-i18n="s1p">Mismos datos y mismo conjunto de prueba para todos. Entre celdas solo cambia el LLM que escribió el código y el nivel de instrucción que recibió.</p>
+    <div class="tarjeta">
+      <div class="titulo-tarjeta" data-i18n="p2h">Exactitud media en prueba (494 imágenes)</div>
+      <div class="matriz" id="matriz"></div>
+      <div class="niveles">
+        <div><b>Tier 1</b><span data-i18n="t1">Instrucción básica.</span></div>
+        <div><b>Tier 2</b><span data-i18n="t2">Añade el vector de hiperparámetros θ.</span></div>
+        <div><b>Tier 3</b><span data-i18n="t3">Prescribe además arquitectura y calendario de aprendizaje.</span></div>
       </div>
-      <div class="arrow" aria-hidden="true"></div>
-      <div class="stage"><h3 data-i18n="p3h">Estadística</h3><span class="big">n = 20</span><p data-i18n="p3p">por configuración (8 en Grok Tier 3). Welch, Mann-Whitney, d de Cohen y ANOVA de dos vías.</p></div>
     </div>
-    <p class="note" data-i18n-html="tiersNote"><b>Tier 1</b>: instrucción básica. <b>Tier 2</b>: añade el vector de hiperparámetros θ (dropout, tasas de aprendizaje, lote, unidades). <b>Tier 3</b>: prescribe además arquitectura y calendario de aprendizaje. Las celdas rayadas no convergieron.</p>
+    <p class="nota" data-i18n="s1n">Partición fija de 478 imágenes de entrenamiento y 494 de prueba. n = 20 ejecuciones por configuración (8 en Grok Tier 3). En rojo, las configuraciones que no convergieron.</p>
   </section>
 
-  <!-- 2 -->
-  <section class="step" id="resultados">
-    <div class="sh"><span class="n">02</span><h2 data-i18n="s2t">Cada ejecución, un punto</h2>
-      <p data-i18n="s2p">Los puntos son ejecuciones individuales leídas de los CSV crudos. La raya horizontal es la media y la franja, su IC del 95 %. Pasa el cursor por un punto para ver su valor.</p></div>
-    <div class="panel">
-      <div class="controls">
-        <span class="ctl-label" data-i18n="metric">Métrica</span>
-        <div class="seg" id="metricSeg" role="group"></div>
-        <span class="ctl-label" data-i18n="scale">Escala</span>
-        <div class="seg" id="scaleSeg" role="group">
-          <button type="button" data-scale="full" aria-pressed="true" data-i18n="full">completa</button>
-          <button type="button" data-scale="zoom" aria-pressed="false" data-i18n="zoom">zoom</button>
+  <section id="resultados">
+    <h2 data-i18n="s2t">Cada ejecución, un punto</h2>
+    <p class="sub" data-i18n="s2p">Puntos leídos de los CSV crudos. La raya es la media y la franja su IC del 95 %. Pasa el cursor por un punto para ver su valor.</p>
+    <div class="tarjeta">
+      <div class="controles">
+        <div class="pestanas" id="metricas" role="group"></div>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="pestanas" id="escalas" role="group">
+          <button type="button" class="pestana" data-scale="full" aria-pressed="true" data-i18n="full">Escala completa</button>
+          <button type="button" class="pestana" data-scale="zoom" aria-pressed="false" data-i18n="zoom">Zoom</button>
         </div>
       </div>
-      <div class="chart" id="chart"></div>
-      <div class="legend" id="legend"></div>
+      <div class="grafico" id="grafico"></div>
+      <div class="leyenda" id="leyenda"></div>
     </div>
-    <p class="note" id="metricNote"></p>
+    <p class="nota" id="notaMetrica"></p>
   </section>
 
-  <!-- 3 -->
-  <section class="step" id="tier3">
-    <div class="sh"><span class="n">03</span><h2 data-i18n="s3t">Por qué colapsa el Tier 3</h2>
-      <p data-i18n="s3p">Gemini y Grok siguieron al pie de la letra la arquitectura multiescala entrenada desde cero. ChatGPT y Claude la sustituyeron por una ResNet18 preentrenada. Un diseño factorial 2×2 aísla la causa.</p></div>
-    <div class="two">
-      <div class="panel">
-        <div class="abl" id="abl"></div>
-      </div>
-      <div>
-        <p class="verdict" data-i18n-html="verdict">Con el mismo calendario, la red preentrenada llega a <strong>0.945–0.947</strong> y la red desde cero se queda en <strong>0.53–0.57</strong>, cerca del azar. Cambiar el planificador apenas mueve el resultado. El factor decisivo es <strong>partir de cero con 478 imágenes</strong>.</p>
-        <p class="note" data-i18n="ablNote">5 ejecuciones × 20 épocas por celda. Misma partición, aumentos, optimizador y parada temprana. La línea vertical marca 0.5 (azar).</p>
+  <section id="tier3">
+    <h2 data-i18n="s3t">Por qué falla el Tier 3</h2>
+    <p class="sub" data-i18n="s3p">Gemini y Grok aplicaron al pie de la letra la red multiescala entrenada desde cero. ChatGPT y Claude la cambiaron por una ResNet18 preentrenada. Un diseño factorial 2×2 separa las dos causas posibles.</p>
+    <div class="dos">
+      <div class="tarjeta"><div class="titulo-tarjeta" data-i18n="ablT">Ablación: red × planificador</div><div class="abl" id="abl"></div></div>
+      <div class="tarjeta">
+        <div class="titulo-tarjeta" data-i18n="concT">Conclusión</div>
+        <p class="conclusion" data-i18n-html="verdict">La red preentrenada llega a <strong>0.945–0.947</strong> con cualquiera de los dos planificadores. La red desde cero se queda en <strong>0.53–0.57</strong>, cerca del azar. Lo que decide el resultado es entrenar desde cero con 478 imágenes, no el planificador.</p>
+        <p class="nota" data-i18n="ablNote">5 ejecuciones × 20 épocas por celda, con la misma partición, aumentos, optimizador y parada temprana. La línea vertical marca 0.5.</p>
       </div>
     </div>
   </section>
 
-  <!-- 4 -->
-  <section class="step" id="robustez">
-    <div class="sh"><span class="n">04</span><h2 data-i18n="s4t">Fuera de una sola partición</h2>
-      <p data-i18n="s4p">Validación cruzada estratificada de 5 pliegues sobre las 972 imágenes y una línea base diseñada por un experto con protocolo fijo de 30 ejecuciones.</p></div>
-    <div class="panel">
-      <div class="bars" id="bars"></div>
-      <div class="axisnote"><span>0.90</span><span>0.95</span><span>1.00</span></div>
-    </div>
-    <p class="note" id="kfNote"></p>
-  </section>
-
-  <!-- 5 -->
-  <section class="step" id="anova">
-    <div class="sh"><span class="n">05</span><h2 data-i18n="s5t">ANOVA de dos vías</h2>
-      <p data-i18n="s5p">Exactitud con factores LLM y Tier, método de medias no ponderadas (celdas con n desigual). La interacción es tan fuerte como los efectos principales: el efecto del nivel de prompt depende de qué LLM lo recibe.</p></div>
-    <div class="panel tbl">
-      <table><thead><tr><th data-i18n="factor">Factor</th><th class="num">SS</th><th class="num">df</th><th class="num">F</th><th class="num">p</th><th class="anova-bar" style="width:30%"></th></tr></thead><tbody id="anovaBody"></tbody></table>
+  <section id="robustez">
+    <h2 data-i18n="s4t">Más allá de una sola partición</h2>
+    <p class="sub" data-i18n="s4p">Validación cruzada estratificada de 5 pliegues sobre las 972 imágenes, frente a una línea base experta con protocolo fijo de 30 ejecuciones.</p>
+    <div class="dos">
+      <div class="tarjeta">
+        <div class="titulo-tarjeta" data-i18n="barT">Exactitud</div>
+        <div class="barras" id="barras"></div>
+        <div class="eje"><span>0.90</span><span>0.95</span><span>1.00</span></div>
+        <p class="nota" id="notaKf"></p>
+      </div>
+      <div class="tarjeta tabla-wrap">
+        <div class="titulo-tarjeta" data-i18n="s5t">ANOVA de dos vías (LLM × Tier)</div>
+        <table class="tabla"><thead><tr><th data-i18n="factor">Factor</th><th class="num">df</th><th class="num">F</th><th class="num">p</th></tr></thead><tbody id="anova"></tbody></table>
+        <p class="nota" data-i18n="s5p">Método de medias no ponderadas (n desigual por celda). La interacción es tan fuerte como los efectos principales: el efecto del nivel de instrucción depende del LLM que la recibe.</p>
+      </div>
     </div>
   </section>
 
-  <!-- 6 -->
-  <section class="step" id="reproducir">
-    <div class="sh"><span class="n">06</span><h2 data-i18n="s6t">Reproducir</h2>
-      <p data-i18n="s6p">Todo lo que muestra esta página sale de archivos del repositorio. Con PyTorch instalado, un comando relanza los experimentos de la revisión y otro regenera los datos de esta web.</p></div>
-    <pre><span class="c"># experimentos de revisión (k-fold, línea base, ablación)</span>
+  <section id="reproducir">
+    <h2 data-i18n="s6t">Reproducir</h2>
+    <p class="sub" data-i18n="s6p">Todo lo que muestra esta página sale de archivos del repositorio.</p>
+    <pre><span class="c" data-i18n="c1"># estadística desde los registros crudos (sin entrenar)</span>
+python revision/stats_analysis.py
+
+<span class="c" data-i18n="c2"># experimentos de la revisión: k-fold, línea base y ablación (PyTorch)</span>
 pip install -r requirements.txt
 nohup bash run_experiments.sh &gt; revision/logs/run_all.log 2&gt;&amp;1 &amp;
 
-<span class="c"># estadística a partir de los registros crudos (sin entrenar)</span>
-python revision/stats_analysis.py
-
-<span class="c"># datos de esta web</span>
+<span class="c" data-i18n="c3"># datos de esta web</span>
 python docs/build_data.py</pre>
-    <div class="files" style="margin-top:24px">
-      <div><h3 data-i18n="fa">Scripts</h3><p><code>tier{1,2,3}-{chatgpt,claude,gemini,grok}.py</code> <span data-i18n="fap">tal como los generó cada LLM.</span></p></div>
-      <div><h3 data-i18n="fb">Registros</h3><p><code>*_results.csv · *_summary.csv · *-output.txt</code> <span data-i18n="fbp">por ejecución.</span></p></div>
-      <div><h3 data-i18n="fc">Revisión</h3><p><code>revision/</code> <span data-i18n="fcp">estadística, k-fold, línea base, ablación y matriz de confusión regenerada.</span></p></div>
+  </section>
+
+  <section id="citar">
+    <h2 data-i18n="s7t">Cómo citar</h2>
+    <p class="sub" data-i18n="s7p">Si usas el código, los datos o los resultados, cita el artículo.</p>
+    <div class="dos">
+      <div class="tarjeta">
+        <div class="cita-cab"><div class="titulo-tarjeta">APA 7</div><button class="copiar" type="button" data-copy="apa" data-i18n="copy">Copiar</button></div>
+        <p class="cita" id="apa"></p>
+        <div class="cita-cab" style="margin-top:16px"><div class="titulo-tarjeta" data-i18n="repoCite">Repositorio</div><button class="copiar" type="button" data-copy="repo" data-i18n="copy">Copiar</button></div>
+        <p class="cita" id="repo"></p>
+      </div>
+      <div class="tarjeta">
+        <div class="cita-cab"><div class="titulo-tarjeta">BibTeX</div><button class="copiar" type="button" data-copy="bib" data-i18n="copy">Copiar</button></div>
+        <pre id="bib"></pre>
+      </div>
     </div>
+    <div class="aviso" id="avisoCita" data-i18n="citeNote">Artículo en revisión. Volumen, número y DOI se añadirán al publicarse.</div>
   </section>
 </main>
 
-<div class="hazard" aria-hidden="true"></div>
-<footer><div class="wrap">Jorge Párraga-Álava · <span class="mono">jorge.parraga@utm.edu.ec</span> · Universidad Técnica de Manabí</div></footer>
+<footer>
+  <div class="contenedor">
+    <span>Jorge Párraga-Álava · jorge.parraga@utm.edu.ec</span>
+    <span class="lema">Patria · Técnica · Cultura</span>
+  </div>
+</footer>
 
 <script src="data.js"></script>
 <script>
+/* Datos de la cita: edítalos aquí cuando el artículo se publique
+   (y en CITATION.cff, en la raíz del repositorio). */
+const CITA = {
+  autores_apa: "Párraga-Álava, J.",
+  autores_bib: "Párraga-Álava, Jorge",
+  anio: 2026,
+  titulo: "LLM-generated CNNs for helmet-wearing compliance classification",
+  revista: "Discover Artificial Intelligence",
+  volumen: "", numero: "", paginas: "",
+  doi: "",
+  repo: "https://github.com/jorgeklz/llm-helmet-ppe"
+};
+
 (function(){
 const D = window.STUDY;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const LLM_NAME = {chatgpt:'ChatGPT',claude:'Claude',gemini:'Gemini',grok:'Grok'};
+const NOM = {chatgpt:'ChatGPT',claude:'Claude',gemini:'Gemini',grok:'Grok'};
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const svgNS = 'http://www.w3.org/2000/svg';
-const el = (tag, attrs={}, parent) => { const e=document.createElementNS(svgNS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; };
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, a={}, p) => { const e=document.createElementNS(NS,tag); for(const k in a) e.setAttribute(k,a[k]); if(p) p.appendChild(e); return e; };
 
-/* ---------- i18n ---------- */
-const T = {
- en:{nav1:'Protocol',nav2:'Results',nav3:'Tier 3',nav4:'Robustness',nav5:'Reproduce',
+/* ---------- idioma ---------- */
+const EN = {
+  nav1:'Protocol',nav2:'Results',nav3:'Tier 3',nav4:'Robustness',nav5:'How to cite',
   eyebrow:'Discover Artificial Intelligence · revision material',
-  h1:'Twelve CNNs written by LLMs. One question: <em>helmet on?</em>',
-  lede:'ChatGPT, Claude, Gemini and Grok generated the training code under three levels of instruction. Each script ran up to <b>20 times</b> on the same image set. This is what came out of those logs, untouched.',
-  cta1:'See the results',cta2:'Code on GitHub',
-  f1:'images, 486 per class',f2:'LLM-generated scripts',f3:'logged runs',f4:'mean accuracy, 5-fold CV',
-  s1t:'Protocol',s1p:'Same data, four language models, three prompt levels. The only thing that changes between cells is who wrote the code and under how many constraints.',
-  p1h:'Data',p1p:'train / test. 640×640 images with a .txt label: 0 = helmet, 1 = no helmet.',
-  p2h:'Tier × LLM → mean accuracy',p3h:'Statistics',p3p:'per configuration (8 for Grok Tier 3). Welch, Mann-Whitney, Cohen d and two-way ANOVA.',
-  tiersNote:'<b>Tier 1</b>: basic instruction. <b>Tier 2</b>: adds the hyperparameter vector θ (dropout, learning rates, batch, units). <b>Tier 3</b>: also prescribes architecture and learning-rate schedule. Hatched cells did not converge.',
-  s2t:'Every run, one dot',s2p:'Dots are individual runs read from the raw CSVs. The horizontal tick is the mean and the band its 95% CI. Hover a dot to see its value.',
-  metric:'Metric',scale:'Scale',full:'full',zoom:'zoom',
-  s3t:'Why Tier 3 collapses',s3p:'Gemini and Grok followed the prescribed from-scratch multi-scale architecture to the letter. ChatGPT and Claude swapped it for a pretrained ResNet18. A 2×2 factorial design isolates the cause.',
-  verdict:'Under the same schedule the pretrained network reaches <strong>0.945–0.947</strong> while the from-scratch network stays at <strong>0.53–0.57</strong>, close to chance. Changing the scheduler barely moves the result. The decisive factor is <strong>training from scratch on 478 images</strong>.',
-  ablNote:'5 runs × 20 epochs per cell. Same split, augmentation, optimizer and early stopping. The vertical line marks 0.5 (chance).',
-  s4t:'Beyond a single split',s4p:'Stratified 5-fold cross-validation over all 972 images, and an expert-designed baseline with a fixed 30-run protocol.',
-  s5t:'Two-way ANOVA',s5p:'Accuracy with LLM and Tier as factors, unweighted-means method (unequal cell n). The interaction is as strong as the main effects: what a prompt level does depends on which LLM receives it.',
-  factor:'Factor',s6t:'Reproduce',s6p:'Everything on this page comes from files in the repository. With PyTorch installed, one command re-runs the revision experiments and another regenerates this site’s data.',
-  fa:'Scripts',fap:'exactly as each LLM generated them.',fb:'Logs',fbp:'per run.',fc:'Revision',fcp:'statistics, k-fold, baseline, ablation and the regenerated confusion matrix.',
-  helmet:'Helmet',nohelmet:'No helmet',label:'label',
-  m_accuracy:'Accuracy',m_auc:'AUC',m_precision:'Precision',m_recall_pos:'Recall+',m_recall_neg:'Recall−',m_loss:'Loss',m_time_sec:'Time (min)',
-  note_loss:'Loss is reported as each script computed it (different criteria and reductions), so compare it within a script, not across LLMs. Not recovered for Gemini Tier 3.',
-  note_time:'Wall-clock time per run on the author’s CPU. Gemini Tier 3 logged time in a different unit and is left out.',
-  note_def:'Test set of 494 images. Grok Tier 3 has 8 runs; every other configuration has 20.',
-  pre:'pretrained ResNet18',scratch:'from-scratch multi-scale',cos:'CosineAnnealingLR',rop:'ReduceLROnPlateau',
-  run:'run',mean:'mean',fold:'Fold',kfmean:'5-fold mean',baseline:'Expert baseline',bestllm:'Best LLM (Claude T1)',
-  kfNote:(m,lo,hi,auc)=>`5-fold accuracy ${m} (95% CI [${lo}, ${hi}]), AUC ${auc}. The expert baseline and the best LLM configuration land within 0.002 of each other.`},
- es:{m_accuracy:'Exactitud',m_auc:'AUC',m_precision:'Precisión',m_recall_pos:'Recall+',m_recall_neg:'Recall−',m_loss:'Pérdida',m_time_sec:'Tiempo (min)',
-  helmet:'Con casco',nohelmet:'Sin casco',label:'etiqueta',
-  note_loss:'La pérdida se reporta tal como la calculó cada script (criterios y reducciones distintos), así que conviene compararla dentro de un mismo script y no entre LLM. No se recuperó para Gemini Tier 3.',
-  note_time:'Tiempo de reloj por ejecución en la CPU del autor. Gemini Tier 3 registró el tiempo en otra unidad y queda fuera.',
-  note_def:'Conjunto de prueba de 494 imágenes. Grok Tier 3 tiene 8 ejecuciones; el resto, 20.',
-  pre:'ResNet18 preentrenada',scratch:'multiescala desde cero',cos:'CosineAnnealingLR',rop:'ReduceLROnPlateau',
-  run:'ejecución',mean:'media',fold:'Pliegue',kfmean:'Media 5-fold',baseline:'Línea base experta',bestllm:'Mejor LLM (Claude T1)',
-  kfNote:(m,lo,hi,auc)=>`Exactitud 5-fold ${m} (IC 95 % [${lo}, ${hi}]), AUC ${auc}. La línea base experta y la mejor configuración LLM quedan a menos de 0.002 entre sí.`}
+  h1:'LLM-generated CNNs for helmet-wearing compliance classification',
+  lede:'ChatGPT, Claude, Gemini and Grok wrote the training code under three levels of instruction. Each script ran up to 20 times on the same images and every run was logged.',
+  cta1:'See results',cta2:'Code and data',visorT:'Test-set examples',
+  f1:'Balanced images',f2:'Generated scripts',f3:'Logged runs',f4:'5-fold CV accuracy',
+  s1t:'Protocol',s1p:'Same data and the same test set for everyone. Between cells only the LLM that wrote the code and the instruction level it received change.',
+  p2h:'Mean test accuracy (494 images)',t1:'Basic instruction.',t2:'Adds the hyperparameter vector θ.',t3:'Also prescribes architecture and learning-rate schedule.',
+  s1n:'Fixed split of 478 training and 494 test images. n = 20 runs per configuration (8 for Grok Tier 3). Red marks the configurations that did not converge.',
+  s2t:'Every run, one dot',s2p:'Dots read from the raw CSVs. The tick is the mean and the band its 95% CI. Hover a dot to see its value.',
+  full:'Full scale',zoom:'Zoom',
+  s3t:'Why Tier 3 fails',s3p:'Gemini and Grok applied the prescribed from-scratch multi-scale network to the letter. ChatGPT and Claude swapped it for a pretrained ResNet18. A 2×2 factorial design separates the two possible causes.',
+  ablT:'Ablation: network × scheduler',concT:'Conclusion',
+  verdict:'The pretrained network reaches <strong>0.945–0.947</strong> with either scheduler. The from-scratch network stays at <strong>0.53–0.57</strong>, close to chance. Training from scratch on 478 images decides the outcome, not the scheduler.',
+  ablNote:'5 runs × 20 epochs per cell, with the same split, augmentation, optimizer and early stopping. The vertical line marks 0.5.',
+  s4t:'Beyond a single split',s4p:'Stratified 5-fold cross-validation over all 972 images, against an expert baseline with a fixed 30-run protocol.',
+  barT:'Accuracy',s5t:'Two-way ANOVA (LLM × Tier)',factor:'Factor',
+  s5p:'Unweighted-means method (unequal cell n). The interaction is as strong as the main effects: what an instruction level does depends on which LLM receives it.',
+  s6t:'Reproduce',s6p:'Everything on this page comes from files in the repository.',
+  s7t:'How to cite',s7p:'If you use the code, data or results, please cite the article.',
+  c1:'# statistics from the raw logs (no training)',c2:'# revision experiments: k-fold, baseline and ablation (PyTorch)',c3:'# data for this website',
+  copy:'Copy',copied:'Copied',repoCite:'Repository',
+  citeNote:'Article under review. Volume, issue and DOI will be added on publication.'
 };
-const ES_STATIC = {};
-document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(n=>{
-  const k=n.dataset.i18n||n.dataset.i18nHtml; ES_STATIC[k]=n.dataset.i18nHtml?n.innerHTML:n.textContent;
-});
+const TXT = {
+  es:{helmet:'Con casco',nohelmet:'Sin casco',m_accuracy:'Exactitud',m_auc:'AUC',m_precision:'Precisión',m_recall_pos:'Recall+',m_recall_neg:'Recall−',m_loss:'Pérdida',m_time_sec:'Tiempo (min)',
+    note_loss:'La pérdida se reporta como la calculó cada script (criterios distintos): compárala dentro de un mismo script. No se recuperó para Gemini Tier 3.',
+    note_time:'Tiempo por ejecución en la CPU del autor. Gemini Tier 3 registró el tiempo en otra unidad y queda fuera.',
+    note_def:'Conjunto de prueba de 494 imágenes. Grok Tier 3 tiene 8 ejecuciones; el resto, 20.',
+    pre:'ResNet18 preentrenada',scratch:'Multiescala desde cero',cos:'Cosine',rop:'Plateau',run:'ejecución',mean:'media',chance:'azar',
+    fold:'Pliegue',kfmean:'Media 5-fold',baseline:'Línea base experta',bestllm:'Mejor LLM (Claude T1)',copied:'Copiado',
+    kf:(lo,hi,auc)=>`IC 95 % de la media 5-fold: [${lo}, ${hi}]. AUC ${auc}.`},
+  en:{helmet:'Helmet',nohelmet:'No helmet',m_accuracy:'Accuracy',m_auc:'AUC',m_precision:'Precision',m_recall_pos:'Recall+',m_recall_neg:'Recall−',m_loss:'Loss',m_time_sec:'Time (min)',
+    note_loss:'Loss is reported as each script computed it (different criteria): compare it within a script. Not recovered for Gemini Tier 3.',
+    note_time:'Time per run on the author’s CPU. Gemini Tier 3 logged time in a different unit and is left out.',
+    note_def:'Test set of 494 images. Grok Tier 3 has 8 runs; every other configuration has 20.',
+    pre:'Pretrained ResNet18',scratch:'From-scratch multi-scale',cos:'Cosine',rop:'Plateau',run:'run',mean:'mean',chance:'chance',
+    fold:'Fold',kfmean:'5-fold mean',baseline:'Expert baseline',bestllm:'Best LLM (Claude T1)',copied:'Copied',
+    kf:(lo,hi,auc)=>`95% CI of the 5-fold mean: [${lo}, ${hi}]. AUC ${auc}.`}
+};
+const ES = {};
+document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(n=>{ const k=n.dataset.i18n||n.dataset.i18nHtml; ES[k]=n.dataset.i18nHtml?n.innerHTML:n.textContent; });
 let lang='es';
 try{ lang = localStorage.getItem('helmet-lang') || (navigator.language||'es').slice(0,2); }catch(e){ lang=(navigator.language||'es').slice(0,2); }
 if(lang!=='en') lang='es';
-const t = k => (T[lang] && T[lang][k]!==undefined) ? T[lang][k] : (T.es[k]!==undefined ? T.es[k] : ES_STATIC[k]);
-function applyLang(){
+const t = k => TXT[lang][k];
+function aplicarIdioma(){
   document.documentElement.lang=lang;
-  document.querySelectorAll('[data-i18n]').forEach(n=>{ n.textContent = lang==='en' ? (T.en[n.dataset.i18n]??ES_STATIC[n.dataset.i18n]) : ES_STATIC[n.dataset.i18n]; });
-  document.querySelectorAll('[data-i18n-html]').forEach(n=>{ n.innerHTML = lang==='en' ? (T.en[n.dataset.i18nHtml]??ES_STATIC[n.dataset.i18nHtml]) : ES_STATIC[n.dataset.i18nHtml]; });
-  const b=document.getElementById('lang'); b.textContent = lang==='en'?'ES':'EN'; b.setAttribute('aria-label', lang==='en'?'Cambiar a español':'Switch to English');
-  buildMetricSeg(); renderChart(false); buildAblation(false); buildBars(false); scanShow(scanI, false);
+  document.querySelectorAll('[data-i18n]').forEach(n=>{ const k=n.dataset.i18n; n.textContent = lang==='en'?(EN[k]??ES[k]):ES[k]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(n=>{ const k=n.dataset.i18nHtml; n.innerHTML = lang==='en'?(EN[k]??ES[k]):ES[k]; });
+  const b=document.getElementById('idioma'); b.textContent = lang==='en'?'ES':'EN'; b.setAttribute('aria-label', lang==='en'?'Cambiar a español':'Switch to English');
+  pestanas(); grafico(false); ablacion(false); barras(false); mostrar(iv,false);
 }
-document.getElementById('lang').addEventListener('click',()=>{ lang = lang==='en'?'es':'en'; try{localStorage.setItem('helmet-lang',lang)}catch(e){} applyLang(); });
+document.getElementById('idioma').addEventListener('click',()=>{ lang=lang==='en'?'es':'en'; try{localStorage.setItem('helmet-lang',lang)}catch(e){} aplicarIdioma(); });
 
-/* ---------- scanner ---------- */
-const S = D.samples, img=document.getElementById('scanImg'), box=document.getElementById('scanBox'),
-      stamp=document.getElementById('stamp'), scanner=document.getElementById('scanner'), dots=document.getElementById('dots'), cap=document.getElementById('scanCap');
-S.forEach(()=>dots.appendChild(document.createElement('span')));
-let scanI=0;
-function scanShow(i, animate=true){
-  const s=S[i]; img.src=s.src;
-  const [cx,cy,w,h]=s.box; box.setAttribute('x',(cx-w/2)*100); box.setAttribute('y',(cy-h/2)*100); box.setAttribute('width',w*100); box.setAttribute('height',h*100);
-  const col = s.label===0 ? css('--amber') : css('--fail');
-  box.style.stroke=col; stamp.style.color=col;
-  stamp.innerHTML = (s.label===0?t('helmet'):t('nohelmet')) + `<small>${t('label')} ${s.label} · test ${i+1}/${S.length}</small>`;
-  img.alt = s.label===0?t('helmet'):t('nohelmet');
-  [...dots.children].forEach((d,j)=>d.classList.toggle('on',j===i));
-  cap.textContent = `dataset/test · ${s.label===0?'CON_Casco':'SIN_Casco'}`;
-  if(animate && !reduce){ scanner.classList.remove('run'); void scanner.offsetWidth; scanner.classList.add('run'); }
-  else scanner.classList.add('run');
+/* ---------- visor ---------- */
+const S=D.samples, img=document.getElementById('visorImg'), caja=document.getElementById('visorCaja'), visor=document.getElementById('visor'),
+      etq=document.getElementById('visorEtq'), puntos=document.getElementById('puntos');
+S.forEach(()=>puntos.appendChild(document.createElement('span')));
+let iv=0;
+function mostrar(i, anim=true){
+  const s=S[i], [cx,cy,w,h]=s.box; img.src=s.src;
+  caja.setAttribute('x',(cx-w/2)*100); caja.setAttribute('y',(cy-h/2)*100); caja.setAttribute('width',w*100); caja.setAttribute('height',h*100);
+  caja.style.stroke = s.label===0?css('--g4'):css('--rojo');
+  etq.className='insignia '+(s.label===0?'si':'no'); etq.textContent=(s.label===0?t('helmet'):t('nohelmet'))+' · '+s.label;
+  img.alt=etq.textContent;
+  [...puntos.children].forEach((d,j)=>d.classList.toggle('on',j===i));
+  if(anim&&!reduce){ visor.classList.remove('anima'); void visor.offsetWidth; }
+  visor.classList.add('anima');
 }
-scanShow(0);
-if(!reduce) setInterval(()=>{ if(document.hidden) return; scanI=(scanI+1)%S.length; scanShow(scanI); }, 3600);
+mostrar(0);
+if(!reduce) setInterval(()=>{ if(document.hidden) return; iv=(iv+1)%S.length; mostrar(iv); },3200);
 
-/* ---------- counters + reveal ---------- */
-function countUp(n){
-  const end=parseFloat(n.dataset.count), dec=+(n.dataset.dec||0); if(reduce) return;
-  const t0=performance.now(), dur=1300;
-  (function f(now){ const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3); n.textContent=(end*e).toFixed(dec); if(p<1) requestAnimationFrame(f); })(t0);
+/* ---------- utilidades de animación ---------- */
+function contar(n){
+  const fin=parseFloat(n.dataset.count), dec=+(n.dataset.dec||0); if(reduce) return;
+  const t0=performance.now();
+  (function f(now){ const p=Math.min(1,(now-t0)/1200), e=1-Math.pow(1-p,3); n.textContent=(fin*e).toFixed(dec); if(p<1) requestAnimationFrame(f); })(t0);
 }
-const once = (node, fn) => {
-  if(!('IntersectionObserver' in window)) return;
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ io.disconnect(); fn(); } }),{threshold:.25});
-  io.observe(node);
-};
-once(document.getElementById('figs'), ()=>document.querySelectorAll('[data-count]').forEach(countUp));
+const alVer=(nodo,fn)=>{ if(!('IntersectionObserver' in window)) return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ io.disconnect(); fn(); } }),{threshold:.3}); io.observe(nodo); };
+const crecer=(sel)=>requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll(sel).forEach((b,i)=>{ b.style.transitionDelay=(i*80)+'ms'; b.style.width=b.dataset.w+'%'; })));
+alVer(document.getElementById('kpis'),()=>document.querySelectorAll('#kpis [data-count]').forEach(contar));
 
-/* ---------- matrix ---------- */
-document.getElementById('dsBig').textContent = `${D.dataset.train} / ${D.dataset.test}`;
-function buildMatrix(play){
-  const m=document.getElementById('matrix'); m.innerHTML='<span></span>'+D.llms.map(l=>`<span class="hd">${LLM_NAME[l]}</span>`).join('');
+/* ---------- matriz ---------- */
+function matriz(anim){
+  const m=document.getElementById('matriz');
+  m.innerHTML='<span></span>'+D.llms.map(l=>`<span class="cab">${NOM[l]}</span>`).join('');
   let k=0;
   D.tiers.forEach(tr=>{
-    m.insertAdjacentHTML('beforeend',`<span class="tl">Tier ${tr}</span>`);
-    D.llms.forEach(l=>{
-      const s=D.summary[`${tr}-${l}`].accuracy, bad=s.mean<0.8;
-      m.insertAdjacentHTML('beforeend',`<div class="cell${bad?' bad':''}${play?' lit':''}" style="animation-delay:${(k++)*90}ms"><b>${s.mean.toFixed(3)}</b><span>n=${s.n}</span></div>`);
-    });
+    m.insertAdjacentHTML('beforeend',`<span class="fila">Tier ${tr}</span>`);
+    D.llms.forEach(l=>{ const s=D.summary[`${tr}-${l}`].accuracy;
+      m.insertAdjacentHTML('beforeend',`<div class="celda${s.mean<.8?' mal':''}${anim&&!reduce?' entra':''}" style="animation-delay:${(k++)*70}ms"><b>${s.mean.toFixed(3)}</b><span>± ${s.sd.toFixed(3)}</span></div>`); });
   });
 }
-buildMatrix(false); once(document.getElementById('pipe'), ()=>buildMatrix(true));
+matriz(false); alVer(document.getElementById('matriz'),()=>matriz(true));
 
-/* ---------- strip chart ---------- */
-const METRICS=['accuracy','auc','precision','recall_pos','recall_neg','loss','time_sec'];
-let metric='accuracy', scale='full';
-function buildMetricSeg(){
-  const seg=document.getElementById('metricSeg'); seg.innerHTML='';
-  METRICS.forEach(m=>{ const b=document.createElement('button'); b.type='button'; b.textContent=t('m_'+m); b.setAttribute('aria-pressed',m===metric); b.onclick=()=>{metric=m; buildMetricSeg(); renderChart(true);}; seg.appendChild(b); });
-  document.querySelectorAll('#scaleSeg button').forEach(b=>{ b.setAttribute('aria-pressed', b.dataset.scale===scale); b.onclick=()=>{scale=b.dataset.scale; buildMetricSeg(); renderChart(true);}; });
-  document.getElementById('legend').innerHTML = D.llms.map(l=>`<span><i style="background:var(--c-${l})"></i>${LLM_NAME[l]}</span>`).join('');
+/* ---------- gráfico de puntos ---------- */
+const METRICAS=['accuracy','auc','precision','recall_pos','recall_neg','loss','time_sec'];
+let metrica='accuracy', escala='full';
+function pestanas(){
+  const c=document.getElementById('metricas'); c.innerHTML='';
+  METRICAS.forEach(m=>{ const b=document.createElement('button'); b.type='button'; b.className='pestana'; b.textContent=t('m_'+m); b.setAttribute('aria-pressed',m===metrica);
+    b.onclick=()=>{ metrica=m; pestanas(); grafico(true); }; c.appendChild(b); });
+  document.querySelectorAll('#escalas button').forEach(b=>{ b.setAttribute('aria-pressed',b.dataset.scale===escala); b.onclick=()=>{ escala=b.dataset.scale; pestanas(); grafico(true); }; });
+  document.getElementById('leyenda').innerHTML=D.llms.map(l=>`<span><i style="background:var(--c-${l})"></i>${NOM[l]}</span>`).join('');
 }
-function vals(key){ const r=D.runs[key][metric]; if(!r) return null; return metric==='time_sec' ? r.map(v=>v/60) : r; }
-function niceTicks(lo,hi,n=5){ const span=hi-lo, step0=span/n, mag=Math.pow(10,Math.floor(Math.log10(step0))), err=step0/mag, step=(err>=7.5?10:err>=3.5?5:err>=1.5?2:1)*mag;
-  const out=[]; for(let v=Math.ceil(lo/step)*step; v<=hi+1e-9; v+=step) out.push(+v.toFixed(10)); return {ticks:out,step}; }
+const valores=k=>{ const r=D.runs[k][metrica]; return !r?null:(metrica==='time_sec'?r.map(v=>v/60):r); };
+function marcas(lo,hi,n=5){ const p0=(hi-lo)/n, mag=Math.pow(10,Math.floor(Math.log10(p0))), e=p0/mag, paso=(e>=7.5?10:e>=3.5?5:e>=1.5?2:1)*mag;
+  const out=[]; for(let v=Math.ceil(lo/paso-1e-9)*paso; v<=hi+1e-9; v+=paso) out.push(+v.toFixed(10)); return {out,paso}; }
 const tip=document.createElement('div'); tip.className='tip'; tip.hidden=true; document.body.appendChild(tip);
-function renderChart(play){
-  const host=document.getElementById('chart'); host.innerHTML='';
-  const W=960,H=420,ml=58,mr=12,mt=34,mb=40, iw=W-ml-mr, ih=H-mt-mb;
-  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':t('m_'+metric)},host);
-  let all=[]; D.tiers.forEach(tr=>D.llms.forEach(l=>{const v=vals(`${tr}-${l}`); if(v) all=all.concat(v);}));
-  let lo=Math.min(...all), hi=Math.max(...all);
-  const bounded = ['accuracy','auc','precision','recall_pos','recall_neg'].includes(metric);
-  if(bounded){
-    if(scale==='zoom'){ const conv=all.filter(v=>v>0.85); lo=Math.min(...conv); hi=1; }
-    else { lo=Math.min(lo,0.5); hi=1; }
-  } else if(scale==='zoom'){ const s=[...all].sort((a,b)=>a-b); hi=s[Math.floor(s.length*0.9)]; lo=0; } else lo=0;
-  const {ticks,step}=niceTicks(lo,hi); lo=Math.min(lo,ticks[0]); if(!bounded) hi=Math.max(hi,ticks[ticks.length-1]);
-  if(bounded && scale==='zoom') lo=Math.floor(lo/step)*step;
+function grafico(anim){
+  const host=document.getElementById('grafico'); host.innerHTML='';
+  const W=960,H=380,ml=52,mr=10,mt=30,mb=36, iw=W-ml-mr, ih=H-mt-mb;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':t('m_'+metrica)},host);
+  let todos=[]; D.tiers.forEach(tr=>D.llms.forEach(l=>{ const v=valores(`${tr}-${l}`); if(v) todos=todos.concat(v); }));
+  const acotada=['accuracy','auc','precision','recall_pos','recall_neg'].includes(metrica);
+  let lo,hi;
+  if(acotada){ hi=1; lo = escala==='zoom' ? Math.min(...todos.filter(v=>v>.85)) : Math.min(.5,Math.min(...todos)); }
+  else { lo=0; const s=[...todos].sort((a,b)=>a-b); hi = escala==='zoom'? s[Math.floor(s.length*.9)] : s[s.length-1]; }
+  const {out,paso}=marcas(lo,hi); if(acotada) lo=Math.min(lo,Math.floor(lo/paso)*paso); else hi=Math.max(hi,out[out.length-1]);
   const y=v=>mt+ih-(Math.min(Math.max(v,lo),hi)-lo)/(hi-lo)*ih;
-  const g=el('g',{class:'grid'},svg);
-  niceTicks(lo,hi).ticks.forEach(v=>{ el('line',{x1:ml,x2:W-mr,y1:y(v),y2:y(v)},g); const tx=el('text',{x:ml-8,y:y(v)+4,'text-anchor':'end'},svg); tx.textContent = metric==='time_sec'? v.toFixed(0) : (v<1&&v>0? v.toFixed(step<0.01?3:2): v); });
-  if(bounded && lo<=0.5){ el('line',{x1:ml,x2:W-mr,y1:y(.5),y2:y(.5),stroke:css('--fail'),'stroke-dasharray':'4 4'},svg); const c=el('text',{x:W-mr,y:y(.5)-6,'text-anchor':'end',fill:css('--fail')},svg); c.textContent=lang==='en'?'chance':'azar'; c.style.fill='var(--fail)'; }
+  marcas(lo,hi).out.forEach(v=>{ el('line',{x1:ml,x2:W-mr,y1:y(v),y2:y(v),stroke:css('--borde')},svg);
+    const tx=el('text',{x:ml-8,y:y(v)+4,'text-anchor':'end'},svg); tx.textContent = metrica==='time_sec'? v.toFixed(0) : v.toFixed(paso<.01?3:2); });
+  if(acotada && lo<=.5){ el('line',{x1:ml,x2:W-mr,y1:y(.5),y2:y(.5),stroke:css('--rojo'),'stroke-dasharray':'4 4'},svg);
+    const c=el('text',{x:W-mr,y:y(.5)-6,'text-anchor':'end'},svg); c.textContent=t('chance'); c.style.fill=css('--rojo'); }
   const gw=iw/3, cw=gw/4; let k=0;
   D.tiers.forEach((tr,ti)=>{
     const gx=ml+ti*gw;
-    if(ti) el('line',{x1:gx,x2:gx,y1:mt-18,y2:H-mb+6,stroke:css('--rule')},svg);
-    const tt=el('text',{x:gx+gw/2,y:mt-14,'text-anchor':'middle',class:'tier'},svg); tt.textContent='TIER '+tr;
+    if(ti) el('line',{x1:gx,x2:gx,y1:mt-14,y2:H-mb+4,stroke:css('--borde')},svg);
+    const tt=el('text',{x:gx+gw/2,y:mt-12,'text-anchor':'middle',class:'tier'},svg); tt.textContent='TIER '+tr;
     D.llms.forEach((l,li)=>{
-      const cx=gx+cw*li+cw/2, key=`${tr}-${l}`, v=vals(key);
-      const lab=el('text',{x:cx,y:H-mb+20,'text-anchor':'middle'},svg); lab.textContent=LLM_NAME[l];
+      const cx=gx+cw*li+cw/2, key=`${tr}-${l}`, v=valores(key);
+      const et=el('text',{x:cx,y:H-mb+18,'text-anchor':'middle'},svg); et.textContent=NOM[l];
       if(!v){ const na=el('text',{x:cx,y:mt+ih/2,'text-anchor':'middle'},svg); na.textContent='n/d'; return; }
-      const col=`var(--c-${l})`, s=D.summary[key]&&D.summary[key][metric];
-      if(s && metric!=='time_sec'){ el('rect',{x:cx-cw*.36,width:cw*.72,y:y(s.hi),height:Math.max(2,y(s.lo)-y(s.hi)),fill:col,opacity:.18,rx:2},svg); }
+      const col=css('--c-'+l), s=D.summary[key]&&D.summary[key][metrica];
+      if(s && metrica!=='time_sec') el('rect',{x:cx-cw*.34,width:cw*.68,y:y(s.hi),height:Math.max(2,y(s.lo)-y(s.hi)),fill:col,opacity:.16,rx:3},svg);
       v.forEach((val,i)=>{
         const jx=cx+(((i*37)%17)/16-.5)*cw*.5;
-        const c=el('circle',{cx:jx,cy:y(val),r:4.2,fill:col,'fill-opacity':.78,stroke:css('--surface'),'stroke-width':1},svg);
-        if(play&&!reduce){ c.classList.add('dot'); c.style.animationDelay=(k*40+i*18)+'ms'; }
-        c.addEventListener('pointerenter',e=>{ tip.hidden=false; tip.innerHTML=`${LLM_NAME[l]} · Tier ${tr}<br>${t('run')} ${i+1}: <b>${val.toFixed(4)}</b>${s?`<br>${t('mean')} ${s.mean.toFixed(4)} ± ${s.sd.toFixed(4)}`:''}`; });
-        c.addEventListener('pointermove',e=>{ tip.style.left=Math.min(e.clientX+14, innerWidth-250)+'px'; tip.style.top=(e.clientY+14)+'px'; });
+        const c=el('circle',{cx:jx,cy:y(val),r:4,fill:col,'fill-opacity':.85,stroke:'#fff','stroke-width':1},svg);
+        if(anim&&!reduce){ c.classList.add('punto'); c.style.animationDelay=(k*35+i*15)+'ms'; }
+        c.addEventListener('pointerenter',()=>{ tip.hidden=false; tip.innerHTML=`<b>${NOM[l]} · Tier ${tr}</b><br>${t('run')} ${i+1}: <b>${val.toFixed(4)}</b>${s?`<br>${t('mean')} ${s.mean.toFixed(4)} ± ${s.sd.toFixed(4)}`:''}`; });
+        c.addEventListener('pointermove',e=>{ tip.style.left=Math.min(e.clientX+14,innerWidth-250)+'px'; tip.style.top=(e.clientY+14)+'px'; });
         c.addEventListener('pointerleave',()=>tip.hidden=true);
       });
-      const mean = v.reduce((a,b)=>a+b,0)/v.length;
-      const ml_=el('line',{x1:cx-cw*.36,x2:cx+cw*.36,y1:y(mean),y2:y(mean),class:'mean'},svg);
-      if(play&&!reduce) ml_.style.animationDelay=(k*40+500)+'ms'; else ml_.style.animation='none';
+      const media=v.reduce((a,b)=>a+b,0)/v.length;
+      const ln=el('line',{x1:cx-cw*.34,x2:cx+cw*.34,y1:y(media),y2:y(media),class:'media'},svg);
+      if(anim&&!reduce) ln.style.animationDelay=(k*35+450)+'ms'; else ln.style.animation='none';
       k++;
     });
   });
-  const yl=el('text',{x:14,y:mt+ih/2,transform:`rotate(-90 14 ${mt+ih/2})`,'text-anchor':'middle'},svg); yl.textContent=t('m_'+metric);
-  document.getElementById('metricNote').textContent = metric==='loss'?t('note_loss'): metric==='time_sec'?t('note_time'):t('note_def');
+  document.getElementById('notaMetrica').textContent = metrica==='loss'?t('note_loss'):metrica==='time_sec'?t('note_time'):t('note_def');
 }
-buildMetricSeg(); renderChart(false); once(document.getElementById('chart'), ()=>renderChart(true));
+pestanas(); grafico(false); alVer(document.getElementById('grafico'),()=>grafico(true));
 
-/* ---------- ablation ---------- */
-function buildAblation(play){
-  const a=document.getElementById('abl');
-  const get=(b,s)=>D.ablation.find(x=>x.backbone===b&&x.scheduler===s);
-  a.innerHTML=`<span></span><span class="hd">${t('cos')}</span><span class="hd">${t('rop')}</span>`;
+/* ---------- ablación ---------- */
+function ablacion(anim){
+  const a=document.getElementById('abl'), get=(b,s)=>D.ablation.find(x=>x.backbone===b&&x.scheduler===s);
+  a.innerHTML=`<span></span><span class="cab">${t('cos')}</span><span class="cab">${t('rop')}</span>`;
   [['pretrained_resnet18','pre'],['fromscratch_multiscale','scratch']].forEach(([b,lab])=>{
-    a.insertAdjacentHTML('beforeend',`<span class="rl">${t(lab)}</span>`);
-    ['cosine_annealing','reduce_on_plateau'].forEach(s=>{
-      const c=get(b,s), fail=c.mean<0.8;
-      a.insertAdjacentHTML('beforeend',`<div class="acell${fail?' fail':''}"><div><b data-v="${c.mean}">${c.mean.toFixed(3)}</b><br><small>± ${c.sd.toFixed(3)}</small></div><div class="meter"><i style="width:${play?0:c.mean*100}%" data-w="${c.mean*100}"></i><span class="chance"></span></div></div>`);
-    });
+    a.insertAdjacentHTML('beforeend',`<span class="fila">${t(lab)}</span>`);
+    ['cosine_annealing','reduce_on_plateau'].forEach(s=>{ const c=get(b,s), w=c.mean*100;
+      a.insertAdjacentHTML('beforeend',`<div class="acelda${c.mean<.8?' mal':''}"><div><b data-count="${c.mean}" data-dec="3">${c.mean.toFixed(3)}</b> <small>± ${c.sd.toFixed(3)}</small></div><div class="barra-progreso"><div style="width:${anim&&!reduce?0:w}%" data-w="${w}"></div><span class="azar"></span></div></div>`); });
   });
-  if(play && !reduce){
-    requestAnimationFrame(()=>requestAnimationFrame(()=>a.querySelectorAll('.meter i').forEach(i=>i.style.width=i.dataset.w+'%')));
-    a.querySelectorAll('b[data-v]').forEach(n=>{ n.dataset.count=n.dataset.v; n.dataset.dec=3; countUp(n); });
-  }
+  if(anim&&!reduce){ crecer('#abl .barra-progreso > div'); a.querySelectorAll('[data-count]').forEach(contar); }
 }
-buildAblation(false); once(document.getElementById('abl'), ()=>buildAblation(true));
+ablacion(false); alVer(document.getElementById('abl'),()=>ablacion(true));
 
-/* ---------- k-fold bars ---------- */
-function buildBars(play){
-  const best=D.summary['1-claude'].accuracy.mean, kf=D.kfold;
-  const rows=[...kf.folds.map((f,i)=>({l:`${t('fold')} ${i+1}`,v:f.acc,c:'kf'})),{l:t('kfmean'),v:kf.mean,c:'kf'},{l:t('baseline'),v:D.baseline.acc},{l:t('bestllm'),v:best}];
-  const pos=v=>Math.max(0,(v-0.9)/0.1*100);
-  document.getElementById('bars').innerHTML=rows.map(r=>`<div class="brow ${r.c||''}"><span>${r.l}</span><div class="track"><div class="fill" style="width:${play?0:pos(r.v)}%" data-w="${pos(r.v)}"></div></div><span class="v">${r.v.toFixed(4)}</span></div>`).join('');
-  if(play&&!reduce) requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll('#bars .fill').forEach((f,i)=>{f.style.transitionDelay=(i*90)+'ms'; f.style.width=f.dataset.w+'%';})));
-  document.getElementById('kfNote').textContent = t('kfNote')(kf.mean.toFixed(3),kf.lo.toFixed(3),kf.hi.toFixed(3),kf.auc.toFixed(4));
+/* ---------- k-fold ---------- */
+function barras(anim){
+  const kf=D.kfold, pos=v=>Math.max(0,(v-.9)/.1*100);
+  const filas=[...kf.folds.map((f,i)=>({l:`${t('fold')} ${i+1}`,v:f.acc})),{l:t('kfmean'),v:kf.mean,c:'resalta'},{l:t('baseline'),v:D.baseline.acc,c:'ref'},{l:t('bestllm'),v:D.summary['1-claude'].accuracy.mean,c:'ref'}];
+  document.getElementById('barras').innerHTML=filas.map(r=>`<div class="bfila ${r.c||''}"><span>${r.l}</span><div class="barra-progreso"><div style="width:${anim&&!reduce?0:pos(r.v)}%" data-w="${pos(r.v)}"></div></div><span class="v">${r.v.toFixed(4)}</span></div>`).join('');
+  if(anim&&!reduce) crecer('#barras .barra-progreso > div');
+  document.getElementById('notaKf').textContent=t('kf')(kf.lo.toFixed(3),kf.hi.toFixed(3),kf.auc.toFixed(4));
 }
-buildBars(false); once(document.getElementById('bars'), ()=>buildBars(true));
+barras(false); alVer(document.getElementById('barras'),()=>barras(true));
 
-/* ---------- anova ---------- */
+/* ---------- ANOVA ---------- */
+document.getElementById('anova').innerHTML=D.anova.map(r=>`<tr><td><b>${r.factor}</b></td><td class="num">${r.df}</td><td class="num">${r.F.toFixed(1)}</td><td class="num">${r.p.replace('e-',' × 10<sup>−')}</sup></td></tr>`).join('');
+
+/* ---------- cita ---------- */
 (function(){
-  const maxF=Math.max(...D.anova.map(r=>r.F)), body=document.getElementById('anovaBody');
-  body.innerHTML=D.anova.map(r=>`<tr><td><b>${r.factor}</b></td><td class="num">${r.ss.toFixed(4)}</td><td class="num">${r.df}</td><td class="num">${r.F.toFixed(1)}</td><td class="num" style="white-space:nowrap">${r.p.replace('e-',' × 10<sup>−')}</sup></td><td class="anova-bar"><div class="fbar" style="width:${r.F/maxF*100}%" data-w="${r.F/maxF*100}"></div></td></tr>`).join('');
-  once(body,()=>{ if(reduce) return; const b=body.querySelectorAll('.fbar'); b.forEach(x=>x.style.width='0%'); requestAnimationFrame(()=>requestAnimationFrame(()=>b.forEach((x,i)=>{x.style.transitionDelay=i*150+'ms'; x.style.width=x.dataset.w+'%';}))); });
+  const c=CITA;
+  const fuente=`<i>${c.revista}${c.volumen?', '+c.volumen:''}</i>${c.numero?'('+c.numero+')':''}${c.paginas?', '+c.paginas:''}`;
+  document.getElementById('apa').innerHTML=`${c.autores_apa} (${c.anio}). ${c.titulo}. ${fuente}.${c.doi?' https://doi.org/'+c.doi:''}`;
+  document.getElementById('repo').innerHTML=`${c.autores_apa} (${c.anio}). <i>llm-helmet-ppe: Code, data and logs</i> [Software]. GitHub. <a href="${c.repo}">${c.repo}</a>`;
+  const bib=['@article{parraga'+c.anio+'llmhelmet,',`  author  = {${c.autores_bib}},`,`  title   = {${c.titulo}},`,`  journal = {${c.revista}},`,`  year    = {${c.anio}},`];
+  if(c.volumen) bib.push(`  volume  = {${c.volumen}},`); if(c.numero) bib.push(`  number  = {${c.numero}},`); if(c.paginas) bib.push(`  pages   = {${c.paginas}},`);
+  bib.push(c.doi?`  doi     = {${c.doi}},`:'  note    = {Under review},');
+  bib.push(`  url     = {${c.repo}}`,'}');
+  document.getElementById('bib').textContent=bib.join('\n');
+  if(c.doi) document.getElementById('avisoCita').hidden=true;
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+    const n=document.getElementById(b.dataset.copy);
+    const ok=()=>{ b.textContent=t('copied'); setTimeout(()=>{ b.textContent=lang==='en'?EN.copy:ES.copy; },1600); };
+    const sel=()=>{ const r=document.createRange(); r.selectNodeContents(n); const s=getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try{ navigator.clipboard.writeText(n.innerText).then(ok,sel); }catch(e){ sel(); }
+  }));
 })();
 
-if(lang==='en') applyLang();
+if(lang==='en') aplicarIdioma();
 })();
 </script>
 </body>

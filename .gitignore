@@ -8,6 +8,7 @@
 # top-level files to include
 !/.gitignore
 !/README.md
+!/CITATION.cff
 !/requirements.txt
 !/push_to_github.sh
 !/run_experiments.sh
