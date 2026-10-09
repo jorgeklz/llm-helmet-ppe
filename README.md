@@ -6,10 +6,11 @@ pipeline for a binary helmet / no-helmet classifier under three levels of prompt
 instruction. Every generated script was run repeatedly on the same images and every run
 was logged. The manuscript itself is not included.
 
-**Interactive results:** <https://jorgeklz.github.io/llm-helmet-ppe/>, an animated
-page built only from the files in this repository. Its source is in
-[`docs/`](docs/); every push to `main` that touches `docs/` republishes it through
-`.github/workflows/pages.yml` (branch `gh-pages`).
+**Interactive lab:** <https://jorgeklz.github.io/llm-helmet-ppe/>. Tabs to browse every run,
+open each LLM-generated script with its run log, compare any two configurations with a Welch
+t-test computed in the browser, and copy the commands to rerun the experiments. It is built only
+from the files in this repository. Its source is in [`docs/`](docs/); every push to `main` that
+touches `docs/` republishes it through `.github/workflows/pages.yml` (branch `gh-pages`).
 
 ## Study design
 
@@ -50,7 +51,7 @@ tier{1,2,3}-{llm}_results.csv    one row per run
 tier{1,2,3}-{llm}_summary.csv    mean / SD / min / max per metric
 tier{1,2,3}-{llm}-output.txt     console log of every run
 revision/                        statistics and reviewer-requested experiments (see revision/README.md)
-docs/                            results website (index.html, data.js, build_data.py)
+docs/                            interactive lab (index.html, data.js, build_data.py, logo-jpa.svg)
 run_experiments.sh               runs k-fold CV, expert baseline and Tier-3 ablation
 rerun_rest.sh                    re-runs only the baseline and the ablation
 requirements.txt                 pinned Python dependencies
